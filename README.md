@@ -1,100 +1,108 @@
-# 智算智伴源码与复现入口
+# 智算智伴：源代码与手动复现
 
-## 评审下载入口
+本仓库交付的是智算智伴的源代码，不是已部署的网站或含数据库的一键运行包。项目包含 React 学生端、教师端、管理端，Fastify API，以及课程学习、知识图谱、诊断练习、智能答疑、智能出题和 AI 学伴等功能的实现。评审可按下列步骤在自己的电脑上启动程序；实际可见内容取决于导入的数据和配置的 AI 服务。
 
-评委老师无需从源码配置数据库。请打开仓库的 [Releases](https://github.com/Kevin325272/zhisuan-zhiban/releases) 页面，下载最新 Release 附件 `智算智伴-评审演示包.zip`，解压到纯英文路径后双击 `start.cmd`。该附件包含便携 PostgreSQL、演示数据库快照和完整演示数据；源码仓库本身不上传这些运行时文件。
+**重要边界：** Git 仓库没有包含 `.runtime/` 演示数据库快照，也没有提交 `data/**/raw/`、`data/**/processed/` 中的完整课程语料与题库。仅克隆源码可以启动基础平台，但**不能还原原演示中的完整课程、知识图谱、真题、具身研学或已有学习记录**。这些内容不能靠 `pnpm db:setup` 凭空生成；缺少原始数据时请使用下文的“源码基础运行”步骤，不要执行 `pnpm db:setup`。云端智能能力还需要评审自行配置有效的服务密钥。
 
-这是“智算智伴”程序源代码。源码包含学生端、教师端、管理端、智能答疑、智能出题、知识图谱/学习路径、具身研学和可拖动 AI 学伴等功能。离线交付包中的演示数据库快照位于 `.runtime/repro-demo.sql`。
+## 一、环境准备
 
-评审老师按步骤运行时，请按根目录编号顺序双击 `01-检查环境.cmd` 到 `08-启动网页.cmd`。每一步完成后再执行下一步；浏览器入口会在第 08 步的窗口中显示。演示结束后双击 `停止本演示.cmd`。`start.cmd` 仍可作为一键启动备用入口，但分步入口更便于定位环境问题。
+以下命令以 Windows PowerShell 为例，均在仓库根目录运行。需要：
 
-**GitHub 仓库仅发布源代码。** `.runtime/` 中的演示数据库快照和便携 PostgreSQL、本机账号、环境变量及 `node_modules` 均不会上传。需要完整的免配置演示数据时，请使用单独交付的离线压缩包；从 GitHub 克隆后运行，请按下方“手动启动”说明自行准备 PostgreSQL 17 和数据库内容。
-
-重要：当前便携 PostgreSQL 在**含中文字符的目录**下无法初始化。请将压缩包解压至从盘符到项目目录都为英文字母、数字的路径，例如 `D:\zhisuan-demo`。不要解压到 `D:\比赛项目\源码`，也不要在压缩包预览窗口直接运行。首次安装依赖需要访问 npm 网络。
-
-## 离线演示包启动（Windows）
-
-1. 安装 Node.js 24.x（24.14 或更高版本）。安装程序自带 Corepack，不需要单独安装 pnpm。
-2. 将单独提交的离线演示包完整解压到纯英文路径（例如 `D:\zhisuan-demo`），不要在压缩包预览窗口中运行。GitHub 源码不包含此步骤需要的演示数据库和便携 PostgreSQL。
-3. 依次双击 `01-检查环境.cmd`、`02-安装依赖.cmd`、`03-生成本机配置.cmd`、`04-启动数据库.cmd`、`05-导入演示数据.cmd`、`06-初始化演示账号.cmd`、`07-启动API.cmd`、`08-启动网页.cmd`。每一步显示完成后再进行下一步。
-4. 第 08 步窗口会打印实际浏览器入口；若默认端口被占用，配置脚本会自动选择其他可用端口，并只修改本演示包自己的本机配置。演示账号密码写入 `.repro-accounts.json`。
-5. 结束演示时先关闭 API 和网页窗口，再双击 `停止本演示.cmd`。该脚本只停止本演示包使用的端口和数据库，不会停止其他项目的服务。
-
-如果双击没有反应，请在本目录打开 PowerShell，执行 `powershell -ExecutionPolicy Bypass -File .\\run-demo.ps1`，窗口中的错误信息可以直接定位缺少的环境。
-
-## 手动启动
-
-使用 Node.js 24.14.0 或更高的 24.x 版本、pnpm 11.5.2 和 PostgreSQL 17。以下命令均在本目录执行：
+- Git、Node.js **24.14.0 或更新的 24.x**、pnpm **11.5.2**。
+- 二选一：Docker Desktop（含 `docker compose`，须先启动 Docker Desktop），或本机 PostgreSQL **17**。不需要同时启动两个数据库。
+- 首次安装 JavaScript 依赖、拉取 Docker 镜像需要联网。网页浏览器建议使用最新版 Chrome 或 Edge。
 
 ```powershell
+git clone https://github.com/Kevin325272/zhisuan-zhiban.git
+Set-Location .\zhisuan-zhiban
+node --version
+pnpm --version
 pnpm install --frozen-lockfile
+```
+
+如果 `pnpm` 未安装，可先执行 `npm install --global pnpm@11.5.2`，再检查版本。不要在 ZIP 预览窗口中运行命令。选择一个自己有写入权限的目录；采用下面的**本机 PostgreSQL** 方式时，项目完整路径还应只含英文、数字等 ASCII 字符，例如 `D:\zhisuan-zhiban`，避免 Windows `initdb` 在中文路径下失败。
+
+## 二、生成本机配置
+
+在新克隆的仓库根目录执行：
+
+```powershell
 pnpm repro:configure
+```
+
+它会生成 `.env.reproduction`、`apps/api/.env.local`、`.repro-accounts.json`，分别保存本机端口/数据库参数、API 配置和随机生成的演示账号密码。这些文件被 Git 忽略，不在仓库中。脚本发现文件已存在时会**拒绝覆盖**；重复运行前先检查自己的旧配置，不要覆盖已有数据或把密码提交到 GitHub。
+
+默认端口为数据库 `55435`、API `53105`、网页 `57305`，均应只用于本机。若这些端口已被其他程序占用，先确认占用者并换到空闲端口；不要连接其他项目的数据库。数据库端口可在首次配置前通过 `REPRO_DATABASE_PORT` 指定；API/Web 端口变更还需同步修改生成的两个配置文件。
+
+## 三、启动独立 PostgreSQL
+
+选择 **A 或 B**，只执行其中一种。
+
+### A. Docker Desktop
+
+确认 Docker Desktop 已启动后，在根目录执行：
+
+```powershell
+docker compose --env-file .env.reproduction -f compose.reproduction.yml up -d --wait
+```
+
+该 Compose 项目使用独立命名卷，数据库只映射到 `127.0.0.1:55435`（或配置的端口）。不要用其他项目的 PostgreSQL 容器代替它。
+
+### B. 本机 PostgreSQL 17
+
+安装 PostgreSQL 17 后，在根目录执行：
+
+```powershell
 node repro/postgres.mjs start
-pnpm db:setup
+```
+
+脚本默认从 `C:\Program Files\PostgreSQL\17\bin` 查找 `initdb.exe`、`pg_ctl.exe` 和 `psql.exe`。如果安装在其他位置，先在同一个 PowerShell 窗口设置 `$env:POSTGRES_BIN = 'D:\PostgreSQL\17\bin'`。脚本会在本仓库 `.runtime/repro-postgres/` 新建独立数据库集群，不会自动使用电脑上其他小组的数据库。
+
+## 四、初始化源码基础数据
+
+**新克隆、未提供原始数据时，请逐行执行以下命令，不要运行 `pnpm db:setup`：**
+
+```powershell
+pnpm db:migrate
+pnpm --filter @xuetu/api db:seed:platform
 pnpm db:seed:auth
 pnpm db:check
+```
+
+这会建立表结构、三个演示身份、四门 408 课程的目录与权限，并为三个账号设置本机随机密码；不会自动产生完整题库或课程知识图谱。`pnpm db:check` 应输出当前数据库名称和各类数据数量。在此基础上，也可执行 `pnpm --filter @xuetu/api db:seed:demo-roster` 和 `pnpm --filter @xuetu/api db:seed:community`，加入源码中合成的班级与社区演示记录；它们不代表真实学生数据。
+
+评审如果**另行持有且有权使用**与 `data/` 下各 `manifest.json` 校验值匹配的完整原始资料，可按各数据目录 README 恢复相应的 `raw/`、`processed/` 文件，再在这个**独立本机数据库**上执行 `pnpm db:setup`、`pnpm db:seed:auth`、`pnpm db:check`。`db:setup` 会依次导入真题、课程、试卷和课程图谱等内容；缺少任意必需数据会报错，不是程序已经自动下载了资料。原演示数据库中的历史学习记录仍不会由这些导入命令生成。
+
+## 五、分别启动 API 和网页
+
+在仓库根目录打开第一个 PowerShell 窗口，执行并保持运行：
+
+```powershell
 pnpm repro:api
 ```
 
-保持 API 终端运行，另开一个本目录终端：
+打开第二个 PowerShell 窗口，仍在仓库根目录，执行并保持运行：
 
 ```powershell
-node repro/prepare-demo.mjs --local-demo
 pnpm repro:web
 ```
 
-Windows 原生 PostgreSQL 路径默认 `C:\Program Files\PostgreSQL\17\bin`。其他路径可设置 `POSTGRES_BIN`。没有原生 PostgreSQL 时可用 `compose.reproduction.yml`；不要同时启动两种数据库。Docker 命令见完整指南。
+浏览器访问 [http://127.0.0.1:57305/login](http://127.0.0.1:57305/login)。可在本机运行 `Get-Content .repro-accounts.json` 查看账号和随机密码。用户名分别是 `user_student_001`、`user_teacher_001`、`user_admin_001`；三者的密码以**本机生成文件**为准，不在 README 中提供固定密码。API 健康检查地址是 [http://127.0.0.1:53105/api/v1/system-status](http://127.0.0.1:53105/api/v1/system-status)，正常时 `data.status` 为 `ready`。
 
-浏览器入口：`http://127.0.0.1:57305/login`。本地随机生成的账号密码仅写入 `.repro-accounts.json`，不要上传；学生、教师和管理员用户名分别为 `user_student_001`、`user_teacher_001`、`user_admin_001`。新学生首次进入学习设置，完成目标、自评和起步筛查后进入学习面板。
+## 六、可选：接入智能服务
 
-`prepare-demo.mjs` 只为独立本机数据库中的 8 道自编筛查题和 8 道自编练习题执行有审计说明的演示审核。正式教学应由教师重新审核，不得把此步骤当作真实教师签审。也可不用该脚本，改由管理员在正常管理流程逐题审核。
+不填密钥也能启动平台，但真实的 AI 答疑、出题、诊断或学伴调用不能因此视为已接通。评审如果有兼容 Chat Completions 的服务，可在**仅保存在本机**的 `apps/api/.env.local` 中填写 `LLM_API_KEY`，并核对 `LLM_BASE_URL`、`LLM_MODEL`、`LLM_API_FORMAT` 及 `AI_WORKFLOW_PROVIDER=openai_compatible`，保存后重启 API。提供方必须与所填模型名称匹配；默认示例配置不保证评审拥有对应账号或额度。
 
-## 云模型配置
+浮窗学伴的独立工作流接入还需同时设置 `XUETU_AGENT_CHAT_BASE_URL` 和 `XUETU_AGENT_CHAT_SECRET`。如果使用 Dify 工作流，须使用与该智能体实际应用类型和接口契约匹配的配置；不能把任意 Dify App Key 直接当成通用大模型 Key。没有密钥时可能只看到本地演示回复、不可用提示或空结果，不应当作真实云端调用成功。**不要把任何 API Key 写入 README、提交到仓库或发送给评审。**
 
-编辑 `apps/api/.env.local` 中的 `LLM_API_KEY`，保留以下非敏感配置，保存后重启 API：
+## 七、结束与排查
 
-```dotenv
-AI_WORKFLOW_PROVIDER=openai_compatible
-LLM_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
-LLM_MODEL=ZHIPU/GLM-5.3-Flash
-LLM_API_FORMAT=chat_completions
-LLM_REASONING_EFFORT=low
-LLM_MAX_OUTPUT_TOKENS=4096
-LLM_TIMEOUT_MS=60000
-```
+- 结束时在 API 和网页窗口各按 `Ctrl+C`。Docker 方式再执行 `docker compose --env-file .env.reproduction -f compose.reproduction.yml down`；本机 PostgreSQL 方式执行 `node repro/postgres.mjs stop`。两者都保留已有数据库数据。
+- `pnpm` 找不到：确认 Node.js 和 pnpm 安装成功，关闭并重新打开 PowerShell 后检查版本。
+- Docker 连接失败：先启动 Docker Desktop；如果没有 Docker，可改用 PostgreSQL 17 的 B 方案。
+- `initdb` 报路径错误：本机 PostgreSQL 方式把整个项目放到纯英文路径，重新在**全新的项目目录**按步骤配置，不要直接覆盖旧数据库目录。
+- 数据库连接或端口错误：核对 `.env.reproduction`、`apps/api/.env.local` 指向同一个本机端口，并确认该端口没有被其他项目占用。
+- `db:setup` 提示找不到 `raw/` 文件：源码仓库本来不含完整原始资料。无资料时使用第四节的基础数据步骤；缺少资料不能复现原演示的全部内容。
+- 课程/知识图谱/智能出题页为空：先看 `pnpm db:check` 的课程、题目和知识点数量。仅有目录而没有原始课程资料、审核后的题目或有效 AI 密钥时，页面内容不等于原演示。
 
-```powershell
-pnpm repro:model --save
-```
-
-未配置 Key 时，核验脚本以状态 `not_configured`、退出码 2 结束，不会生成伪造的模型结果。详细标识与当前验证边界见 `../模型接入/模型接入与标识说明.md`。
-
-## 结构与测试
-
-| 目录 | 内容 |
-| --- | --- |
-| `apps/web` | React/Vite 学生端、教师端、管理员页面 |
-| `apps/api` | Fastify API、权限与会话、数据库服务、模型适配器 |
-| `packages/contracts` | Zod 数据契约与共享类型 |
-| `data` | 可复现导入的数据、原图归档、来源清单及验证工具 |
-| `repro` | 独立配置、数据库管理、Web 启动、演示审核、模型核验 |
-| `deploy` | 部署脚本、反向代理配置及生产环境示例 |
-| `e2e` | 原有 Playwright 测试；包含模拟服务场景，不能代替云模型实测 |
-
-```powershell
-pnpm typecheck
-pnpm build
-pnpm test
-```
-
-测试终端不要额外注入运行实例的 `XUETU_LISTEN_HOST` 等环境变量；API 和数据库命令会自行读取 `.env.local`。默认编程执行器为 `mock`，只用于演示流程；真实代码运行需单独接入 Judge0。
-
-停止 API 和 Web 后执行 `node repro/postgres.mjs stop`。源码包不包含 `node_modules`、`apps/api/.env.local`、已生成配置、数据库目录、云服务 Key、线上账户密码或学生私有上传文件；`start.cmd` 会在首次启动时自动安装依赖并生成本机配置。请不要把 `.env.reproduction`、`.repro-accounts.json` 或 `.runtime/repro-postgres` 上传到公共仓库。课程页原图与原始教材归档未随分享包分发，课程原页查看/原始图示功能可能不可用；源码运行和演示课程/题库数据不依赖原图。
-
-## 常见问题
-
-- **提示“不是内部或外部命令”**：请从压缩包中完整解压后双击根目录的 `start.cmd`，不要直接在压缩包预览窗口运行；新版入口只调用英文文件名 `run-demo.ps1`，可避免中文路径编码问题。
-- **具身研学或智能出题为空白**：确认 `.runtime/repro-demo.sql` 存在，并使用根目录的 `start.cmd` 启动。该快照包含演示课程、题库、学习画像和研学数据。
-- **端口被占用**：新版启动脚本会自动为数据库、API 和网页选择下一个可用端口，并同步更新本机配置；不会连接或覆盖其他演示实例。
-- **提示 `apps/api/.env.local 已存在`**：旧压缩包误包含本机配置，不能继续使用旧包。新版不会包含 `.env.local`；请解压到全新目录，不要覆盖旧目录。
-- **提示 `initdb` 或 UTF-8 路径错误**：完整路径中含中文字符，请改为纯英文路径，例如 `D:\zhisuan-demo`。
+代码结构：`apps/web` 为 React/Vite 前端，`apps/api` 为 Fastify 后端，`packages/contracts` 为共享数据契约，`data` 为数据清单和可公开的小型样例，`repro` 为本机配置/数据库脚本。源码检查可运行 `pnpm typecheck`、`pnpm build`、`pnpm test`；单元测试通过不等于已验证所有外部数据和云服务。
