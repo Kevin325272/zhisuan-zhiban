@@ -1,0 +1,46 @@
+{
+  "sample_id": "bfs-rag-fixture-v1",
+  "review_status": "test_only_unverified",
+  "selection": [
+    {
+      "chunk_id": "csdn_119455799_chunk_0020",
+      "role": "queue_prerequisite",
+      "note": "队列的 FIFO、入队和出队基础概念。"
+    },
+    {
+      "chunk_id": "csdn_129588429_chunk_0047",
+      "role": "bfs_core",
+      "note": "BFS 的邻接点、访问标记、辅助队列和基础复杂度。"
+    },
+    {
+      "chunk_id": "csdn_131792829_chunk_0002",
+      "role": "enqueue_marking_and_shortest_path",
+      "note": "先标记再入队，并给出无权图最短路径更新方式。"
+    },
+    {
+      "chunk_id": "csdn_145752322_chunk_0005",
+      "role": "complexity_and_representation",
+      "note": "邻接矩阵、邻接表下的复杂度与遍历序列差异。"
+    },
+    {
+      "chunk_id": "csdn_136340070_chunk_0005",
+      "role": "disconnected_graph_and_limits",
+      "note": "非连通图、无权最短路径和 BFS 使用边界。"
+    },
+    {
+      "chunk_id": "csdn_149521023_chunk_0007",
+      "role": "graph_representation_prerequisite",
+      "note": "邻接矩阵与邻接表的结构背景。"
+    },
+    {
+      "chunk_id": "csdn_149521023_chunk_0008",
+      "role": "conflicting_code_example",
+      "note": "Python 示例在出队后标记，作为重复入队风险和低置信场景的冲突材料。"
+    },
+    {
+      "chunk_id": "csdn_149673833_chunk_0050",
+      "role": "corroborating_bfs_implementation",
+      "note": "另一份先标记再入队的实现及复杂度说明。"
+    }
+  ]
+}

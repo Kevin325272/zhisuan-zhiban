@@ -1,0 +1,481 @@
+/* Scoped readability and information-architecture pass for learning workspaces. */
+
+.nav-list li:last-child {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.26);
+}
+
+.nav-list li:last-child .nav-link {
+  /* AI 学伴 is an entry point, not a persistent "online/active" status. */
+  color: #50565c;
+  background: transparent;
+}
+
+.nav-list li:last-child .nav-link:hover {
+  color: #1f2d34;
+  background: #f3f5f1;
+}
+
+.nav-list li:last-child .nav-link.active {
+  color: white;
+  background: var(--color-ink);
+}
+
+.readability-upgraded {
+  --learning-text: #172033;
+  --learning-muted: #536179;
+  color: var(--learning-text);
+}
+
+.readability-upgraded p,
+.readability-upgraded blockquote,
+.readability-upgraded dd,
+.readability-upgraded td,
+.readability-upgraded button,
+.readability-upgraded textarea,
+.readability-upgraded select {
+  font-size: 15px !important;
+  line-height: 1.65;
+}
+
+.readability-upgraded small,
+.readability-upgraded time,
+.readability-upgraded dt,
+.readability-upgraded em,
+.readability-upgraded i,
+.readability-upgraded label,
+.readability-upgraded .cs-workspace-kicker {
+  font-size: 13px !important;
+  line-height: 1.45;
+}
+
+.readability-upgraded p,
+.readability-upgraded small,
+.readability-upgraded time,
+.readability-upgraded dt {
+  color: var(--learning-muted);
+}
+
+.readability-upgraded h2 {
+  color: #121a2b;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.readability-upgraded h3 {
+  color: #182136;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+/* AI companion workspace */
+.ai-learning-context {
+  display: grid;
+  grid-template-columns: minmax(205px, 0.8fr) minmax(540px, 2.2fr) auto;
+  align-items: center;
+  gap: 18px 26px;
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border: 1px solid #d9e0eb;
+  border-left: 3px solid #6658d3;
+  border-radius: 12px;
+  background: #fbfcff;
+  box-shadow: 0 5px 18px rgba(35, 45, 78, 0.055);
+}
+
+.ai-context-heading {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-context-heading > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #5247b8;
+  border-radius: 9px;
+  background: #eeecff;
+}
+
+.ai-context-heading small {
+  display: block;
+  margin-bottom: 2px;
+  color: #6b6aa7;
+  font-size: 13px !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ai-context-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ai-context-heading em {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 3px 8px;
+  color: #625c83;
+  font-style: normal;
+  border: 1px solid #ddd8f4;
+  border-radius: 999px;
+  background: #f7f5ff;
+}
+
+.ai-learning-context dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+}
+
+.ai-learning-context dl > div {
+  min-width: 0;
+  padding: 0 14px;
+  border-left: 1px solid #e2e7ef;
+}
+
+.ai-learning-context dt {
+  margin-bottom: 3px;
+  color: #758096;
+}
+
+.ai-learning-context dd {
+  overflow: hidden;
+  margin: 0;
+  color: #1e293b;
+  font-weight: 650;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ai-context-actions {
+  display: grid;
+  gap: 8px;
+  min-width: 156px;
+}
+
+.ai-context-actions a {
+  color: #4f46b8;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.ai-context-actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ai-context-actions a:focus-visible,
+.materials-context-rail a:focus-visible {
+  outline: 2px solid #6658d3;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.ai-context-boundary {
+  grid-column: 2 / -1;
+  margin: -7px 0 0;
+  padding-top: 9px;
+  color: #68758a !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  border-top: 1px dashed #dce2eb;
+}
+
+.ai-tutor-page .ai-workbench {
+  min-height: 620px;
+}
+
+.ai-tutor-page .ai-message p,
+.ai-tutor-page .ai-answer-markdown,
+.ai-tutor-page .ai-source-list p,
+.ai-tutor-page .ai-source-empty p {
+  font-size: 15px;
+}
+
+.ai-tutor-page .ai-console-header small,
+.ai-tutor-page .ai-message header small,
+.ai-tutor-page .retrieval-scope dt,
+.ai-tutor-page .retrieval-scope dd,
+.ai-tutor-page .ai-source-list small,
+.ai-tutor-page .ai-evidence-console footer {
+  font-size: 13px;
+}
+
+.ai-tutor-page .ai-console-header strong,
+.ai-tutor-page .ai-message header strong,
+.ai-tutor-page .ai-question-starters > span,
+.ai-tutor-page .ai-source-empty strong {
+  font-size: 13px;
+}
+
+/* Materials: one context rail, one reading workspace, one continuation lane. */
+.materials-context-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 0 18px;
+  border-top: 1px solid #ced6e2;
+  border-bottom: 1px solid #ced6e2;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.materials-context-rail > div {
+  min-width: 0;
+  padding: 18px 22px 17px;
+}
+
+.materials-context-rail > div + div {
+  border-left: 1px solid #dbe1e9;
+}
+
+.materials-context-rail small {
+  display: block;
+  margin-bottom: 4px;
+  color: #68758d;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.materials-context-rail h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.materials-context-rail p {
+  margin: 0;
+  color: #536179;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.materials-context-rail a {
+  display: inline-block;
+  margin-top: 6px;
+  color: #3659a7;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.materials-context-rail a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.materials-page .material-workspace {
+  display: grid;
+  grid-template-columns: 286px minmax(0, 1fr);
+  gap: 0;
+  min-height: 590px;
+  margin-bottom: 18px;
+}
+
+.materials-page .material-source-panel {
+  border-right: 1px solid #d8dee8;
+}
+
+.materials-page .material-reader {
+  scroll-margin-top: 82px;
+}
+
+.materials-page .material-source-item button strong,
+.materials-page .material-reader p,
+.materials-page .material-reader blockquote,
+.materials-page .source-cross-check strong,
+.materials-page .material-action-panel p,
+.materials-page .material-note-editor textarea {
+  font-size: 15px;
+}
+
+.materials-page .material-source-item button small,
+.materials-page .material-source-item button i,
+.materials-page .material-source-item button em,
+.materials-page .material-source-panel footer,
+.materials-page .material-reader header span,
+.materials-page .source-cross-check small,
+.materials-page .source-cross-check span,
+.materials-page .source-cross-check i {
+  font-size: 13px;
+}
+
+.materials-page .material-sync-status strong,
+.materials-page .material-source-panel > header span,
+.materials-page .material-source-panel > header strong,
+.materials-page .material-page-marker span,
+.materials-page .material-selection-summary strong {
+  font-size: 13px;
+}
+
+.materials-page .material-selection-summary > span {
+  font-size: 18px;
+}
+
+.materials-page .material-action-panel {
+  display: grid;
+  grid-template-columns: 190px minmax(230px, 1fr) 210px minmax(245px, 1fr);
+  gap: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d6dde7;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.materials-page .material-action-panel > header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0 20px;
+  border-bottom: 1px solid #dce2ea;
+  background: #f7f9fc;
+}
+
+.materials-page .material-action-panel > header span,
+.materials-page .material-action-panel > header strong {
+  font-size: 13px;
+}
+
+.materials-page .material-selection-summary,
+.materials-page .material-action-panel > section {
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 0;
+  background: transparent;
+}
+
+.materials-page .material-action-panel > section,
+.materials-page .material-action-panel > section + section {
+  border-left: 1px solid #e0e5ec;
+}
+
+.materials-page .material-selection-summary {
+  align-content: start;
+}
+
+.materials-page .material-action-panel h3 {
+  margin: 7px 0 5px;
+}
+
+.materials-page .material-action-panel button {
+  min-height: 38px;
+  font-size: 13px;
+}
+
+.materials-page .material-output-actions {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+}
+
+/* Evidence and course readability */
+.evidence-page .module-stat-strip span,
+.evidence-page .module-stat-strip small,
+.evidence-page .evidence-ledger > header span,
+.evidence-page .evidence-filter button,
+.evidence-page .evidence-timeline time,
+.evidence-page .evidence-timeline article small,
+.evidence-page .evidence-timeline article i,
+.evidence-page .evidence-chain-panel small,
+.course-map-page .course-map-summary small,
+.course-map-page .map-view-toolbar p,
+.course-map-page .knowledge-detail-panel small,
+.cs-courses-page .course-stage,
+.cs-courses-page .course-code,
+.cs-courses-page .course-availability {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.evidence-page .evidence-timeline article p,
+.evidence-page .evidence-chain-panel > p,
+.course-map-page .current-node-reason,
+.course-map-page .knowledge-detail-panel p,
+.cs-courses-page .major-course-card p,
+.cs-courses-page .course-catalog > header p {
+  color: #4f5e74;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.evidence-page .evidence-timeline article strong,
+.evidence-page .evidence-chain-panel li strong,
+.course-map-page .knowledge-detail-panel strong,
+.cs-courses-page .major-course-card h3 {
+  color: #172033;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.evidence-page .evidence-chain-panel > header span,
+.evidence-page .evidence-chain-panel > header strong,
+.cs-courses-page .major-badge,
+.cs-courses-page .command-index,
+.cs-courses-page .major-course-progress strong {
+  font-size: 13px;
+}
+
+.course-map-page .course-map-summary strong,
+.course-map-page .knowledge-node strong,
+.course-map-page .knowledge-node-mastery b,
+.course-map-page .course-tree strong,
+.course-map-page .knowledge-evidence-strip strong {
+  font-size: 13px;
+}
+
+@media (max-width: 1320px) {
+  .ai-learning-context {
+    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 2fr);
+  }
+
+  .ai-learning-context dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 11px;
+  }
+
+  .ai-context-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 22px;
+  }
+
+  .ai-context-boundary {
+    grid-column: 1 / -1;
+  }
+
+  .materials-page .material-action-panel {
+    grid-template-columns: 190px minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .materials-page .material-notes {
+    grid-column: 1 / -1;
+    border-top: 1px solid #e0e5ec !important;
+    border-left: 0 !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  .materials-context-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-context-rail > div + div {
+    border-top: 1px solid #dbe1e9;
+    border-left: 0;
+  }
+
+  .materials-page .material-workspace {
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "fixture_id": "bfs-rag-query-cases-v1",
+  "cases": [
+    {
+      "case_id": "bfs_queue_role",
+      "scenario": "normal",
+      "query": "为什么广度优先搜索要使用队列，而不是栈？",
+      "expected_evidence_ids": [
+        "csdn_119455799_chunk_0020",
+        "csdn_129588429_chunk_0047"
+      ],
+      "expected_answer_points": ["队列先进先出", "按层扩展邻接点"]
+    },
+    {
+      "case_id": "bfs_visited_timing",
+      "scenario": "normal",
+      "query": "BFS 中 visited 应该在入队时还是出队时更新？为什么？",
+      "expected_evidence_ids": [
+        "csdn_131792829_chunk_0002",
+        "csdn_149673833_chunk_0050"
+      ],
+      "expected_answer_points": ["首次发现邻接点时标记", "标记后再入队", "避免重复加入队列"]
+    },
+    {
+      "case_id": "bfs_complexity",
+      "scenario": "normal",
+      "query": "邻接矩阵和邻接表实现 BFS 的时间复杂度分别是多少？",
+      "expected_evidence_ids": [
+        "csdn_145752322_chunk_0005",
+        "csdn_149673833_chunk_0050"
+      ],
+      "expected_answer_points": ["邻接矩阵 O(|V|^2)", "邻接表 O(|V|+|E|)"]
+    },
+    {
+      "case_id": "bfs_shortest_path",
+      "scenario": "normal",
+      "query": "为什么 BFS 能求无权图的单源最短路径？",
+      "expected_evidence_ids": [
+        "csdn_131792829_chunk_0002",
+        "csdn_136340070_chunk_0005"
+      ],
+      "expected_answer_points": ["按距离分层访问", "每扩展一层路径长度加 1", "只适用于无权图或等权图"]
+    },
+    {
+      "case_id": "bfs_traversal_order",
+      "scenario": "normal",
+      "query": "同一个图使用邻接表时，BFS 遍历序列为什么可能不同？",
+      "expected_evidence_ids": [
+        "csdn_145752322_chunk_0005",
+        "csdn_136340070_chunk_0005"
+      ],
+      "expected_answer_points": ["邻接表表示不唯一", "邻接点存储顺序影响访问顺序"]
+    },
+    {
+      "case_id": "bfs_conflicting_python_example",
+      "scenario": "rag_low_confidence",
+      "query": "这个 Python BFS 为什么可能让同一顶点重复进入队列？",
+      "expected_evidence_ids": [
+        "csdn_149521023_chunk_0008",
+        "csdn_131792829_chunk_0002"
+      ],
+      "expected_answer_points": ["示例在出队后才标记", "其他来源采用入队前标记", "需要结合测试轨迹确认"]
+    },
+    {
+      "case_id": "bfs_weighted_graph",
+      "scenario": "rag_low_confidence",
+      "query": "普通 BFS 可以直接求任意带权图的最短路径吗？",
+      "expected_evidence_ids": ["csdn_136340070_chunk_0005"],
+      "expected_answer_points": ["不能直接用于任意带权图", "仅适用于无权图或所有边等权"]
+    },
+    {
+      "case_id": "out_of_scope_networking",
+      "scenario": "rag_empty",
+      "query": "TCP 三次握手中为什么不能只握手两次？",
+      "expected_evidence_ids": [],
+      "expected_answer_points": []
+    }
+  ]
+}

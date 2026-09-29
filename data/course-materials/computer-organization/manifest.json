@@ -1,0 +1,50 @@
+{
+  "dataset_id": "computer_organization_local_materials_v1",
+  "course_slug": "computer-organization",
+  "course_id": "course_408_co",
+  "original_directory": "C:\\Users\\Administrator\\Desktop\\挑战杯\\课程资料\\计算机组成原理",
+  "license_status": "unverified",
+  "usage_scope": "local_demo_only",
+  "provenance_status": "source_unknown_unverified",
+  "files": {
+    "knowledge": {
+      "file": "knowledge.json",
+      "original_path": "C:\\Users\\Administrator\\Desktop\\挑战杯\\课程资料\\计算机组成原理\\knowledge.json",
+      "sha256": "50246d015ea91f89727bfec33029cd5d7abc4d2410005ffe51f77285ed82d5ef",
+      "record_count": 504
+    },
+    "qa": {
+      "file": "qa.json",
+      "original_path": "C:\\Users\\Administrator\\Desktop\\挑战杯\\课程资料\\计算机组成原理\\qa.json",
+      "sha256": "251918b7fa84ceaec82719cbb97a268172eb8771b89bb582c2e24150cca3050c",
+      "record_count": 123
+    },
+    "training": {
+      "file": "training.json",
+      "original_path": "C:\\Users\\Administrator\\Desktop\\挑战杯\\课程资料\\计算机组成原理\\training.json",
+      "sha256": "cfdf13924c703daffb8de9755616cea0594761acd56d2fba268df6af7230f6e0",
+      "record_count": 123,
+      "usage": "reference_only_not_model_training"
+    },
+    "figure_assets": {
+      "file": "figure-assets.json",
+      "sha256": "eac4ce9dabfe0ea6bf8ace5cfa91e7bbbfaab20af91ea880b485ab40ab742c36",
+      "record_count": 93
+    },
+    "curriculum_map": {
+      "file": "curriculum-map.json",
+      "sha256": "3447fd75ee7b71c1bac84fe772d4d838abc6fb5b096156943ebd0aec2f0ef1bc",
+      "record_count": 46
+    },
+    "figure_catalog": {
+      "file": "figure-catalog.json",
+      "sha256": "266efa4848a3cfff18e3904a631e3e17f3c1253bce39b3d3749f156aa4305a16",
+      "record_count": 293
+    },
+    "concept_figure_links": {
+      "file": "concept-figure-links.json",
+      "sha256": "e78ed8a175b84745c852fd565ed22086d7c190cb6ee75aac319c025d7d303e22",
+      "record_count": 20
+    }
+  }
+}

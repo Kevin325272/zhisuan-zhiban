@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light;
+  --color-canvas: #eef0ec;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f6f7f3;
+  --color-active: #111318;
+  --color-ink: #111318;
+  --color-ink-soft: #41464c;
+  --color-muted: #73797e;
+  --color-border: #dde1de;
+  --color-border-strong: #cbd0cd;
+  --color-primary: #c8f04a;
+  --color-primary-hover: #b5dd38;
+  --color-primary-soft: #eff9cb;
+  --color-success: #5d8a56;
+  --color-success-soft: #e8f1e4;
+  --color-info: #2d63ff;
+  --color-info-soft: #e8eeff;
+  --color-warning: #c48a21;
+  --color-warning-soft: #fff2d8;
+  --color-danger: #e4573f;
+  --color-danger-soft: #feeae6;
+  --color-teal: var(--color-success);
+  --color-teal-soft: var(--color-success-soft);
+  --color-coral: var(--color-danger);
+  --color-coral-soft: var(--color-danger-soft);
+  --color-amber: var(--color-warning);
+  --color-amber-soft: var(--color-warning-soft);
+  --shadow-popover: 0 20px 54px rgb(17 19 24 / 14%);
+  --topbar-height: 68px;
+  --sidebar-width: 244px;
+  --content-max: 1600px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-page: 8px;
+  font-family: var(--xuetu-font-interface);
+}

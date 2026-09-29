@@ -1,0 +1,20 @@
+.course-original-document { margin: 28px 0 8px; border: 1px solid #e5ece8; border-radius: 18px; overflow: clip; background: #f5f7f5; }
+.source-document-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 20px; border-bottom: 1px solid #e5ece8; background: #fff; }
+.source-document-toolbar > div, .source-document-toolbar nav, .source-document-dialog header > div { display: flex; align-items: center; gap: 12px; }
+.source-document-toolbar h3 { margin: 0; font: 650 16px var(--xuetu-font-interface); }
+.source-document-toolbar span { color: var(--xuetu-muted); font: 500 13px var(--xuetu-font-interface); font-variant-numeric: tabular-nums; }
+.source-document-toolbar button, .source-document-error button, .source-document-dialog button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 34px; padding: 7px 10px; border: 1px solid #e2eae6; border-radius: 8px; color: var(--xuetu-action); background: #fff; font: 550 13px var(--xuetu-font-interface); cursor: pointer; }
+.source-document-toolbar button:disabled, .source-document-dialog button:disabled { opacity: .35; cursor: default; }
+.source-document-toolbar button:not(:disabled):hover, .source-document-dialog button:not(:disabled):hover { background: #edf4f0; }
+.source-document-sheet { position: relative; width: 100%; max-width: 1120px; margin: 0 auto; background: #fff; }
+.source-document-sheet > img { display: block; width: 100%; height: auto; }
+.source-document-sheet[data-source-excerpt="true"] { overflow: hidden; }
+.source-page-bookmark { position: absolute; left: 0; right: 0; pointer-events: none; }
+.source-document-error { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 70px 24px; color: var(--xuetu-muted); }
+.source-document-dialog { width: min(1120px, 92vw); height: 92vh; max-width: 92vw; max-height: 92vh; padding: 0; border: 1px solid #dce6e0; border-radius: 18px; color: var(--xuetu-ink); background: #f1f4f1; box-shadow: 0 30px 100px #092c3433; }
+.source-document-dialog::backdrop { background: #0a2428aa; }
+.source-document-dialog[open] { display: flex; flex-direction: column; }
+.source-document-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex: 0 0 auto; padding: 16px 22px; background: #fff; border-bottom: 1px solid #e2eae6; }
+.source-document-dialog h2 { margin: 0; font: 650 17px var(--xuetu-font-interface); }
+.source-document-zoom-body { min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; padding: 20px; }
+.source-document-zoom-body > img { display: block; max-width: none; height: auto; margin-inline: auto; box-shadow: 0 4px 18px #19392e12; }

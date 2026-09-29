@@ -1,0 +1,302 @@
+[
+  {
+    "link_id": "co_link_co_c01_02_1_1",
+    "concept_id": "co_c01_02",
+    "asset_id": "co_figure_1_1",
+    "figure_label": "图1.1",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0013"
+    ],
+    "evidence_text": "co_chunk_k0013 directly references 图1.1",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c01_02_1_2",
+    "concept_id": "co_c01_02",
+    "asset_id": "co_figure_1_2",
+    "figure_label": "图1.2",
+    "display_role": "related",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0013"
+    ],
+    "evidence_text": "co_chunk_k0013 directly references 图1.2",
+    "display_enabled": true,
+    "ordinal": 1
+  },
+  {
+    "link_id": "co_link_co_c01_02_1_3",
+    "concept_id": "co_c01_02",
+    "asset_id": "co_figure_1_3",
+    "figure_label": "图1.3",
+    "display_role": "related",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0013"
+    ],
+    "evidence_text": "co_chunk_k0013 directly references 图1.3",
+    "display_enabled": true,
+    "ordinal": 2
+  },
+  {
+    "link_id": "co_link_co_c01_04_1_9",
+    "concept_id": "co_c01_04",
+    "asset_id": "co_figure_1_9",
+    "figure_label": "图1.9",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0018"
+    ],
+    "evidence_text": "co_chunk_k0018 directly references 图1.9",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c01_05_1_11",
+    "concept_id": "co_c01_05",
+    "asset_id": "co_figure_1_11",
+    "figure_label": "图1.11",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0026"
+    ],
+    "evidence_text": "co_chunk_k0026 directly references 图1.11",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c03_01_3_2",
+    "concept_id": "co_c03_01",
+    "asset_id": "co_figure_3_2",
+    "figure_label": "图3.2",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0067"
+    ],
+    "evidence_text": "co_chunk_k0067 directly references 图3.2",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c03_03_3_14",
+    "concept_id": "co_c03_03",
+    "asset_id": "co_figure_3_14",
+    "figure_label": "图3.14",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0086"
+    ],
+    "evidence_text": "co_chunk_k0086 directly references 图3.14",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c03_04_3_17",
+    "concept_id": "co_c03_04",
+    "asset_id": "co_figure_3_17",
+    "figure_label": "图3.17",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0089"
+    ],
+    "evidence_text": "co_chunk_k0089 directly references 图3.17",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c04_02_4_7",
+    "concept_id": "co_c04_02",
+    "asset_id": "co_figure_4_7",
+    "figure_label": "图4.7",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0104"
+    ],
+    "evidence_text": "co_chunk_k0104 directly references 图4.7",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c04_04_4_49",
+    "concept_id": "co_c04_04",
+    "asset_id": "co_figure_4_49",
+    "figure_label": "图4.49",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0145"
+    ],
+    "evidence_text": "co_chunk_k0145 directly references 图4.49",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c05_01_5_1",
+    "concept_id": "co_c05_01",
+    "asset_id": "co_figure_5_1",
+    "figure_label": "图5.1",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0201"
+    ],
+    "evidence_text": "co_chunk_k0201 directly references 图5.1",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c05_02_5_5",
+    "concept_id": "co_c05_02",
+    "asset_id": "co_figure_5_5",
+    "figure_label": "图5.5",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0206"
+    ],
+    "evidence_text": "co_chunk_k0206 directly references 图5.5",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c05_03_5_9",
+    "concept_id": "co_c05_03",
+    "asset_id": "co_figure_5_9",
+    "figure_label": "图5.9",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0210"
+    ],
+    "evidence_text": "co_chunk_k0210 directly references 图5.9",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c05_04_5_41",
+    "concept_id": "co_c05_04",
+    "asset_id": "co_figure_5_41",
+    "figure_label": "图5.41",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0251"
+    ],
+    "evidence_text": "co_chunk_k0251 directly references 图5.41",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c05_05_5_45",
+    "concept_id": "co_c05_05",
+    "asset_id": "co_figure_5_45",
+    "figure_label": "图5.45",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0256"
+    ],
+    "evidence_text": "co_chunk_k0256 directly references 图5.45",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c07_02_7_6",
+    "concept_id": "co_c07_02",
+    "asset_id": "co_figure_7_6",
+    "figure_label": "图7.6",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0371"
+    ],
+    "evidence_text": "co_chunk_k0371 directly references 图7.6",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c07_02_7_8",
+    "concept_id": "co_c07_02",
+    "asset_id": "co_figure_7_8",
+    "figure_label": "图7.8",
+    "display_role": "related",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0371"
+    ],
+    "evidence_text": "co_chunk_k0371 directly references 图7.8",
+    "display_enabled": true,
+    "ordinal": 1
+  },
+  {
+    "link_id": "co_link_co_c07_03_7_8",
+    "concept_id": "co_c07_03",
+    "asset_id": "co_figure_7_8",
+    "figure_label": "图7.8",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0372"
+    ],
+    "evidence_text": "co_chunk_k0372 directly references 图7.8",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c09_01_9_8",
+    "concept_id": "co_c09_01",
+    "asset_id": "co_figure_9_8",
+    "figure_label": "图9.8",
+    "display_role": "primary",
+    "match_method": "semantic_candidate",
+    "match_confidence": 0.9400000000000001,
+    "source_chunk_ids": [
+      "co_chunk_k0445"
+    ],
+    "evidence_text": "same chapter and high-threshold term match for 图9.8",
+    "display_enabled": true,
+    "ordinal": 0
+  },
+  {
+    "link_id": "co_link_co_c09_03_9_8",
+    "concept_id": "co_c09_03",
+    "asset_id": "co_figure_9_8",
+    "figure_label": "图9.8",
+    "display_role": "primary",
+    "match_method": "direct_reference",
+    "match_confidence": 1.0,
+    "source_chunk_ids": [
+      "co_chunk_k0456"
+    ],
+    "evidence_text": "co_chunk_k0456 directly references 图9.8",
+    "display_enabled": true,
+    "ordinal": 0
+  }
+]

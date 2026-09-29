@@ -1,0 +1,2656 @@
+{
+  "schema_version": "1.0",
+  "course_id": "course_408_ds",
+  "course_slug": "data-structures",
+  "title": "课程知识地图",
+  "curation_method": "source_constrained_course_design",
+  "source_dataset_id": "408-three-course-source-v1",
+  "source_archive_sha256": "dbfa820489270c78f6e561c198cf3b75aaf7d03142fdf445caa00a0de82afb24",
+  "chapters": [
+    {
+      "chapter_id": "ds_ch01",
+      "source_chapter": "第1章",
+      "title": "绪论",
+      "ordinal": 1,
+      "modules": [
+        {
+          "module_id": "ds_m01_01",
+          "title": "数据结构基础",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c01_01",
+              "title": "数据、数据元素与数据项",
+              "learning_objective": "理解数据在程序中的表示形式，并区分数据元素、数据项和数据对象。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "数据",
+                "数据元素",
+                "数据项"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "先明确要处理的对象，再决定如何组织它们。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "数据是信息在程序中的表示形式；数据元素是计算机处理或访问的基本单位。"
+                ],
+                "case_prompt": "把一份学生名册拆成数据元素、数据项和数据对象。",
+                "practice_tags": [
+                  "数据结构",
+                  "数据",
+                  "数据元素"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0002",
+                  "print_page": 2
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "ds_c01_02",
+              "title": "逻辑结构与存储结构",
+              "learning_objective": "区分面向问题的逻辑结构和面向实现的存储结构，理解二者的对应关系。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "逻辑结构",
+                "存储结构",
+                "抽象"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "逻辑上相邻不等于物理地址相邻，存储方式要由实现需求决定。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "逻辑结构描述元素及其关系；存储结构进一步决定这些关系如何落到存储单元中。"
+                ],
+                "case_prompt": "同一个线性表分别用数组和指针链接表示时，哪些关系保持不变？",
+                "practice_tags": [
+                  "数据结构",
+                  "逻辑结构",
+                  "存储结构"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0005",
+                  "print_page": 5
+                },
+                {
+                  "chunk_id": "ds_k0006",
+                  "print_page": 6
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_1_3",
+                  "figure_label": "图1.3",
+                  "caption": "逻辑结构与存储结构间的关系",
+                  "source_chunk_id": "ds_k0005",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c01_03",
+              "title": "数据结构上的基本操作",
+              "learning_objective": "能为一种数据结构列出创建、查找、插入、删除和排序等基本操作，并说明先决条件。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "创建",
+                "查找",
+                "插入",
+                "删除"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "操作的名称相似，但每个操作都要先说明对象状态和位置约束。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "课程把创建、销毁、查找、插入、删除和排序作为常见基本操作；具体操作集随结构而变。"
+                ],
+                "case_prompt": "为一个空线性表写出初始化、插入和删除的先决条件。",
+                "practice_tags": [
+                  "数据结构",
+                  "创建",
+                  "查找"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0007",
+                  "print_page": 7
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m01_02",
+          "title": "算法与效率",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c01_04",
+              "title": "算法设计与逐步求精",
+              "learning_objective": "能把具体问题按需求、思路、算法框架和程序实现逐层细化。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "算法设计",
+                "逐步求精",
+                "穷举法",
+                "递归法"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "先把问题边界说清楚，再选择算法方法；不要从代码细节倒推需求。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源示例用“理解需求—设计思路—算法框架—程序实现”组织求最大值问题，并介绍穷举、迭代、递推和递归。"
+                ],
+                "case_prompt": "设计一个返回数组最大元素下标的算法，先写需求和框架再写循环。",
+                "practice_tags": [
+                  "数据结构",
+                  "算法设计",
+                  "逐步求精"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0014",
+                  "print_page": 14
+                },
+                {
+                  "chunk_id": "ds_k0015",
+                  "print_page": 15
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "ds_c01_05",
+              "title": "时间、空间与渐近复杂度",
+              "learning_objective": "明确问题规模，区分时间复杂度和空间复杂度，并用渐近量级比较算法。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "问题规模",
+                "时间复杂度",
+                "空间复杂度",
+                "渐近分析"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "复杂度比较的是随规模增长的趋势，不是某台机器上的一次实测时间。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "时间和空间代价都要以问题规模为变量；递归实现还会额外占用工作栈空间。"
+                ],
+                "case_prompt": "比较迭代阶乘和递归阶乘：结果相同，但附加空间为何不同？",
+                "practice_tags": [
+                  "数据结构",
+                  "问题规模",
+                  "时间复杂度"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0018",
+                  "print_page": 18
+                },
+                {
+                  "chunk_id": "ds_k0019",
+                  "print_page": 19
+                },
+                {
+                  "chunk_id": "ds_k0021",
+                  "print_page": 21
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch02",
+      "source_chapter": "第2章",
+      "title": "线性表",
+      "ordinal": 2,
+      "modules": [
+        {
+          "module_id": "ds_m02_01",
+          "title": "线性表模型",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c02_01",
+              "title": "线性表的定义与相邻关系",
+              "learning_objective": "能描述有限序列、表头、表尾、直接前趋和直接后继。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "线性表",
+                "表头",
+                "表尾",
+                "前趋",
+                "后继"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "线性表元素有位置和值；位置关系不是元素具体内容本身。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "线性表是同类型数据元素组成的有限序列，除首尾外每个元素都有唯一直接前趋和后继。"
+                ],
+                "case_prompt": "给定空表、单元素表和三元素表，分别判断表头、表尾及长度。",
+                "practice_tags": [
+                  "数据结构",
+                  "线性表",
+                  "表头"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0027",
+                  "print_page": 27
+                },
+                {
+                  "chunk_id": "ds_k0028",
+                  "print_page": 28
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "ds_c02_02",
+              "title": "顺序表的存储表示",
+              "learning_objective": "理解顺序表用连续存储单元表示逻辑相邻元素，并能解释容量与长度。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "顺序表",
+                "连续存储",
+                "长度",
+                "容量"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "容量是已分配空间，长度是当前有效元素数，两者不能混用。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "顺序表的逻辑相邻元素存放在物理相邻单元中，数组下标可直接定位元素。"
+                ],
+                "case_prompt": "观察一个容量为8、长度为5的顺序表，判断插入是否需要扩容。",
+                "practice_tags": [
+                  "数据结构",
+                  "顺序表",
+                  "连续存储"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0029",
+                  "print_page": 29
+                },
+                {
+                  "chunk_id": "ds_k0030",
+                  "print_page": 30
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_2_1",
+                  "figure_label": "图2.1",
+                  "caption": "顺序表的示意图",
+                  "source_chunk_id": "ds_k0029",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c02_03",
+              "title": "顺序表的插入与删除",
+              "learning_objective": "能按位置说明顺序表插入、删除时元素移动的方向与边界检查。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "插入",
+                "删除",
+                "元素移动",
+                "边界"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "插入和删除的核心代价通常来自移动元素，而不是定位下标本身。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源示例展示插入新元素和删除已有元素时的移动过程；位置合法性是操作先决条件。"
+                ],
+                "case_prompt": "在长度为5的顺序表第2位插入一个元素，哪些元素需要向后移动？",
+                "practice_tags": [
+                  "数据结构",
+                  "插入",
+                  "删除"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0032",
+                  "print_page": 32
+                },
+                {
+                  "chunk_id": "ds_k0034",
+                  "print_page": 34
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_2_3",
+                  "figure_label": "图2.3",
+                  "caption": "插入新元素的示例",
+                  "source_chunk_id": "ds_k0032",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m02_02",
+          "title": "链式表示",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c02_04",
+              "title": "单链表结点与基本操作",
+              "learning_objective": "能读懂单链表结点的链接关系，并按指针变化完成查找、插入和删除。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "单链表",
+                "结点",
+                "指针",
+                "link"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "链表逻辑相邻不代表地址相邻，遍历必须沿链接逐结点进行。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "单链表用结点和链接指针表示后继；插入和删除主要改变链接，而不是搬移整段元素。"
+                ],
+                "case_prompt": "在结点 q 后插入 p，先保存哪条链接才能避免断链？",
+                "practice_tags": [
+                  "数据结构",
+                  "单链表",
+                  "结点"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0035",
+                  "print_page": 35
+                },
+                {
+                  "chunk_id": "ds_k0036",
+                  "print_page": 36
+                },
+                {
+                  "chunk_id": "ds_k0037",
+                  "print_page": 37
+                },
+                {
+                  "chunk_id": "ds_k0039",
+                  "print_page": 39
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "ds_c02_05",
+              "title": "带头结点、循环链表与双向链表",
+              "learning_objective": "比较带头结点、循环链表和双向链表在边界处理与前后向遍历上的差异。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "头结点",
+                "循环链表",
+                "双向链表",
+                "前驱指针"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "头结点通常不代表有效数据；循环链表结束条件也不能写成指针为空。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源分别介绍带头结点、循环链表和双向链表的结构与插入删除情形。"
+                ],
+                "case_prompt": "为需要频繁在表尾插入的场景选择循环链表或双向链表，并说明理由。",
+                "practice_tags": [
+                  "数据结构",
+                  "头结点",
+                  "循环链表"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0040",
+                  "print_page": 40
+                },
+                {
+                  "chunk_id": "ds_k0047",
+                  "print_page": 47
+                },
+                {
+                  "chunk_id": "ds_k0050",
+                  "print_page": 50
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_2_12",
+                  "figure_label": "图2.12",
+                  "caption": "带头结点的单链表结构",
+                  "source_chunk_id": "ds_k0040",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m02_03",
+          "title": "表示选择与应用",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c02_06",
+              "title": "线性表表示选择与多项式应用",
+              "learning_objective": "能结合访问、修改和空间需求选择顺序或链接表示，并理解多项式链式相加的过程。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "顺序表示",
+                "链接表示",
+                "多项式",
+                "合并"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "没有绝对更快的表示；要把操作频率和存储代价一起比较。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源比较顺序表与链表的特点，并用链表结点表示多项式及其相加过程。"
+                ],
+                "case_prompt": "合并两个按指数有序的多项式链表时，指数相等和不等分别如何处理？",
+                "practice_tags": [
+                  "数据结构",
+                  "顺序表示",
+                  "链接表示"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0055",
+                  "print_page": 55
+                },
+                {
+                  "chunk_id": "ds_k0059",
+                  "print_page": 59
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_2_26",
+                  "figure_label": "图2.26",
+                  "caption": "多项式链表的相加",
+                  "source_chunk_id": "ds_k0059",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch03",
+      "source_chapter": "第3章",
+      "title": "栈和队列",
+      "ordinal": 3,
+      "modules": [
+        {
+          "module_id": "ds_m03_01",
+          "title": "栈结构",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c03_01",
+              "title": "栈的抽象与存储",
+              "learning_objective": "能用后进先出解释栈顶操作，并比较顺序栈与链栈的实现边界。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "栈",
+                "后进先出",
+                "栈顶",
+                "入栈",
+                "出栈"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "栈只能在栈顶进行入栈和出栈，不能把它当作任意位置可插删的线性表。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源用示意图、顺序栈和链栈说明栈顶及进栈、退栈操作。"
+                ],
+                "case_prompt": "依次入栈 A、B、C 后连续出栈，序列为什么只能从 C 开始？",
+                "practice_tags": [
+                  "数据结构",
+                  "栈",
+                  "后进先出"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0066",
+                  "print_page": 66
+                },
+                {
+                  "chunk_id": "ds_k0067",
+                  "print_page": 67
+                },
+                {
+                  "chunk_id": "ds_k0073",
+                  "print_page": 73
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_3_1",
+                  "figure_label": "图3.1",
+                  "caption": "栈的示意图",
+                  "source_chunk_id": "ds_k0066",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m03_02",
+          "title": "队列",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c03_02",
+              "title": "队列与循环队列",
+              "learning_objective": "能用先进先出描述队列，并解释循环队列如何复用数组中的空闲位置。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "队列",
+                "先进先出",
+                "队头",
+                "队尾",
+                "循环队列"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "循环队列的队尾绕回数组起点，不等于可以无条件覆盖队头元素。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍队列的基本操作、顺序循环队列和链式队列的组织方式。"
+                ],
+                "case_prompt": "一个循环队列只有一个空位约定时，如何判断队满和队空？",
+                "practice_tags": [
+                  "数据结构",
+                  "队列",
+                  "先进先出"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0076",
+                  "print_page": 76
+                },
+                {
+                  "chunk_id": "ds_k0077",
+                  "print_page": 77
+                },
+                {
+                  "chunk_id": "ds_k0080",
+                  "print_page": 80
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m03_03",
+          "title": "栈和队列的算法应用",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c03_03",
+              "title": "括号匹配与表达式求值",
+              "learning_objective": "能说明栈如何保存尚未匹配的括号，并按优先级处理表达式求值。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "括号匹配",
+                "表达式",
+                "运算符栈",
+                "优先级"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "遇到右括号时匹配的是最近一个未匹配左括号，即栈顶。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源把括号匹配和中缀表达式求值作为栈的典型应用，并强调运算符优先级。"
+                ],
+                "case_prompt": "扫描“([{}])”时每一步栈顶是什么？如果遇到“(]”应在哪里报告错误？",
+                "practice_tags": [
+                  "数据结构",
+                  "括号匹配",
+                  "表达式"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0082",
+                  "print_page": 82
+                },
+                {
+                  "chunk_id": "ds_k0083",
+                  "print_page": 83
+                },
+                {
+                  "chunk_id": "ds_k0084",
+                  "print_page": 84
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "ds_c03_04",
+              "title": "递归、回溯与队列应用",
+              "learning_objective": "能识别递归调用的工作栈，并理解迷宫等问题中回溯和状态保存的关系。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "递归",
+                "回溯",
+                "工作栈",
+                "迷宫"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "递归不是没有循环的魔法；每次调用都要保存参数、返回地址等工作记录。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源把递归作为算法设计方法，并以迷宫和回溯过程说明状态恢复。"
+                ],
+                "case_prompt": "走迷宫遇到死路时，应该撤销哪一步并回到哪个已保存状态？",
+                "practice_tags": [
+                  "数据结构",
+                  "递归",
+                  "回溯"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0092",
+                  "print_page": 92
+                },
+                {
+                  "chunk_id": "ds_k0098",
+                  "print_page": 98
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m03_04",
+          "title": "扩展队列结构",
+          "ordinal": 4,
+          "concepts": [
+            {
+              "concept_id": "ds_c03_05",
+              "title": "双端队列与优先队列",
+              "learning_objective": "能区分双端队列两端操作和优先队列按关键码取出元素的规则。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "双端队列",
+                "优先队列",
+                "关键码",
+                "队头"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "优先队列的“先出”由优先级决定，不等于按进入时间先进先出。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源在队列章节介绍双端队列和优先队列的结构及操作入口。"
+                ],
+                "case_prompt": "任务调度同时到达两个请求时，什么时候应选优先级更高的请求而不是更早到达的请求？",
+                "practice_tags": [
+                  "数据结构",
+                  "双端队列",
+                  "优先队列"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0102",
+                  "print_page": 102
+                },
+                {
+                  "chunk_id": "ds_k0106",
+                  "print_page": 106
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch04",
+      "source_chapter": "第4章",
+      "title": "数组、字符串与广义表",
+      "ordinal": 4,
+      "modules": [
+        {
+          "module_id": "ds_m04_01",
+          "title": "数组与压缩存储",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c04_01",
+              "title": "多维数组与地址映射",
+              "learning_objective": "能说明多维数组按行优先或列优先映射到一维存储的规则。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "多维数组",
+                "行优先",
+                "列优先",
+                "地址"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "下标顺序和存储顺序是两件事；地址计算必须先确认采用哪种优先方式。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍多维数组及二维数组的顺序存放方式，核心是下标到线性地址的映射。"
+                ],
+                "case_prompt": "同一个二维数组按行优先与列优先存放时，a[1][2]的相邻元素分别是谁？",
+                "practice_tags": [
+                  "数据结构",
+                  "多维数组",
+                  "行优先"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0114",
+                  "print_page": 114
+                },
+                {
+                  "chunk_id": "ds_k0115",
+                  "print_page": 115
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_4_2",
+                  "figure_label": "图4.2",
+                  "caption": "多维数组",
+                  "source_chunk_id": "ds_k0114",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c04_02",
+              "title": "特殊矩阵的压缩存储",
+              "learning_objective": "能利用对称、三角和对角结构减少矩阵存储，并定位压缩数组中的元素。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "对称矩阵",
+                "三角矩阵",
+                "压缩存储",
+                "对角线"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "压缩前先确认矩阵的结构规律；不能把任意矩阵套用三角矩阵公式。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源展示对称、三角和对角矩阵的压缩存储方式及元素位置计算。"
+                ],
+                "case_prompt": "对称矩阵只保存下三角时，如何由(i,j)判断应访问哪个存储位置？",
+                "practice_tags": [
+                  "数据结构",
+                  "对称矩阵",
+                  "三角矩阵"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0117",
+                  "print_page": 117
+                },
+                {
+                  "chunk_id": "ds_k0119",
+                  "print_page": 119
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_4_4",
+                  "figure_label": "图4.4",
+                  "caption": "对称矩阵、上(下)三角矩阵",
+                  "source_chunk_id": "ds_k0117",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m04_02",
+          "title": "稀疏矩阵",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c04_03",
+              "title": "稀疏矩阵与三元组表",
+              "learning_objective": "能判断矩阵是否稀疏，并用(行、列、值)三元组记录非零元素。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "稀疏矩阵",
+                "三元组表",
+                "非零元",
+                "转置"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "稀疏矩阵不是“所有元素都小”，而是非零元素相对很少。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源从稀疏矩阵示例过渡到三元组表和带行地址数组的顺序表示。"
+                ],
+                "case_prompt": "把一个含有五个非零元的矩阵写成三元组表，转置时行列号如何交换？",
+                "practice_tags": [
+                  "数据结构",
+                  "稀疏矩阵",
+                  "三元组表"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0120",
+                  "print_page": 120
+                },
+                {
+                  "chunk_id": "ds_k0121",
+                  "print_page": 121
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_4_15",
+                  "figure_label": "图4.15",
+                  "caption": "三元组表",
+                  "source_chunk_id": "ds_k0121",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m04_03",
+          "title": "字符串与广义表",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c04_04",
+              "title": "字符串的表示与基本操作",
+              "learning_objective": "能区分字符串长度、存储空间和结束标记，并说明顺序存储与链接表示的差异。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "字符串",
+                "长度",
+                "串存储",
+                "字符"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "字符串长度不一定等于分配的数组容量，结束标记也可能占用存储单元。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍字符串概念、自定义串存储和字符串基本操作的表示方式。"
+                ],
+                "case_prompt": "容量为10的字符数组存放长度为6的字符串时，剩余空间和结束标记如何处理？",
+                "practice_tags": [
+                  "数据结构",
+                  "字符串",
+                  "长度"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0125",
+                  "print_page": 125
+                },
+                {
+                  "chunk_id": "ds_k0126",
+                  "print_page": 126
+                },
+                {
+                  "chunk_id": "ds_k0128",
+                  "print_page": 128
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "ds_c04_05",
+              "title": "BF与KMP模式匹配",
+              "learning_objective": "能跟踪朴素匹配的回退过程，并理解 KMP 用 next 失配信息减少重复比较。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "模式匹配",
+                "BF",
+                "KMP",
+                "next"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "KMP并不是跳过所有比较，而是利用已匹配前缀信息决定模式串的新位置。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源给出BF匹配过程、next失配函数示例和KMP匹配过程。"
+                ],
+                "case_prompt": "模式串在第 j 个字符失配时，KMP 为什么可以不回退主串指针？",
+                "practice_tags": [
+                  "数据结构",
+                  "模式匹配",
+                  "BF"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0133",
+                  "print_page": 133
+                },
+                {
+                  "chunk_id": "ds_k0135",
+                  "print_page": 135
+                },
+                {
+                  "chunk_id": "ds_k0136",
+                  "print_page": 136
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_4_24",
+                  "figure_label": "图4.24",
+                  "caption": "使用BF方法的串模式匹配过程样例",
+                  "source_chunk_id": "ds_k0133",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch05",
+      "source_chapter": "第5章",
+      "title": "树与二叉树",
+      "ordinal": 5,
+      "modules": [
+        {
+          "module_id": "ds_m05_01",
+          "title": "树与二叉树基础",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c05_01",
+              "title": "树的术语与基本操作",
+              "learning_objective": "能解释根、结点、度、层次和子树，并按树的层次关系组织数据。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "树",
+                "根",
+                "结点",
+                "度",
+                "层次"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "树的边表示父子关系；结点度是孩子数，不是整棵树的高度。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源从树的定义和基本操作开始，强调结点之间的层次关系。"
+                ],
+                "case_prompt": "给定一棵组织结构树，分别计算某结点的度和所在层次。",
+                "practice_tags": [
+                  "数据结构",
+                  "树",
+                  "根"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0152",
+                  "print_page": 152
+                },
+                {
+                  "chunk_id": "ds_k0154",
+                  "print_page": 154
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_5_1",
+                  "figure_label": "图5.1",
+                  "caption": "树的示意图",
+                  "source_chunk_id": "ds_k0152",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c05_02",
+              "title": "二叉树性质与存储",
+              "learning_objective": "能应用二叉树的度限制和性质，并比较顺序存储、链式存储的适用场景。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "二叉树",
+                "度",
+                "顺序存储",
+                "链式存储"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "二叉树每个结点最多两个孩子，不要求每个结点恰好有两个孩子。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源讨论二叉树性质、顺序存储表示和链表存储表示。"
+                ],
+                "case_prompt": "一棵有 n 个结点的完全二叉树用数组存储时，如何由下标定位父子结点？",
+                "practice_tags": [
+                  "数据结构",
+                  "二叉树",
+                  "度"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0155",
+                  "print_page": 155
+                },
+                {
+                  "chunk_id": "ds_k0156",
+                  "print_page": 156
+                },
+                {
+                  "chunk_id": "ds_k0159",
+                  "print_page": 159
+                },
+                {
+                  "chunk_id": "ds_k0160",
+                  "print_page": 160
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m05_02",
+          "title": "遍历与线索化",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c05_03",
+              "title": "二叉树的递归与非递归遍历",
+              "learning_objective": "能按先序、中序、后序规则访问二叉树，并说明非递归遍历为何需要栈。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "先序",
+                "中序",
+                "后序",
+                "遍历"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "遍历顺序描述的是访问时机，不是结点在图上的左右位置简单排序。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源给出二叉树遍历的递归算法、非递归算法及应用举例。"
+                ],
+                "case_prompt": "同一棵树的先序和中序序列已知时，如何定位根并拆分左右子树？",
+                "practice_tags": [
+                  "数据结构",
+                  "先序",
+                  "中序"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0161",
+                  "print_page": 161
+                },
+                {
+                  "chunk_id": "ds_k0162",
+                  "print_page": 162
+                },
+                {
+                  "chunk_id": "ds_k0166",
+                  "print_page": 166
+                },
+                {
+                  "chunk_id": "ds_k0169",
+                  "print_page": 169
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "ds_c05_04",
+              "title": "线索二叉树",
+              "learning_objective": "能说明线索指针如何利用空指针保存遍历前驱或后继，并理解线索化的访问收益。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "线索二叉树",
+                "前驱",
+                "后继",
+                "线索"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "线索指针只有在标志位表明其含义时才能按前驱或后继使用。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍中序前趋、后继线索以及先序、后序线索二叉树。"
+                ],
+                "case_prompt": "中序线索树中某结点没有右孩子时，右指针可能保存什么信息？",
+                "practice_tags": [
+                  "数据结构",
+                  "线索二叉树",
+                  "前驱"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0175",
+                  "print_page": 175
+                },
+                {
+                  "chunk_id": "ds_k0178",
+                  "print_page": 178
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_5_24",
+                  "figure_label": "图5.24",
+                  "caption": "增加中序pred指针和succ指针的二叉树",
+                  "source_chunk_id": "ds_k0175",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m05_03",
+          "title": "树的应用",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c05_05",
+              "title": "树、森林与遍历转换",
+              "learning_objective": "能在树、森林和二叉树表示之间转换，并比较深度优先与广度优先遍历。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "森林",
+                "二叉树转换",
+                "深度优先",
+                "广度优先"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "森林转二叉树是表示转换，不是把多个根硬拼成普通兄弟结点。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍树的存储表示、森林与二叉树转换，以及树和森林的深度/广度优先遍历。"
+                ],
+                "case_prompt": "把一棵树转成二叉树后，原来的第一个孩子和下一个兄弟分别对应什么链接？",
+                "practice_tags": [
+                  "数据结构",
+                  "森林",
+                  "二叉树转换"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0180",
+                  "print_page": 180
+                },
+                {
+                  "chunk_id": "ds_k0184",
+                  "print_page": 184
+                },
+                {
+                  "chunk_id": "ds_k0185",
+                  "print_page": 185
+                },
+                {
+                  "chunk_id": "ds_k0187",
+                  "print_page": 187
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_5_31",
+                  "figure_label": "图5.31",
+                  "caption": "树的双亲表示法",
+                  "source_chunk_id": "ds_k0180",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c05_06",
+              "title": "Huffman树与编码",
+              "learning_objective": "能按权值合并规则构造 Huffman 树，并理解路径长度与编码长度的关系。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Huffman树",
+                "权值",
+                "路径长度",
+                "编码"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "Huffman编码的关键是反复合并当前最小权值，不是按字符字典序排列。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源讨论不同路径长度的二叉树、Huffman树构造和Huffman编码。"
+                ],
+                "case_prompt": "给定五个字符频率，哪两个权值应先合并？合并后如何更新候选集合？",
+                "practice_tags": [
+                  "数据结构",
+                  "Huffman树",
+                  "权值"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0190",
+                  "print_page": 190
+                },
+                {
+                  "chunk_id": "ds_k0196",
+                  "print_page": 196
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_5_44",
+                  "figure_label": "图5.44",
+                  "caption": "具有不同路径长度的二叉树",
+                  "source_chunk_id": "ds_k0190",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m05_04",
+          "title": "堆与并查集",
+          "ordinal": 4,
+          "concepts": [
+            {
+              "concept_id": "ds_c05_07",
+              "title": "堆与堆操作",
+              "learning_objective": "能辨认大根堆/小根堆的局部序关系，并跟踪插入、删除和筛选调整。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "堆",
+                "大根堆",
+                "小根堆",
+                "siftDown"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "堆只保证父子局部序关系，不等于整个数组已经有序。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍堆的定义、插入和删除，并用筛选调整维护堆。"
+                ],
+                "case_prompt": "删除大根堆根元素后，为什么要把末元素移到根再向下调整？",
+                "practice_tags": [
+                  "数据结构",
+                  "堆",
+                  "大根堆"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0198",
+                  "print_page": 198
+                },
+                {
+                  "chunk_id": "ds_k0201",
+                  "print_page": 201
+                },
+                {
+                  "chunk_id": "ds_k0202",
+                  "print_page": 202
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 7,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_5_55",
+                  "figure_label": "图5.55",
+                  "caption": "堆的例子",
+                  "source_chunk_id": "ds_k0198",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c05_08",
+              "title": "等价类与并查集",
+              "learning_objective": "能用并查集表示等价关系，并说明查找、合并及路径压缩的作用。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "等价类",
+                "并查集",
+                "查找",
+                "合并"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "并查集适合处理动态连通/等价关系，不负责给出元素之间的完整顺序。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍等价类方法、并查集定义与实现，以及操作分析和改进。"
+                ],
+                "case_prompt": "合并两个集合后查询元素代表元，路径压缩会改变哪些父指针？",
+                "practice_tags": [
+                  "数据结构",
+                  "等价类",
+                  "并查集"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0203",
+                  "print_page": 203
+                },
+                {
+                  "chunk_id": "ds_k0204",
+                  "print_page": 204
+                },
+                {
+                  "chunk_id": "ds_k0205",
+                  "print_page": 205
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch06",
+      "source_chapter": "第6章",
+      "title": "图结构",
+      "ordinal": 6,
+      "modules": [
+        {
+          "module_id": "ds_m06_01",
+          "title": "图的表示与遍历",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c06_01",
+              "title": "图的基本概念与存储表示",
+              "learning_objective": "能区分顶点、边、有向/无向图及邻接矩阵、邻接表等表示。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "图",
+                "顶点",
+                "边",
+                "邻接矩阵",
+                "邻接表"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "有向边的入度和出度要分别统计，不能直接套无向图度数。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍图的基本概念、基本操作和邻接矩阵、邻接表等存储结构。"
+                ],
+                "case_prompt": "同一张稀疏图用邻接矩阵和邻接表存储时，哪种表示更节省空间？",
+                "practice_tags": [
+                  "数据结构",
+                  "图",
+                  "顶点"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0217",
+                  "print_page": 217
+                },
+                {
+                  "chunk_id": "ds_k0221",
+                  "print_page": 221
+                },
+                {
+                  "chunk_id": "ds_k0225",
+                  "print_page": 225
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_2",
+                  "figure_label": "图6.2",
+                  "caption": "4个图的实例",
+                  "source_chunk_id": "ds_k0217",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c06_02",
+              "title": "深度优先搜索",
+              "learning_objective": "能按递归或显式栈跟踪 DFS 的访问标记与回退路径。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "DFS",
+                "访问标记",
+                "递归",
+                "回退"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "DFS 的访问顺序依赖邻接点选择顺序，但是否访问过的判定不能省略。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源给出深度优先搜索过程，并以访问邻接顶点说明递归回退。"
+                ],
+                "case_prompt": "从顶点 A 开始 DFS，访问完一个分支后为何必须回到最近的可继续顶点？",
+                "practice_tags": [
+                  "数据结构",
+                  "DFS",
+                  "访问标记"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0232",
+                  "print_page": 232
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "ds_c06_03",
+              "title": "广度优先搜索与连通分量",
+              "learning_objective": "能用队列按层访问图，并据访问结果判断连通分量。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "BFS",
+                "队列",
+                "层次",
+                "连通分量"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "BFS 的层次性来自先进先出队列；发现顶点时就标记可避免重复入队。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍广度优先搜索和连通分量的判断，图算法的学习面会在练习中追踪队列状态。"
+                ],
+                "case_prompt": "从 A 开始 BFS，为什么同一层顶点必须先于下一层出队？",
+                "practice_tags": [
+                  "数据结构",
+                  "BFS",
+                  "队列"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0234",
+                  "print_page": 234
+                },
+                {
+                  "chunk_id": "ds_k0236",
+                  "print_page": 236
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m06_02",
+          "title": "最小生成树",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c06_04",
+              "title": "Kruskal最小生成树",
+              "learning_objective": "能按边权递增选择不成环的边，并用并查集判断是否形成环。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Kruskal",
+                "最小生成树",
+                "边权",
+                "成环"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "Kruskal 不是无条件选最小边，若该边形成环必须跳过。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍最小生成树和 Kruskal 算法构造过程。"
+                ],
+                "case_prompt": "边权最小的候选边会形成环时，Kruskal 下一步应如何选择？",
+                "practice_tags": [
+                  "数据结构",
+                  "Kruskal",
+                  "最小生成树"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0240",
+                  "print_page": 240
+                },
+                {
+                  "chunk_id": "ds_k0243",
+                  "print_page": 243
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_27",
+                  "figure_label": "图6.27",
+                  "caption": "使用Kruskal算法构造最小生成树的过程",
+                  "source_chunk_id": "ds_k0243",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c06_05",
+              "title": "Prim最小生成树",
+              "learning_objective": "能从已选顶点集合出发，选择连接集合与外部顶点的最小边。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Prim",
+                "顶点集合",
+                "割",
+                "最小生成树"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "Prim 每一步只比较跨越当前集合边界的边，不是全图任意最小边。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍 Prim 算法及其逐步构造最小生成树的过程。"
+                ],
+                "case_prompt": "当前已选集合为 S 时，为什么不能选择两个外部顶点之间的最小边？",
+                "practice_tags": [
+                  "数据结构",
+                  "Prim",
+                  "顶点集合"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0240",
+                  "print_page": 240
+                },
+                {
+                  "chunk_id": "ds_k0245",
+                  "print_page": 245
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_28",
+                  "figure_label": "图6.28",
+                  "caption": "使用Prim算法构造最小生成树的过程",
+                  "source_chunk_id": "ds_k0245",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m06_03",
+          "title": "最短路径",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c06_06",
+              "title": "Dijkstra单源最短路径",
+              "learning_objective": "能维护已确定集合、dist 和 path，并解释非负权边条件。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Dijkstra",
+                "dist",
+                "path",
+                "单源最短路径"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "Dijkstra 的逐步确定性依赖边权非负，存在负权边时不能直接套用。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源以非负权值单源最短路径为背景，展示 dist、path 的更新过程。"
+                ],
+                "case_prompt": "每次从未确定顶点中选 dist 最小者后，哪些邻接顶点可能被松弛更新？",
+                "practice_tags": [
+                  "数据结构",
+                  "Dijkstra",
+                  "dist"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0248",
+                  "print_page": 248
+                },
+                {
+                  "chunk_id": "ds_k0249",
+                  "print_page": 249
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_32",
+                  "figure_label": "图6.32",
+                  "caption": "使用Dijkstra算法求有向带权图最短路径的过程",
+                  "source_chunk_id": "ds_k0249",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c06_07",
+              "title": "全源与无权图最短路径",
+              "learning_objective": "能区分全体顶点对最短路径和无权图按层计算最短路径的思路。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Floyd",
+                "无权图",
+                "路径长度",
+                "BFS"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "无权图的最短路径长度是边数；带权图要比较累计权值。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源分别讨论所有顶点之间的最短路径和无权图的最短路径，后者可用 BFS。"
+                ],
+                "case_prompt": "无权图中从源点到某顶点第一次被发现时，为什么它的层数就是最短边数？",
+                "practice_tags": [
+                  "数据结构",
+                  "Floyd",
+                  "无权图"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0254",
+                  "print_page": 254
+                },
+                {
+                  "chunk_id": "ds_k0257",
+                  "print_page": 257
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 7,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_44",
+                  "figure_label": "图6.44",
+                  "caption": "使用BFS求无权图的最短路径(顶点旁的数字为路径长度)",
+                  "source_chunk_id": "ds_k0257",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m06_04",
+          "title": "活动网络",
+          "ordinal": 4,
+          "concepts": [
+            {
+              "concept_id": "ds_c06_08",
+              "title": "拓扑排序与关键路径",
+              "learning_objective": "能在 AOV/ AO E 网络中理解入度、活动先后和关键路径的含义。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "拓扑排序",
+                "AOV",
+                "AOE",
+                "关键路径"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "有向环会阻止拓扑序；关键路径关注工期约束，不是任意最长边路径。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍 AOV 网络拓扑排序、AOE 网络关键路径及相关时间量计算。"
+                ],
+                "case_prompt": "一个活动网络存在入度始终不为零的顶点时，如何判断是否有环？",
+                "practice_tags": [
+                  "数据结构",
+                  "拓扑排序",
+                  "AOV"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0260",
+                  "print_page": 260
+                },
+                {
+                  "chunk_id": "ds_k0261",
+                  "print_page": 261
+                },
+                {
+                  "chunk_id": "ds_k0262",
+                  "print_page": 262
+                },
+                {
+                  "chunk_id": "ds_k0263",
+                  "print_page": 263
+                },
+                {
+                  "chunk_id": "ds_k0264",
+                  "print_page": 264
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 8,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_6_46",
+                  "figure_label": "图6.46",
+                  "caption": "拓扑有序序列及拓扑排序",
+                  "source_chunk_id": "ds_k0260",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch07",
+      "source_chapter": "第7章",
+      "title": "查找",
+      "ordinal": 7,
+      "modules": [
+        {
+          "module_id": "ds_m07_01",
+          "title": "线性与折半查找",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c07_01",
+              "title": "线性查找与平均查找长度",
+              "learning_objective": "能描述顺序查找的比较过程，并用成功概率理解平均查找长度。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "顺序查找",
+                "平均查找长度",
+                "成功概率"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "平均查找长度要说明成功/失败情形及各元素被查找的概率。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源从查找基础和平均查找长度展开，强调比较次数与概率分布的关系。"
+                ],
+                "case_prompt": "一个长度为 n 的无序表中目标可能等概率出现时，比较次数如何估计？",
+                "practice_tags": [
+                  "数据结构",
+                  "顺序查找",
+                  "平均查找长度"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0273",
+                  "print_page": 273
+                },
+                {
+                  "chunk_id": "ds_k0274",
+                  "print_page": 274
+                },
+                {
+                  "chunk_id": "ds_k0275",
+                  "print_page": 275
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "ds_c07_02",
+              "title": "折半查找",
+              "learning_objective": "能在有序表中按中点比较缩小区间，并跟踪 low、mid、high 的变化。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "折半查找",
+                "有序表",
+                "中点",
+                "查找区间"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "折半查找的前提是有序；无序表不能只靠中点比较排除一半区间。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源给出折半查找过程和判定树，展示每次比较如何缩小有序区间。"
+                ],
+                "case_prompt": "在有序表中查找 37，第一次中点值为 40 时应保留哪一半区间？",
+                "practice_tags": [
+                  "数据结构",
+                  "折半查找",
+                  "有序表"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0277",
+                  "print_page": 277
+                },
+                {
+                  "chunk_id": "ds_k0278",
+                  "print_page": 278
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_7_1",
+                  "figure_label": "图7.1",
+                  "caption": "折半查找的过程",
+                  "source_chunk_id": "ds_k0277",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m07_02",
+          "title": "查找树",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c07_03",
+              "title": "二叉查找树的查找与更新",
+              "learning_objective": "能利用左小右大的性质完成二叉查找树查找、插入和删除。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "二叉查找树",
+                "插入",
+                "删除",
+                "中序序列"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "删除有两个孩子的结点时不能直接丢弃子树，需要用后继/前驱等规则保持序性。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍二叉查找树概念、插入、删除及性能分析。"
+                ],
+                "case_prompt": "删除一个同时有左右子树的结点时，为什么常用其中序后继替代它？",
+                "practice_tags": [
+                  "数据结构",
+                  "二叉查找树",
+                  "插入"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0284",
+                  "print_page": 284
+                },
+                {
+                  "chunk_id": "ds_k0285",
+                  "print_page": 285
+                },
+                {
+                  "chunk_id": "ds_k0286",
+                  "print_page": 286
+                },
+                {
+                  "chunk_id": "ds_k0288",
+                  "print_page": 288
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_7_8",
+                  "figure_label": "图7.8",
+                  "caption": "几棵二叉查找树的例子",
+                  "source_chunk_id": "ds_k0285",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c07_04",
+              "title": "AVL树的平衡旋转",
+              "learning_objective": "能根据平衡因子判断失衡类型，并选择单旋或双旋恢复 AVL 树。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "AVL树",
+                "平衡因子",
+                "单旋",
+                "双旋"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "AVL 的平衡不是结点数量相等，而是左右子树高度差受限。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源讨论平衡化旋转、AVL 删除和性能分析。"
+                ],
+                "case_prompt": "插入新结点导致 LL 失衡时，应做哪种方向的旋转？",
+                "practice_tags": [
+                  "数据结构",
+                  "AVL树",
+                  "平衡因子"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0293",
+                  "print_page": 293
+                },
+                {
+                  "chunk_id": "ds_k0296",
+                  "print_page": 296
+                },
+                {
+                  "chunk_id": "ds_k0299",
+                  "print_page": 299
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 4
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m07_03",
+          "title": "多路查找与散列",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c07_05",
+              "title": "B树的多路组织",
+              "learning_objective": "能理解 B 树结点多关键码、多子女的组织方式及查找入口。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "B树",
+                "多路查找",
+                "关键码",
+                "子女"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "B 树结点内关键码有序且子树区间受关键码分隔，不能按二叉树只有两个孩子理解。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍 B 树结构、查找、插入删除及阶数约束。"
+                ],
+                "case_prompt": "在 B 树结点内查找关键码失败时，如何根据区间选择下一棵子树？",
+                "practice_tags": [
+                  "数据结构",
+                  "B树",
+                  "多路查找"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0300",
+                  "print_page": 300
+                },
+                {
+                  "chunk_id": "ds_k0304",
+                  "print_page": 304
+                },
+                {
+                  "chunk_id": "ds_k0307",
+                  "print_page": 307
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 5
+            },
+            {
+              "concept_id": "ds_c07_06",
+              "title": "散列函数与冲突处理",
+              "learning_objective": "能说明散列函数、装填因子和冲突，并比较开放定址与链地址法。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "散列",
+                "装填因子",
+                "冲突",
+                "链地址法"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "散列函数不能保证每个关键码唯一落位，冲突处理是散列表设计的一部分。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍散列概念、常见散列函数、冲突解决和散列法分析。"
+                ],
+                "case_prompt": "两个关键码映射到同一地址时，分别用线性探测和链地址法如何继续插入？",
+                "practice_tags": [
+                  "数据结构",
+                  "散列",
+                  "装填因子"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0317",
+                  "print_page": 317
+                },
+                {
+                  "chunk_id": "ds_k0318",
+                  "print_page": 318
+                },
+                {
+                  "chunk_id": "ds_k0319",
+                  "print_page": 319
+                },
+                {
+                  "chunk_id": "ds_k0322",
+                  "print_page": 322
+                },
+                {
+                  "chunk_id": "ds_k0327",
+                  "print_page": 327
+                },
+                {
+                  "chunk_id": "ds_k0329",
+                  "print_page": 329
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ds_ch08",
+      "source_chapter": "第8章",
+      "title": "排序基础",
+      "ordinal": 8,
+      "modules": [
+        {
+          "module_id": "ds_m08_01",
+          "title": "排序基础与插入",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "ds_c08_01",
+              "title": "排序对象、稳定性与有序区",
+              "learning_objective": "能说明排序码、稳定性和有序/无序区在排序过程中的作用。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "排序码",
+                "稳定性",
+                "有序区",
+                "无序区"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "稳定性关注相同排序码记录的相对次序，不是算法快慢的同义词。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源从排序基本概念、数据表结构和有序区增长方式展开。"
+                ],
+                "case_prompt": "两条记录排序码相同但学号不同，稳定排序后它们的相对顺序应怎样？",
+                "practice_tags": [
+                  "数据结构",
+                  "排序码",
+                  "稳定性"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0335",
+                  "print_page": 335
+                },
+                {
+                  "chunk_id": "ds_k0336",
+                  "print_page": 336
+                },
+                {
+                  "chunk_id": "ds_k0337",
+                  "print_page": 337
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "ds_c08_02",
+              "title": "直接插入与希尔排序",
+              "learning_objective": "能跟踪直接插入的有序区扩展，并说明希尔排序用增量分组减少后续移动。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "直接插入",
+                "希尔排序",
+                "增量",
+                "子序列"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "希尔排序最后的 gap=1 不是重新从零开始，而是利用前面分组排序形成的基本有序。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源给出直接插入和缩小增量希尔排序的过程及示例。"
+                ],
+                "case_prompt": "对序列 21,25,49,25,16 进行直接插入时，16 插入前哪些元素要后移？",
+                "practice_tags": [
+                  "数据结构",
+                  "直接插入",
+                  "希尔排序"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0338",
+                  "print_page": 338
+                },
+                {
+                  "chunk_id": "ds_k0342",
+                  "print_page": 342
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_8_1",
+                  "figure_label": "图8.1",
+                  "caption": "直接插入排序的过程",
+                  "source_chunk_id": "ds_k0338",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m08_02",
+          "title": "交换与选择",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "ds_c08_03",
+              "title": "冒泡与快速排序",
+              "learning_objective": "能解释冒泡排序的逐趟交换和快速排序的基准划分，比较二者的过程差异。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "冒泡排序",
+                "快速排序",
+                "基准",
+                "划分"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "快速排序一趟划分只保证基准两侧的相对区间关系，不会一次排好所有元素。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源分别展示冒泡排序过程和以基准元素划分子序列的快速排序过程。"
+                ],
+                "case_prompt": "以 42 为基准扫描序列时，为什么小于 42 的元素会被移到左侧？",
+                "practice_tags": [
+                  "数据结构",
+                  "冒泡排序",
+                  "快速排序"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0344",
+                  "print_page": 344
+                },
+                {
+                  "chunk_id": "ds_k0346",
+                  "print_page": 346
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_8_4",
+                  "figure_label": "图8.4",
+                  "caption": "起泡排序的过程",
+                  "source_chunk_id": "ds_k0344",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c08_04",
+              "title": "选择排序与堆排序",
+              "learning_objective": "能说明简单选择每趟确定一个最小值，并理解堆排序的建堆与筛选。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "选择排序",
+                "堆排序",
+                "建堆",
+                "筛选"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "选择排序每趟只确定一个位置；堆排序还要维护父子局部序关系。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍简单选择排序、堆排序及其过程，堆排序先建初始堆再反复交换调整。"
+                ],
+                "case_prompt": "建成大根堆后把根与末元素交换，为什么只需对根所在子树向下筛选？",
+                "practice_tags": [
+                  "数据结构",
+                  "选择排序",
+                  "堆排序"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0350",
+                  "print_page": 350
+                },
+                {
+                  "chunk_id": "ds_k0354",
+                  "print_page": 354
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_8_11",
+                  "figure_label": "图8.11",
+                  "caption": "一个堆排序的例子",
+                  "source_chunk_id": "ds_k0354",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "ds_m08_03",
+          "title": "归并与分配",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "ds_c08_05",
+              "title": "归并排序",
+              "learning_objective": "能按分治步骤拆分序列，并用两个有序子表的指针完成二路归并。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "归并排序",
+                "分治",
+                "二路归并",
+                "有序子表"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "归并阶段输入的两个子表必须各自有序，不能直接把任意两段拼接。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍归并排序的分治设计和两个有序表的合并指针过程。"
+                ],
+                "case_prompt": "两个有序表归并时，其中一个表先耗尽，为什么可以直接复制另一个表的剩余部分？",
+                "practice_tags": [
+                  "数据结构",
+                  "归并排序",
+                  "分治"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0356",
+                  "print_page": 356
+                },
+                {
+                  "chunk_id": "ds_k0357",
+                  "print_page": 357
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_8_12",
+                  "figure_label": "图8.12",
+                  "caption": "归并排序过程的示例",
+                  "source_chunk_id": "ds_k0356",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "ds_c08_06",
+              "title": "基数排序的分配与收集",
+              "learning_objective": "能按最高位或最低位排序码进行分配、收集，并解释桶队列的作用。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "基数排序",
+                "MSD",
+                "LSD",
+                "桶",
+                "分配收集"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "LSD 基数排序要求各趟分配/收集保持稳定，否则前一趟的次序信息会被破坏。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源介绍多排序码、MSD/LSD 处理以及按桶分配和收集的过程。"
+                ],
+                "case_prompt": "对三位十进制关键码做 LSD 排序时，三趟分别处理哪一位？",
+                "practice_tags": [
+                  "数据结构",
+                  "基数排序",
+                  "MSD"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0362",
+                  "print_page": 362
+                },
+                {
+                  "chunk_id": "ds_k0365",
+                  "print_page": 365
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6
+            },
+            {
+              "concept_id": "ds_c08_07",
+              "title": "外排序与缓冲区",
+              "learning_objective": "能说明外排序为何需要分块、缓冲和多路归并，并把外存访问次数作为关键代价。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "外排序",
+                "缓冲区",
+                "块化",
+                "多路归并"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "外排序的瓶颈是外存访问，不应只按内存中比较次数评价。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "来源说明外存访问远慢于内存，并介绍磁盘块、输入输出缓冲区和外部归并过程。"
+                ],
+                "case_prompt": "当数据总量超过内存时，为什么先形成初始归并段再进行多路归并？",
+                "practice_tags": [
+                  "数据结构",
+                  "外排序",
+                  "缓冲区"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "ds_k0371",
+                  "print_page": 371
+                },
+                {
+                  "chunk_id": "ds_k0372",
+                  "print_page": 372
+                },
+                {
+                  "chunk_id": "ds_k0376",
+                  "print_page": 376
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 7,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "ds_v2_fig_8_19",
+                  "figure_label": "图8.19",
+                  "caption": "磁盘组示意图",
+                  "source_chunk_id": "ds_k0372",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

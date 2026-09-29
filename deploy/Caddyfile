@@ -1,0 +1,37 @@
+{
+	default_sni {$XUETU_TLS_SERVER_NAME}
+}
+
+(tls_internal) {
+	tls internal
+}
+
+(tls_acme) {
+	tls {
+		issuer acme {
+			profile shortlived
+		}
+	}
+}
+
+{$XUETU_PUBLIC_ORIGIN} {
+	import tls_{$XUETU_TLS_ISSUER}
+	encode zstd gzip
+
+	header {
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+	}
+
+	handle /api/* {
+		reverse_proxy api:3001
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}

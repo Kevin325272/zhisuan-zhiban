@@ -1,0 +1,37 @@
+/* Shared palette from the approved deck: forest green, navy and clean surfaces. */
+:root {
+  --xuetu-canvas: #f7f8f5;
+  --xuetu-surface: #ffffff;
+  --xuetu-surface-muted: #f1f5f2;
+  --xuetu-highlight: #e9efe9;
+  --xuetu-ink: #03182e;
+  --xuetu-muted: #5f6e73;
+  /* Compatibility names used by older components for decorative accents. */
+  --xuetu-ochre: #4d7b78;
+  --xuetu-ochre-text: #14544c;
+  --xuetu-action: #14544c;
+  --xuetu-info: #56707f;
+  --xuetu-success: #2b6e5c;
+  --xuetu-warning: #8a621d;
+  --xuetu-danger: #a33e35;
+  --xuetu-line: #dce8e3;
+  --xuetu-line-strong: #9fbdb4;
+  --xuetu-font-editorial: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  --xuetu-font-interface: "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-serif: var(--xuetu-font-editorial);
+  --font-sans: var(--xuetu-font-interface);
+  --xuetu-shadow-raised: 0 18px 48px rgb(36 37 33 / 9%);
+  --xuetu-shadow-soft: 0 8px 24px rgb(36 37 33 / 6%);
+  --xuetu-focus-ring: 0 0 0 3px rgb(52 75 96 / 28%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

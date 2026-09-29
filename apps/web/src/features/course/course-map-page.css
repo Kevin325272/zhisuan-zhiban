@@ -1,0 +1,46 @@
+.curriculum-graph-page { max-width: 1680px; }
+.curriculum-graph-page .page-heading { margin-bottom: 20px; }
+.curriculum-graph-total { color: #245f55; font-weight: 700; white-space: nowrap; }
+.curriculum-subjects { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 0 18px; border-bottom: 1px solid #dce4e3; }
+.curriculum-subjects button { min-height: 38px; padding: 7px 14px; border: 1px solid #d5e0dd; border-radius: 5px; background: #fff; color: #405454; cursor: pointer; font: inherit; }
+.curriculum-subjects button.active { background: #175a51; border-color: #175a51; color: #fff; }
+.curriculum-subjects button:focus-visible, .curriculum-graph-page button:focus-visible, .curriculum-graph-read:focus-visible { outline: 2px solid #d27055; outline-offset: 2px; }
+.curriculum-graph-layout { display: grid; grid-template-columns: 215px minmax(0, 1fr) 265px; min-height: 530px; }
+.curriculum-chapters { padding: 20px 10px 20px 0; border-right: 1px solid #dce4e3; }
+.curriculum-chapters h2 { margin: 0 10px 14px; font-size: 15px; }
+.curriculum-chapters button { display: grid; grid-template-columns: 25px 1fr; gap: 3px 8px; width: 100%; margin: 2px 0; padding: 9px; border: 0; border-radius: 5px; background: transparent; color: #314647; text-align: left; cursor: pointer; }
+.curriculum-chapters button.active { background: #e8f3f0; color: #12544d; }
+.curriculum-chapters button:hover:not(.active) { background: #f0f3f2; }
+.curriculum-chapters button > span { grid-row: span 2; color: #879795; font-size: 12px; }
+.curriculum-chapters button strong { font-size: 13px; line-height: 1.45; }
+.curriculum-chapters button small { font-size: 11px; color: #758785; }
+.curriculum-graph-main { min-width: 0; }
+.curriculum-graph-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 6px; padding: 19px 20px 13px; }
+.curriculum-graph-heading span, .curriculum-graph-heading small { color: #607777; font-size: 12px; }
+.curriculum-graph-heading h2 { margin: 4px 0 0; font-size: 18px; }
+.curriculum-graph-scroll { overflow: auto; max-height: 660px; }
+.curriculum-graph-canvas { position: relative; width: 100%; min-width: 710px; background: #f6f9f8; background-image: radial-gradient(#dbe5e2 0.7px, transparent 0.7px); background-size: 20px 20px; }
+.curriculum-graph-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.curriculum-graph-lines line { stroke: #a9bdba; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.curriculum-graph-lines line.active { stroke: #ce745b; stroke-width: 2; }
+.curriculum-graph-lines marker path { fill: #7b9a94; }
+.curriculum-graph-node { position: absolute; display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 185px; min-height: 82px; padding: 12px; transform: translate(-50%, -50%); border: 1px solid #c8d6d2; border-radius: 6px; background: #fff; box-shadow: 0 2px 7px #233c370d; text-align: left; cursor: pointer; }
+.curriculum-graph-node:hover { border-color: #4a9382; }
+.curriculum-graph-node.active { border: 2px solid #cb7159; background: #fffaf7; }
+.curriculum-graph-node span { color: #697f7b; font-size: 11px; }
+.curriculum-graph-node strong { color: #183b38; font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+.curriculum-graph-caption { padding: 10px 18px; margin: 0; color: #667b78; font-size: 11px; line-height: 1.5; }
+.curriculum-graph-detail { padding: 22px 18px; border-left: 1px solid #dce4e3; color: #334846; }
+.curriculum-graph-detail-kicker { display: inline-flex; align-items: center; gap: 6px; color: #1e6559; font-size: 12px; font-weight: 700; }
+.curriculum-graph-detail h2 { margin: 12px 0; font-size: 19px; line-height: 1.4; overflow-wrap: anywhere; }
+.curriculum-graph-detail p { margin: 0 0 20px; color: #4e6360; font-size: 13px; line-height: 1.7; }
+.curriculum-graph-detail h3 { margin: 20px 0 9px; font-size: 13px; }
+.curriculum-prerequisites { display: grid; gap: 5px; }
+.curriculum-prerequisites button { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px; border: 1px solid #dce5e2; border-radius: 4px; background: #f8fbfa; color: #245d53; text-align: left; cursor: pointer; font-size: 12px; }
+.curriculum-keywords { display: flex; flex-wrap: wrap; gap: 5px; }
+.curriculum-keywords span { padding: 4px 7px; border: 1px solid #e3e5df; border-radius: 4px; color: #545f57; font-size: 11px; }
+.curriculum-graph-read { display: inline-flex; align-items: center; gap: 7px; margin-top: 23px; padding: 10px 12px; border-radius: 5px; background: #175a51; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; }
+.curriculum-graph-state { padding: 40px 10px; text-align: center; color: #4d6561; }
+.curriculum-graph-state button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 1px solid #aac8c0; border-radius: 5px; background: #fff; color: #195b51; cursor: pointer; }
+@media (max-width: 1200px) { .curriculum-graph-layout { grid-template-columns: 185px minmax(0, 1fr); } .curriculum-graph-detail { grid-column: 2; border-left: 0; border-top: 1px solid #dce4e3; } }
+@media (max-width: 760px) { .curriculum-graph-layout { display: block; } .curriculum-chapters { display: flex; gap: 6px; overflow-x: auto; padding: 12px 0; border-right: 0; border-bottom: 1px solid #dce4e3; } .curriculum-chapters h2 { flex: none; align-self: center; margin: 0 5px; } .curriculum-chapters button { flex: 0 0 155px; } .curriculum-graph-detail { padding: 18px 2px; } .curriculum-graph-heading { padding: 16px 2px 12px; } }

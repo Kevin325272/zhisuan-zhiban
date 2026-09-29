@@ -1,0 +1,3003 @@
+{
+  "schema_version": "1.0",
+  "course_id": "course_408_os",
+  "course_slug": "operating-systems",
+  "title": "课程知识地图",
+  "curation_method": "source_constrained_course_design",
+  "source_dataset_id": "408-three-course-source-v1",
+  "source_archive_sha256": "dbfa820489270c78f6e561c198cf3b75aaf7d03142fdf445caa00a0de82afb24",
+  "chapters": [
+    {
+      "chapter_id": "os_ch01",
+      "source_chapter": "第1章",
+      "title": "操作系统引论",
+      "ordinal": 1,
+      "modules": [
+        {
+          "module_id": "os_m01_01",
+          "title": "系统角色与演进",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c01_01",
+              "title": "操作系统的作用",
+              "learning_objective": "理解操作系统的作用的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "系统调用",
+                "资源管理",
+                "用户程序"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出操作系统的作用涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "操作系统把处理机、存储器、设备和文件组织成可调用服务，并隔离应用与硬件细节。"
+                ],
+                "case_prompt": "把一次文件读取拆成应用、系统调用和设备处理三个边界清楚的步骤。",
+                "practice_tags": [
+                  "系统调用",
+                  "资源管理",
+                  "用户程序"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0002",
+                  "print_page": 2
+                },
+                {
+                  "chunk_id": "os_k0003",
+                  "print_page": 3
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c01_02",
+              "title": "批处理、分时与实时系统",
+              "learning_objective": "理解批处理、分时与实时系统的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "批处理",
+                "分时系统",
+                "实时系统"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把批处理、分时与实时系统与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "批处理关注作业吞吐，分时关注交互响应，实时系统把任务截止期限作为调度约束。"
+                ],
+                "case_prompt": "比较批量报表、交互终端和工业控制三个场景的系统类型。",
+                "practice_tags": [
+                  "批处理",
+                  "分时系统",
+                  "实时系统"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0006",
+                  "print_page": 6
+                },
+                {
+                  "chunk_id": "os_k0008",
+                  "print_page": 8
+                },
+                {
+                  "chunk_id": "os_k0010",
+                  "print_page": 10
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_1_5",
+                  "figure_label": "图1.5",
+                  "caption": "单道程序的运行情况",
+                  "source_chunk_id": "os_k0006",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m01_02",
+          "title": "功能边界",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c01_03",
+              "title": "操作系统的基本特性",
+              "learning_objective": "理解操作系统的基本特性的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "并发",
+                "共享",
+                "虚拟",
+                "异步"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出操作系统的基本特性涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "并发组织多个活动，共享复用资源，虚拟化扩展可见资源，异步允许活动按各自速度推进。"
+                ],
+                "case_prompt": "在两个交替进行的 I/O 任务时间线上标出并发与共享设备的位置。",
+                "practice_tags": [
+                  "并发",
+                  "共享",
+                  "虚拟"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0013",
+                  "print_page": 13
+                },
+                {
+                  "chunk_id": "os_k0014",
+                  "print_page": 14
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c01_04",
+              "title": "操作系统的功能边界",
+              "learning_objective": "理解操作系统的功能边界的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "处理机管理",
+                "存储器管理",
+                "设备管理",
+                "文件管理"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把操作系统的功能边界与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "操作系统围绕处理机、存储器、I/O 设备和文件提供管理功能与使用接口。"
+                ],
+                "case_prompt": "把程序从装入、运行到写文件的过程映射到四类管理功能。",
+                "practice_tags": [
+                  "处理机管理",
+                  "存储器管理",
+                  "设备管理"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0017",
+                  "print_page": 17
+                },
+                {
+                  "chunk_id": "os_k0019",
+                  "print_page": 19
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c01_05",
+              "title": "分层、对象与微内核结构",
+              "learning_objective": "理解分层、对象与微内核结构的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "分层式结构",
+                "微内核",
+                "客户/服务器"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出分层、对象与微内核结构涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "分层结构按抽象层组织调用，面向对象强调边界，微内核把最小核心与外部服务分开。"
+                ],
+                "case_prompt": "为设备驱动和文件服务划分内核内外边界，并说明请求如何跨边界。",
+                "practice_tags": [
+                  "分层式结构",
+                  "微内核",
+                  "客户/服务器"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0024",
+                  "print_page": 24
+                },
+                {
+                  "chunk_id": "os_k0027",
+                  "print_page": 27
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_1_10",
+                  "figure_label": "图1.10",
+                  "caption": "类的继承关系",
+                  "source_chunk_id": "os_k0027",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch02",
+      "source_chapter": "第2章",
+      "title": "进程的描述与控制",
+      "ordinal": 2,
+      "modules": [
+        {
+          "module_id": "os_m02_01",
+          "title": "进程模型与状态",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c02_01",
+              "title": "程序、进程与并发执行",
+              "learning_objective": "理解程序、进程与并发执行的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "程序",
+                "进程",
+                "并发"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出程序、进程与并发执行涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "进程是程序的一次执行活动，多个进程可交替推进，系统需要记录并协调它们的执行关系。"
+                ],
+                "case_prompt": "把两个独立计算任务画成并发时间线并标出共享资源。",
+                "practice_tags": [
+                  "程序",
+                  "进程",
+                  "并发"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0032",
+                  "print_page": 32
+                },
+                {
+                  "chunk_id": "os_k0034",
+                  "print_page": 34
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c02_02",
+              "title": "进程状态及转换",
+              "learning_objective": "理解进程状态及转换的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "就绪",
+                "运行",
+                "阻塞",
+                "状态转换"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把进程状态及转换与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "进程状态反映是否占用处理机以及是否等待事件，调度、I/O 完成和资源请求会触发转换。"
+                ],
+                "case_prompt": "给等待磁盘 I/O 的进程标出状态变化及回到就绪队列的时刻。",
+                "practice_tags": [
+                  "就绪",
+                  "运行",
+                  "阻塞"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0036",
+                  "print_page": 36
+                },
+                {
+                  "chunk_id": "os_k0037",
+                  "print_page": 37
+                },
+                {
+                  "chunk_id": "os_k0038",
+                  "print_page": 38
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_2_6",
+                  "figure_label": "图2.6",
+                  "caption": "进程的五种基本状态及转换",
+                  "source_chunk_id": "os_k0037",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m02_02",
+          "title": "同步、通信与线程",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c02_03",
+              "title": "进程控制块与进程控制",
+              "learning_objective": "理解进程控制块与进程控制的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "PCB",
+                "上下文",
+                "创建",
+                "唤醒"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出进程控制块与进程控制涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "PCB 保存进程标识、处理机状态和调度信息，内核借此组织队列并完成控制。"
+                ],
+                "case_prompt": "一个进程因 I/O 阻塞后被唤醒时，指出 PCB 和队列的变化。",
+                "practice_tags": [
+                  "PCB",
+                  "上下文",
+                  "创建"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0042",
+                  "print_page": 42
+                },
+                {
+                  "chunk_id": "os_k0044",
+                  "print_page": 44
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_2_11",
+                  "figure_label": "图2.11",
+                  "caption": "PCB链接队列示意图",
+                  "source_chunk_id": "os_k0042",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c02_04",
+              "title": "临界区与信号量同步",
+              "learning_objective": "理解临界区与信号量同步的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "临界区",
+                "互斥",
+                "信号量"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把临界区与信号量同步与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "临界区保护共享数据，信号量用等待和唤醒协调进程进入临界区或等待资源。"
+                ],
+                "case_prompt": "为生产者和消费者标出 wait/signal 操作及其保护条件。",
+                "practice_tags": [
+                  "临界区",
+                  "互斥",
+                  "信号量"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0048",
+                  "print_page": 48
+                },
+                {
+                  "chunk_id": "os_k0053",
+                  "print_page": 53
+                },
+                {
+                  "chunk_id": "os_k0058",
+                  "print_page": 58
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_2_15",
+                  "figure_label": "图2.15",
+                  "caption": "管程的示意图",
+                  "source_chunk_id": "os_k0058",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c02_05",
+              "title": "进程通信与线程",
+              "learning_objective": "理解进程通信与线程的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "消息传递",
+                "信箱",
+                "线程",
+                "上下文切换"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出进程通信与线程涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "进程可用消息或信箱交换数据，线程是进程内更轻量的执行单位并共享部分资源。"
+                ],
+                "case_prompt": "为服务器进程划分多个线程，并选择消息或共享资源完成协作。",
+                "practice_tags": [
+                  "消息传递",
+                  "信箱",
+                  "线程"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0068",
+                  "print_page": 68
+                },
+                {
+                  "chunk_id": "os_k0072",
+                  "print_page": 72
+                },
+                {
+                  "chunk_id": "os_k0076",
+                  "print_page": 76
+                },
+                {
+                  "chunk_id": "os_k0083",
+                  "print_page": 83
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_2_20",
+                  "figure_label": "图2.20",
+                  "caption": "利用轻型进程作为中间系统",
+                  "source_chunk_id": "os_k0083",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch03",
+      "source_chapter": "第3章",
+      "title": "处理机调度与死锁",
+      "ordinal": 3,
+      "modules": [
+        {
+          "module_id": "os_m03_01",
+          "title": "处理机调度",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c03_01",
+              "title": "调度目标与常用算法",
+              "learning_objective": "理解调度目标与常用算法的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "周转时间",
+                "FCFS",
+                "短作业优先",
+                "反馈队列"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出调度目标与常用算法涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "调度把就绪进程分配给处理机，不同算法在公平性、响应和周转时间上取舍。"
+                ],
+                "case_prompt": "给出三个不同长度的作业，比较 FCFS 与反馈队列的完成顺序。",
+                "practice_tags": [
+                  "周转时间",
+                  "FCFS",
+                  "短作业优先"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0086",
+                  "print_page": 86
+                },
+                {
+                  "chunk_id": "os_k0096",
+                  "print_page": 96
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_3_4",
+                  "figure_label": "图3.4",
+                  "caption": "多级反馈队列调度算法",
+                  "source_chunk_id": "os_k0096",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c03_02",
+              "title": "实时任务调度",
+              "learning_objective": "理解实时任务调度的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "实时任务",
+                "截止期限",
+                "EDF",
+                "抢占"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把实时任务调度与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "实时调度依据周期、执行时间和截止期限安排处理机，EDF 按最早截止期限选择任务。"
+                ],
+                "case_prompt": "新任务到达时，判断 EDF 是否需要抢占当前任务。",
+                "practice_tags": [
+                  "实时任务",
+                  "截止期限",
+                  "EDF"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0099",
+                  "print_page": 99
+                },
+                {
+                  "chunk_id": "os_k0100",
+                  "print_page": 100
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_3_7",
+                  "figure_label": "图3.7",
+                  "caption": "最早截止时间优先算法用于抢占调度方式之例",
+                  "source_chunk_id": "os_k0100",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m03_02",
+          "title": "死锁处理",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c03_03",
+              "title": "死锁条件与预防",
+              "learning_objective": "理解死锁条件与预防的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "互斥",
+                "占有并等待",
+                "不可抢占",
+                "循环等待"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出死锁条件与预防涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "死锁需要四个必要条件共同成立，预防策略通过限制资源申请方式破坏其中一个条件。"
+                ],
+                "case_prompt": "从资源申请序列中找出循环等待，并改变一条申请规则。",
+                "practice_tags": [
+                  "互斥",
+                  "占有并等待",
+                  "不可抢占"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0104",
+                  "print_page": 104
+                },
+                {
+                  "chunk_id": "os_k0108",
+                  "print_page": 108
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c03_04",
+              "title": "安全状态与银行家算法",
+              "learning_objective": "理解安全状态与银行家算法的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "安全状态",
+                "安全序列",
+                "Need",
+                "银行家算法"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把安全状态与银行家算法与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "银行家算法先试探请求，再检查 Available 和 Need 是否能形成安全序列。"
+                ],
+                "case_prompt": "给出 Available、Allocation 和 Need，逐步找出安全序列。",
+                "practice_tags": [
+                  "安全状态",
+                  "安全序列",
+                  "Need"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0111",
+                  "print_page": 111
+                },
+                {
+                  "chunk_id": "os_k0113",
+                  "print_page": 113
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_3_15",
+                  "figure_label": "图3.15",
+                  "caption": "T时刻的资源分配表",
+                  "source_chunk_id": "os_k0113",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c03_05",
+              "title": "死锁检测与解除",
+              "learning_objective": "理解死锁检测与解除的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "死锁检测",
+                "资源分配图",
+                "进程终止",
+                "资源抢占"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出死锁检测与解除涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "检测算法根据资源分配和等待关系寻找无法完成的进程集合，再选择终止或回收资源解除死锁。"
+                ],
+                "case_prompt": "在资源分配图中圈出无法继续的进程并比较解除代价。",
+                "practice_tags": [
+                  "死锁检测",
+                  "资源分配图",
+                  "进程终止"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0115",
+                  "print_page": 115
+                },
+                {
+                  "chunk_id": "os_k0116",
+                  "print_page": 116
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch04",
+      "source_chapter": "第4章",
+      "title": "存储器管理",
+      "ordinal": 4,
+      "modules": [
+        {
+          "module_id": "os_m04_01",
+          "title": "地址空间与分配",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c04_01",
+              "title": "程序装入与链接",
+              "learning_objective": "理解程序装入与链接的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "装入",
+                "链接",
+                "重定位",
+                "地址空间"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出程序装入与链接涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "程序从目标模块变成可执行映像，需要链接外部引用并建立可运行的地址关系。"
+                ],
+                "case_prompt": "把含外部函数调用的程序按编译、链接、装入三阶段标注输入输出。",
+                "practice_tags": [
+                  "装入",
+                  "链接",
+                  "重定位"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0122",
+                  "print_page": 122
+                },
+                {
+                  "chunk_id": "os_k0123",
+                  "print_page": 123
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c04_02",
+              "title": "连续分配与动态分区",
+              "learning_objective": "理解连续分配与动态分区的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "连续分配",
+                "动态分区",
+                "外部碎片",
+                "首次适应"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把连续分配与动态分区与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "连续分配要求进程占用一段连续空间，动态分区需要在分配、回收和合并空闲区之间取舍。"
+                ],
+                "case_prompt": "给出分配回收操作，比较首次适应和最佳适应后的空闲区布局。",
+                "practice_tags": [
+                  "连续分配",
+                  "动态分区",
+                  "外部碎片"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0126",
+                  "print_page": 126
+                },
+                {
+                  "chunk_id": "os_k0130",
+                  "print_page": 130
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "os_m04_02",
+          "title": "分页与分段",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c04_03",
+              "title": "分页与地址变换",
+              "learning_objective": "理解分页与地址变换的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "分页",
+                "页表",
+                "页号",
+                "页内偏移"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出分页与地址变换涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "分页把逻辑空间切成页、物理内存切成页框，页表记录页到页框的映射。"
+                ],
+                "case_prompt": "给定页大小、逻辑地址和页表项，计算一次地址转换。",
+                "practice_tags": [
+                  "分页",
+                  "页表",
+                  "页号"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0138",
+                  "print_page": 138
+                },
+                {
+                  "chunk_id": "os_k0139",
+                  "print_page": 139
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_4_14",
+                  "figure_label": "图4.14",
+                  "caption": "页表的作用",
+                  "source_chunk_id": "os_k0139",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c04_04",
+              "title": "多级页表与反置页表",
+              "learning_objective": "理解多级页表与反置页表的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "多级页表",
+                "反置页表",
+                "快表",
+                "地址变换"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把多级页表与反置页表与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多级页表按需展开层级，反置页表按物理页框组织表项，二者节省空间的方式不同。"
+                ],
+                "case_prompt": "比较单级和两级页表在稀疏地址空间下的表项数量和访问次数。",
+                "practice_tags": [
+                  "多级页表",
+                  "反置页表",
+                  "快表"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0142",
+                  "print_page": 142
+                },
+                {
+                  "chunk_id": "os_k0143",
+                  "print_page": 143
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_4_17",
+                  "figure_label": "图4.17",
+                  "caption": "两级页表结构",
+                  "source_chunk_id": "os_k0143",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c04_05",
+              "title": "分段与段页式管理",
+              "learning_objective": "理解分段与段页式管理的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "分段",
+                "段表",
+                "段页式",
+                "共享保护"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出分段与段页式管理涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "分段按代码、数据等逻辑单元组织，段页式先分段再分页，兼顾逻辑保护与物理分配。"
+                ],
+                "case_prompt": "为代码段和数据段设置逻辑边界，再列出段页式转换步骤。",
+                "practice_tags": [
+                  "分段",
+                  "段表",
+                  "段页式"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0146",
+                  "print_page": 146
+                },
+                {
+                  "chunk_id": "os_k0150",
+                  "print_page": 150
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch05",
+      "source_chapter": "第5章",
+      "title": "虚拟存储器",
+      "ordinal": 5,
+      "modules": [
+        {
+          "module_id": "os_m05_01",
+          "title": "虚拟存储与请求分页",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c05_01",
+              "title": "局部性与虚拟存储",
+              "learning_objective": "理解局部性与虚拟存储的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "局部性",
+                "虚拟存储",
+                "地址空间",
+                "按需装入"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出局部性与虚拟存储涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "局部性使程序可用部分装入的方式运行，虚拟存储把逻辑地址空间与有限物理内存解耦。"
+                ],
+                "case_prompt": "观察循环访问序列，判断哪些页面可能留在内存中。",
+                "practice_tags": [
+                  "局部性",
+                  "虚拟存储",
+                  "地址空间"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0154",
+                  "print_page": 154
+                },
+                {
+                  "chunk_id": "os_k0155",
+                  "print_page": 155
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c05_02",
+              "title": "请求分页与缺页中断",
+              "learning_objective": "理解请求分页与缺页中断的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "请求分页",
+                "缺页中断",
+                "页表项",
+                "调入"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把请求分页与缺页中断与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "请求分页在访问缺页时触发中断，由系统选择页面并从外存调入。"
+                ],
+                "case_prompt": "沿一次缺页访问标出陷入内核、置换和恢复执行的顺序。",
+                "practice_tags": [
+                  "请求分页",
+                  "缺页中断",
+                  "页表项"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0157",
+                  "print_page": 157
+                },
+                {
+                  "chunk_id": "os_k0158",
+                  "print_page": 158
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_5_1",
+                  "figure_label": "图5.1",
+                  "caption": "涉及6次缺页中断的指令",
+                  "source_chunk_id": "os_k0158",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m05_02",
+          "title": "置换与抖动",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c05_03",
+              "title": "页面置换算法",
+              "learning_objective": "理解页面置换算法的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "FIFO",
+                "OPT",
+                "LRU",
+                "页面置换"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出页面置换算法涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "页面置换在缺页时选择被换出页面，不同算法利用的历史信息不同。"
+                ],
+                "case_prompt": "给出引用串，分别计算 FIFO 和 LRU 的缺页次数。",
+                "practice_tags": [
+                  "FIFO",
+                  "OPT",
+                  "LRU"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0162",
+                  "print_page": 162
+                },
+                {
+                  "chunk_id": "os_k0164",
+                  "print_page": 164
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_5_4",
+                  "figure_label": "图5.4",
+                  "caption": "利用FIFO置换算法时的置换图",
+                  "source_chunk_id": "os_k0164",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c05_04",
+              "title": "Clock与分配策略",
+              "learning_objective": "理解Clock与分配策略的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Clock",
+                "引用位",
+                "工作集",
+                "页面分配"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把Clock与分配策略与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "Clock 使用引用位近似近期使用情况，页面分配还要兼顾进程需求和系统压力。"
+                ],
+                "case_prompt": "给出循环页框及引用位，模拟一次 Clock 扫描。",
+                "practice_tags": [
+                  "Clock",
+                  "引用位",
+                  "工作集"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0166",
+                  "print_page": 166
+                },
+                {
+                  "chunk_id": "os_k0168",
+                  "print_page": 168
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c05_05",
+              "title": "工作集与抖动",
+              "learning_objective": "理解工作集与抖动的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "工作集",
+                "抖动",
+                "驻留集",
+                "处理机利用率"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出工作集与抖动涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "工作集描述一段时间内活跃页面，驻留集过小会造成频繁缺页和抖动。"
+                ],
+                "case_prompt": "根据缺页率变化判断是否出现抖动，并提出增加驻留页的措施。",
+                "practice_tags": [
+                  "工作集",
+                  "抖动",
+                  "驻留集"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0169",
+                  "print_page": 169
+                },
+                {
+                  "chunk_id": "os_k0170",
+                  "print_page": 170
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_5_9",
+                  "figure_label": "图5.9",
+                  "caption": "处理机的利用率",
+                  "source_chunk_id": "os_k0170",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch06",
+      "source_chapter": "第6章",
+      "title": "输入输出系统",
+      "ordinal": 6,
+      "modules": [
+        {
+          "module_id": "os_m06_01",
+          "title": "I/O层次与硬件",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c06_01",
+              "title": "I/O系统层次",
+              "learning_objective": "理解I/O系统层次的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "I/O系统",
+                "设备独立性",
+                "接口",
+                "驱动"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出I/O系统层次涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "I/O 系统按用户接口、设备无关层、驱动和硬件分层，逐层隐藏具体设备差异。"
+                ],
+                "case_prompt": "把一次磁盘读请求沿用户程序到设备硬件的路径分层标注。",
+                "practice_tags": [
+                  "I/O系统",
+                  "设备独立性",
+                  "接口"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0179",
+                  "print_page": 179
+                },
+                {
+                  "chunk_id": "os_k0180",
+                  "print_page": 180
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c06_02",
+              "title": "设备控制器与通道",
+              "learning_objective": "理解设备控制器与通道的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "设备控制器",
+                "寄存器",
+                "通道",
+                "状态"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把设备控制器与通道与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "控制器通过寄存器与处理机交互并管理设备状态，通道可分担成批 I/O 控制。"
+                ],
+                "case_prompt": "给一条设备读命令，标出处理机、控制器和设备读写的寄存器。",
+                "practice_tags": [
+                  "设备控制器",
+                  "寄存器",
+                  "通道"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0183",
+                  "print_page": 183
+                },
+                {
+                  "chunk_id": "os_k0184",
+                  "print_page": 184
+                },
+                {
+                  "chunk_id": "os_k0185",
+                  "print_page": 185
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_6_4",
+                  "figure_label": "图6.4",
+                  "caption": "设备控制器的组成",
+                  "source_chunk_id": "os_k0185",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m06_02",
+          "title": "设备软件与调度",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c06_03",
+              "title": "中断与DMA控制",
+              "learning_objective": "理解中断与DMA控制的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "中断",
+                "DMA",
+                "设备驱动",
+                "CPU占用"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出中断与DMA控制涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "中断让设备在就绪时通知处理机，DMA 让控制器直接在设备与内存间搬运数据。"
+                ],
+                "case_prompt": "同一块磁盘传输大块数据时，比较轮询、中断和 DMA 的步骤。",
+                "practice_tags": [
+                  "中断",
+                  "DMA",
+                  "设备驱动"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0189",
+                  "print_page": 189
+                },
+                {
+                  "chunk_id": "os_k0195",
+                  "print_page": 195
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c06_04",
+              "title": "设备软件、分配与Spooling",
+              "learning_objective": "理解设备软件、分配与Spooling的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "设备无关软件",
+                "设备分配",
+                "Spooling",
+                "设备控制表"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把设备软件、分配与Spooling与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "设备无关层统一命名和分配，Spooling 用磁盘缓冲让慢设备与进程并行工作。"
+                ],
+                "case_prompt": "为多个打印请求安排假脱机队列，说明进程何时与设备解耦。",
+                "practice_tags": [
+                  "设备无关软件",
+                  "设备分配",
+                  "Spooling"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0200",
+                  "print_page": 200
+                },
+                {
+                  "chunk_id": "os_k0201",
+                  "print_page": 201
+                },
+                {
+                  "chunk_id": "os_k0205",
+                  "print_page": 205
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c06_05",
+              "title": "缓冲区与磁盘调度",
+              "learning_objective": "理解缓冲区与磁盘调度的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "缓冲区",
+                "FCFS",
+                "SSTF",
+                "SCAN"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出缓冲区与磁盘调度涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "缓冲区解决生产消费速度匹配，磁盘调度安排请求顺序，二者处于不同优化层次。"
+                ],
+                "case_prompt": "给出磁道请求序列，比较 FCFS 与 SCAN 服务顺序并说明缓冲作用。",
+                "practice_tags": [
+                  "缓冲区",
+                  "FCFS",
+                  "SSTF"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0210",
+                  "print_page": 210
+                },
+                {
+                  "chunk_id": "os_k0218",
+                  "print_page": 218
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_6_30",
+                  "figure_label": "图6.30",
+                  "caption": "FCFS调度算法",
+                  "source_chunk_id": "os_k0218",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch07",
+      "source_chapter": "第7章",
+      "title": "文件管理",
+      "ordinal": 7,
+      "modules": [
+        {
+          "module_id": "os_m07_01",
+          "title": "文件与记录",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c07_01",
+              "title": "文件抽象与操作",
+              "learning_objective": "理解文件抽象与操作的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "文件",
+                "文件类型",
+                "文件操作"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出文件抽象与操作涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "文件系统用统一文件抽象组织持久信息，并通过操作接口隐藏底层存储细节。"
+                ],
+                "case_prompt": "把编辑器保存文件拆成打开、定位、写入和关闭四个动作。",
+                "practice_tags": [
+                  "文件",
+                  "文件类型",
+                  "文件操作"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0222",
+                  "print_page": 222
+                },
+                {
+                  "chunk_id": "os_k0225",
+                  "print_page": 225
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_7_1",
+                  "figure_label": "图7.1",
+                  "caption": "文件、记录和数据项之间的层次关系",
+                  "source_chunk_id": "os_k0222",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c07_02",
+              "title": "文件逻辑结构与记录",
+              "learning_objective": "理解文件逻辑结构与记录的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "逻辑结构",
+                "记录",
+                "定长",
+                "变长"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把文件逻辑结构与记录与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "文件逻辑结构描述用户如何看待记录和数据项，记录组织会影响定位和更新成本。"
+                ],
+                "case_prompt": "为日志文件和学生表选择记录组织方式并说明访问代价。",
+                "practice_tags": [
+                  "逻辑结构",
+                  "记录",
+                  "定长"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0226",
+                  "print_page": 226
+                },
+                {
+                  "chunk_id": "os_k0228",
+                  "print_page": 228
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "os_m07_02",
+          "title": "目录、共享与保护",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c07_03",
+              "title": "目录、FCB与索引结点",
+              "learning_objective": "理解目录、FCB与索引结点的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "目录",
+                "FCB",
+                "索引结点",
+                "路径名"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出目录、FCB与索引结点涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "目录组织名字和层次，FCB 或索引结点保存权限、位置等控制信息，路径查询逐级映射。"
+                ],
+                "case_prompt": "沿绝对路径查找文件，写出每一级目录查询和索引结点定位。",
+                "practice_tags": [
+                  "目录",
+                  "FCB",
+                  "索引结点"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0233",
+                  "print_page": 233
+                },
+                {
+                  "chunk_id": "os_k0237",
+                  "print_page": 237
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_7_7",
+                  "figure_label": "图7.7",
+                  "caption": "MS-DOS的文件控制块",
+                  "source_chunk_id": "os_k0233",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c07_04",
+              "title": "文件共享与链接",
+              "learning_objective": "理解文件共享与链接的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "文件共享",
+                "硬链接",
+                "符号链接",
+                "有向无环图"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把文件共享与链接与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "共享允许多个目录项指向同一文件实体，硬链接和符号链接的目标关系不同。"
+                ],
+                "case_prompt": "为两个用户共享文件，分别画出硬链接和符号链接的目录关系。",
+                "practice_tags": [
+                  "文件共享",
+                  "硬链接",
+                  "符号链接"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0240",
+                  "print_page": 240
+                },
+                {
+                  "chunk_id": "os_k0241",
+                  "print_page": 241
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_7_13",
+                  "figure_label": "图7.13",
+                  "caption": "有向无循环图目录层次",
+                  "source_chunk_id": "os_k0241",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c07_05",
+              "title": "保护域与访问控制",
+              "learning_objective": "理解保护域与访问控制的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "保护域",
+                "访问矩阵",
+                "访问权限",
+                "ACL"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出保护域与访问控制涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "保护模型把进程或用户视为主体、文件等视为对象，用访问矩阵描述允许操作。"
+                ],
+                "case_prompt": "为共享目录设计读写执行权限并检查最小权限原则。",
+                "practice_tags": [
+                  "保护域",
+                  "访问矩阵",
+                  "访问权限"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0244",
+                  "print_page": 244
+                },
+                {
+                  "chunk_id": "os_k0245",
+                  "print_page": 245
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch08",
+      "source_chapter": "第8章",
+      "title": "磁盘存储器的管理",
+      "ordinal": 8,
+      "modules": [
+        {
+          "module_id": "os_m08_01",
+          "title": "空间组织",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c08_01",
+              "title": "链接与索引分配",
+              "learning_objective": "理解链接与索引分配的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "链接分配",
+                "索引分配",
+                "FAT",
+                "文件块"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出链接与索引分配涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "链接分配把块串成链，索引分配集中保存块号，FAT 把链接信息放到显式表中。"
+                ],
+                "case_prompt": "给定文件块访问序列，比较链接分配和索引分配的磁盘访问次数。",
+                "practice_tags": [
+                  "链接分配",
+                  "索引分配",
+                  "FAT"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0252",
+                  "print_page": 252
+                },
+                {
+                  "chunk_id": "os_k0253",
+                  "print_page": 253
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_8_3",
+                  "figure_label": "图8.3",
+                  "caption": "显式链接结构",
+                  "source_chunk_id": "os_k0253",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c08_02",
+              "title": "空闲空间管理",
+              "learning_objective": "理解空闲空间管理的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "空闲表",
+                "空闲链表",
+                "位示图",
+                "成组链接"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把空闲空间管理与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "空闲空间管理方法在空间开销、查找速度和回收粒度之间取舍。"
+                ],
+                "case_prompt": "给出盘块占用位图，计算新文件所需空闲块并更新位示图。",
+                "practice_tags": [
+                  "空闲表",
+                  "空闲链表",
+                  "位示图"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0259",
+                  "print_page": 259
+                },
+                {
+                  "chunk_id": "os_k0261",
+                  "print_page": 261
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_8_10",
+                  "figure_label": "图8.10",
+                  "caption": "位示图",
+                  "source_chunk_id": "os_k0261",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m08_02",
+          "title": "可靠性与一致性",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c08_03",
+              "title": "磁盘缓存与访问性能",
+              "learning_objective": "理解磁盘缓存与访问性能的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "磁盘缓存",
+                "访问时间",
+                "局部性",
+                "I/O性能"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出磁盘缓存与访问性能涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "磁盘访问包含寻道、旋转和传输成本，缓存利用局部性减少重复访问。"
+                ],
+                "case_prompt": "比较顺序读取和随机读取的寻道成本，判断何时缓存更有效。",
+                "practice_tags": [
+                  "磁盘缓存",
+                  "访问时间",
+                  "局部性"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0264",
+                  "print_page": 264
+                },
+                {
+                  "chunk_id": "os_k0265",
+                  "print_page": 265
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c08_04",
+              "title": "RAID与存储可靠性",
+              "learning_objective": "理解RAID与存储可靠性的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "RAID",
+                "冗余",
+                "磁盘阵列",
+                "容错"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把RAID与存储可靠性与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "磁盘阵列用并行和冗余提高吞吐或容错，不同级别的空间与可靠性取舍不同。"
+                ],
+                "case_prompt": "为读多写少的场景选择一种 RAID 思路并说明故障后的恢复代价。",
+                "practice_tags": [
+                  "RAID",
+                  "冗余",
+                  "磁盘阵列"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0266",
+                  "print_page": 266
+                },
+                {
+                  "chunk_id": "os_k0267",
+                  "print_page": 267
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c08_05",
+              "title": "文件系统一致性与并发",
+              "learning_objective": "理解文件系统一致性与并发的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "一致性",
+                "日志",
+                "并发访问",
+                "恢复"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出文件系统一致性与并发涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "并发更新和异常掉电会破坏文件系统状态，需要日志或检查机制恢复一致性。"
+                ],
+                "case_prompt": "模拟一次写入中途掉电，判断哪些元数据需要回滚或重放。",
+                "practice_tags": [
+                  "一致性",
+                  "日志",
+                  "并发访问"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0272",
+                  "print_page": 272
+                },
+                {
+                  "chunk_id": "os_k0274",
+                  "print_page": 274
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch09",
+      "source_chapter": "第9章",
+      "title": "操作系统接口",
+      "ordinal": 9,
+      "modules": [
+        {
+          "module_id": "os_m09_01",
+          "title": "接口与命令",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c09_01",
+              "title": "接口与命令解释",
+              "learning_objective": "理解接口与命令解释的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "操作系统接口",
+                "命令解释器",
+                "命令",
+                "用户界面"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出接口与命令解释涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "操作系统接口把用户意图转成可执行操作，命令解释器负责读取、分析并启动命令。"
+                ],
+                "case_prompt": "把一条文件复制命令拆成解析参数、查找文件和创建目标三个阶段。",
+                "practice_tags": [
+                  "操作系统接口",
+                  "命令解释器",
+                  "命令"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0279",
+                  "print_page": 279
+                },
+                {
+                  "chunk_id": "os_k0280",
+                  "print_page": 280
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c09_02",
+              "title": "Shell重定向与管道",
+              "learning_objective": "理解Shell重定向与管道的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "重定向",
+                "管道",
+                "标准输入",
+                "标准输出"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把Shell重定向与管道与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "重定向改变标准输入输出的去向，管道把一个命令的输出连接到另一个命令的输入。"
+                ],
+                "case_prompt": "设计一个统计日志行数的管道，并指出每个进程的输入输出。",
+                "practice_tags": [
+                  "重定向",
+                  "管道",
+                  "标准输入"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0282",
+                  "print_page": 282
+                },
+                {
+                  "chunk_id": "os_k0285",
+                  "print_page": 285
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "os_m09_02",
+          "title": "系统调用实现",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c09_03",
+              "title": "Shell执行与命令树",
+              "learning_objective": "理解Shell执行与命令树的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "Shell",
+                "命令树",
+                "进程创建",
+                "执行"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出Shell执行与命令树涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "Shell 解析命令结构后创建进程、设置环境并执行程序，命令树反映组合关系。"
+                ],
+                "case_prompt": "从一条带括号和管道的命令画出进程与命令树。",
+                "practice_tags": [
+                  "Shell",
+                  "命令树",
+                  "进程创建"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0288",
+                  "print_page": 288
+                },
+                {
+                  "chunk_id": "os_k0293",
+                  "print_page": 293
+                },
+                {
+                  "chunk_id": "os_k0292",
+                  "print_page": 292
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_9_3",
+                  "figure_label": "图9.3",
+                  "caption": "命令表型结点及其左、右子树",
+                  "source_chunk_id": "os_k0292",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c09_04",
+              "title": "系统调用与POSIX",
+              "learning_objective": "理解系统调用与POSIX的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "系统调用",
+                "POSIX",
+                "API",
+                "内核接口"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把系统调用与POSIX与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "系统调用是用户态进入内核的受控入口，POSIX 约定了一组可移植接口。"
+                ],
+                "case_prompt": "比较库函数和系统调用的边界，说明一次 open 请求何时进入内核。",
+                "practice_tags": [
+                  "系统调用",
+                  "POSIX",
+                  "API"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0294",
+                  "print_page": 294
+                },
+                {
+                  "chunk_id": "os_k0296",
+                  "print_page": 296
+                },
+                {
+                  "chunk_id": "os_k0297",
+                  "print_page": 297
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c09_05",
+              "title": "系统调用实现",
+              "learning_objective": "理解系统调用实现的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "陷阱指令",
+                "参数传递",
+                "内核态",
+                "返回值"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出系统调用实现涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "系统调用通过陷阱或特权切换进入内核，完成检查后以返回值把结果交回用户态。"
+                ],
+                "case_prompt": "沿一次 read 调用标出参数检查、数据拷贝和返回错误码的位置。",
+                "practice_tags": [
+                  "陷阱指令",
+                  "参数传递",
+                  "内核态"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0300",
+                  "print_page": 300
+                },
+                {
+                  "chunk_id": "os_k0301",
+                  "print_page": 301
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch10",
+      "source_chapter": "第10章",
+      "title": "多处理机操作系统",
+      "ordinal": 10,
+      "modules": [
+        {
+          "module_id": "os_m10_01",
+          "title": "多处理机结构",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c10_01",
+              "title": "多处理机类型与结构",
+              "learning_objective": "理解多处理机类型与结构的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "多处理机",
+                "SMP",
+                "UMA",
+                "NUMA"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出多处理机类型与结构涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多处理机通过多个处理器协同执行，UMA 与 NUMA 在内存访问均匀性和扩展方式上不同。"
+                ],
+                "case_prompt": "为共享内存服务器选择 UMA 或 NUMA，并说明访问局部性的影响。",
+                "practice_tags": [
+                  "多处理机",
+                  "SMP",
+                  "UMA"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0308",
+                  "print_page": 308
+                },
+                {
+                  "chunk_id": "os_k0311",
+                  "print_page": 311
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c10_02",
+              "title": "NUMA的目录与访存",
+              "learning_objective": "理解NUMA的目录与访存的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "NUMA",
+                "本地内存",
+                "远程访问",
+                "目录"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把NUMA的目录与访存与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "NUMA 把内存分布在节点上，本地访问通常更快，目录或一致性机制帮助定位共享数据。"
+                ],
+                "case_prompt": "把线程迁移到另一节点，判断访问共享页时增加的路径和代价。",
+                "practice_tags": [
+                  "NUMA",
+                  "本地内存",
+                  "远程访问"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0312",
+                  "print_page": 312
+                },
+                {
+                  "chunk_id": "os_k0314",
+                  "print_page": 314
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "os_m10_02",
+          "title": "并发与分布式组织",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c10_03",
+              "title": "多处理机同步",
+              "learning_objective": "理解多处理机同步的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "自旋锁",
+                "临界区",
+                "RCU",
+                "同步"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出多处理机同步涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多处理机同步让多个 CPU 对共享数据的访问有序，自旋锁和 RCU 适合不同读写模式。"
+                ],
+                "case_prompt": "判断一个短写临界区是否适合自旋锁，并说明等待期间 CPU 行为。",
+                "practice_tags": [
+                  "自旋锁",
+                  "临界区",
+                  "RCU"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0315",
+                  "print_page": 315
+                },
+                {
+                  "chunk_id": "os_k0321",
+                  "print_page": 321
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c10_04",
+              "title": "多处理机调度与死锁",
+              "learning_objective": "理解多处理机调度与死锁的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "进程分配",
+                "自调度",
+                "负载均衡",
+                "死锁"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把多处理机调度与死锁与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多处理机调度要权衡负载均衡、迁移成本、缓存局部性和死锁风险。"
+                ],
+                "case_prompt": "给两个处理器和三类任务设计分配策略并指出同步瓶颈。",
+                "practice_tags": [
+                  "进程分配",
+                  "自调度",
+                  "负载均衡"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0327",
+                  "print_page": 327
+                },
+                {
+                  "chunk_id": "os_k0329",
+                  "print_page": 329
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "os_c10_05",
+              "title": "分布式文件系统",
+              "learning_objective": "理解分布式文件系统的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "分布式文件系统",
+                "命名",
+                "缓存一致性",
+                "容错"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出分布式文件系统涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "分布式文件系统把多个节点的文件组织成共享空间，并处理远程访问、缓存一致性和节点故障。"
+                ],
+                "case_prompt": "为多节点共享目录选择命名和缓存策略，说明节点故障时的降级。",
+                "practice_tags": [
+                  "分布式文件系统",
+                  "命名",
+                  "缓存一致性"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0340",
+                  "print_page": 340
+                },
+                {
+                  "chunk_id": "os_k0341",
+                  "print_page": 341
+                },
+                {
+                  "chunk_id": "os_k0344",
+                  "print_page": 344
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch11",
+      "source_chapter": "第11章",
+      "title": "多媒体操作系统",
+      "ordinal": 11,
+      "modules": [
+        {
+          "module_id": "os_m11_01",
+          "title": "媒体数据与处理",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c11_01",
+              "title": "多媒体文件与媒体类型",
+              "learning_objective": "理解多媒体文件与媒体类型的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "多媒体文件",
+                "音频",
+                "视频",
+                "同步"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出多媒体文件与媒体类型涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多媒体文件包含不同类型媒体流，数据量和时间约束要求存储、传输和处理协同。"
+                ],
+                "case_prompt": "比较文本文件和视频流的访问需求，指出视频额外的时间约束。",
+                "practice_tags": [
+                  "多媒体文件",
+                  "音频",
+                  "视频"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0349",
+                  "print_page": 349
+                },
+                {
+                  "chunk_id": "os_k0350",
+                  "print_page": 350
+                },
+                {
+                  "chunk_id": "os_k0353",
+                  "print_page": 353
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c11_02",
+              "title": "多媒体硬件与软件系统",
+              "learning_objective": "理解多媒体硬件与软件系统的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "采集",
+                "编码",
+                "播放",
+                "多媒体硬件"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把多媒体硬件与软件系统与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "多媒体系统由采集设备、编解码软件、存储介质和播放组件共同完成媒体流处理。"
+                ],
+                "case_prompt": "为摄像头到屏幕的链路标注采集、编码、缓存和播放环节。",
+                "practice_tags": [
+                  "采集",
+                  "编码",
+                  "播放"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0351",
+                  "print_page": 351
+                },
+                {
+                  "chunk_id": "os_k0353",
+                  "print_page": 353
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "os_m11_02",
+          "title": "实时与媒体服务",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c11_03",
+              "title": "多媒体进程的实时调度",
+              "learning_objective": "理解多媒体进程的实时调度的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "周期任务",
+                "软实时",
+                "RMS",
+                "EDF"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出多媒体进程的实时调度涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "媒体任务通常周期性地产生和消费数据，调度需要平衡截止期限、利用率和连续播放。"
+                ],
+                "case_prompt": "给两个周期视频任务，计算最晚完成时间并判断 RMS 或 EDF 的优先级。",
+                "practice_tags": [
+                  "周期任务",
+                  "软实时",
+                  "RMS"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0358",
+                  "print_page": 358
+                },
+                {
+                  "chunk_id": "os_k0359",
+                  "print_page": 359
+                },
+                {
+                  "chunk_id": "os_k0364",
+                  "print_page": 364
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_11_1",
+                  "figure_label": "图11.1",
+                  "caption": "周期任务的时间特性",
+                  "source_chunk_id": "os_k0358",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c11_04",
+              "title": "媒体服务器与接纳控制",
+              "learning_objective": "理解媒体服务器与接纳控制的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "媒体服务器",
+                "接纳控制",
+                "推型服务器",
+                "拉型服务器"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把媒体服务器与接纳控制与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "媒体服务器在接收新请求前评估处理机、内存和带宽资源，避免过载破坏连续性。"
+                ],
+                "case_prompt": "给出已有视频流和新请求，列出接纳控制需要检查的资源。",
+                "practice_tags": [
+                  "媒体服务器",
+                  "接纳控制",
+                  "推型服务器"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0365",
+                  "print_page": 365
+                },
+                {
+                  "chunk_id": "os_k0366",
+                  "print_page": 366
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_11_5",
+                  "figure_label": "图11.5",
+                  "caption": "一部电影所包含的多种媒体的文件",
+                  "source_chunk_id": "os_k0365",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c11_05",
+              "title": "媒体存储与磁盘调度",
+              "learning_objective": "理解媒体存储与磁盘调度的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "媒体存储",
+                "磁盘调度",
+                "SCAN-EDF",
+                "连续播放"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出媒体存储与磁盘调度涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "媒体数据布局、缓存和磁盘服务顺序共同影响连续播放，调度要兼顾位置和截止期限。"
+                ],
+                "case_prompt": "将多个视频请求按磁道和截止期限排序，比较普通 SCAN 与期限感知策略。",
+                "practice_tags": [
+                  "媒体存储",
+                  "磁盘调度",
+                  "SCAN-EDF"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0375",
+                  "print_page": 375
+                },
+                {
+                  "chunk_id": "os_k0378",
+                  "print_page": 378
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "os_ch12",
+      "source_chapter": "第12章",
+      "title": "保护和安全",
+      "ordinal": 12,
+      "modules": [
+        {
+          "module_id": "os_m12_01",
+          "title": "安全基础与密码",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "os_c12_01",
+              "title": "系统安全特征与分类",
+              "learning_objective": "理解系统安全特征与分类的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "保密性",
+                "完整性",
+                "可用性",
+                "安全目标"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出系统安全特征与分类涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "系统安全关注信息和资源不被未授权访问、破坏或拒绝服务，分类帮助定位威胁与边界。"
+                ],
+                "case_prompt": "为学生成绩系统分别列出保密性、完整性和可用性风险。",
+                "practice_tags": [
+                  "保密性",
+                  "完整性",
+                  "可用性"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0381",
+                  "print_page": 381
+                },
+                {
+                  "chunk_id": "os_k0382",
+                  "print_page": 382
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "os_c12_02",
+              "title": "加密与数字签名",
+              "learning_objective": "理解加密与数字签名的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "加密",
+                "密钥",
+                "数字签名",
+                "证书"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把加密与数字签名与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "加密保护内容保密，数字签名通过私钥生成和公开信息验证支撑来源与完整性。"
+                ],
+                "case_prompt": "设计课程文件的加密与签名流程，说明接收者分别验证什么。",
+                "practice_tags": [
+                  "加密",
+                  "密钥",
+                  "数字签名"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0383",
+                  "print_page": 383
+                },
+                {
+                  "chunk_id": "os_k0384",
+                  "print_page": 384
+                },
+                {
+                  "chunk_id": "os_k0386",
+                  "print_page": 386
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_12_4",
+                  "figure_label": "图12.4",
+                  "caption": "数字签名示意图",
+                  "source_chunk_id": "os_k0386",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "os_m12_02",
+          "title": "身份、防护与攻击",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "os_c12_03",
+              "title": "身份验证机制",
+              "learning_objective": "理解身份验证机制的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "口令验证",
+                "物理标志",
+                "生物识别",
+                "身份认证"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出身份验证机制涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "身份验证可以依据所知、所持或自身特征，系统常组合多种因素降低单点失效。"
+                ],
+                "case_prompt": "为管理员登录选择两种互补认证因素并说明各自防范的风险。",
+                "practice_tags": [
+                  "口令验证",
+                  "物理标志",
+                  "生物识别"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0388",
+                  "print_page": 388
+                },
+                {
+                  "chunk_id": "os_k0390",
+                  "print_page": 390
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "os_c12_04",
+              "title": "恶意程序与外部攻击",
+              "learning_objective": "理解恶意程序与外部攻击的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "逻辑炸弹",
+                "缓冲区溢出",
+                "病毒",
+                "外部攻击"
+              ],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "易混点：不要把恶意程序与外部攻击与相邻层次的机制混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "恶意程序可能借助输入边界、隐藏代码或传播机制破坏系统，防护需减少入口并监测异常。"
+                ],
+                "case_prompt": "从异常进程和文件变化中区分缓冲区溢出与病毒传播线索。",
+                "practice_tags": [
+                  "逻辑炸弹",
+                  "缓冲区溢出",
+                  "病毒"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0393",
+                  "print_page": 393
+                },
+                {
+                  "chunk_id": "os_k0395",
+                  "print_page": 395
+                },
+                {
+                  "chunk_id": "os_k0398",
+                  "print_page": 398
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_12_8",
+                  "figure_label": "图12.8",
+                  "caption": "病毒所加在文件中的情况",
+                  "source_chunk_id": "os_k0398",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "os_c12_05",
+              "title": "访问控制模型与可信计算基",
+              "learning_objective": "理解访问控制模型与可信计算基的核心概念，能够结合操作系统场景说明其作用与取舍。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "访问矩阵",
+                "信息流控制",
+                "TCB",
+                "最小权限"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "学习提醒：先画出访问控制模型与可信计算基涉及的对象、状态和边界，再判断步骤。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "访问模型规定主体和对象之间的允许操作，TCB 承载执行规则所需的关键机制。"
+                ],
+                "case_prompt": "为文件服务划分 TCB 内的最小保护机制，并用访问矩阵表达权限。",
+                "practice_tags": [
+                  "访问矩阵",
+                  "信息流控制",
+                  "TCB"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "os_k0402",
+                  "print_page": 402
+                },
+                {
+                  "chunk_id": "os_k0403",
+                  "print_page": 403
+                },
+                {
+                  "chunk_id": "os_k0404",
+                  "print_page": 404
+                },
+                {
+                  "chunk_id": "os_k0405",
+                  "print_page": 405
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "os_v4_fig_12_11",
+                  "figure_label": "图12.11",
+                  "caption": "可信任计算基TCB",
+                  "source_chunk_id": "os_k0404",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

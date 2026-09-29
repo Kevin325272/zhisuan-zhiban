@@ -1,0 +1,102 @@
+.student-settings-page { max-width: 1240px; margin-inline: auto; padding-block: 32px 52px; }
+.student-settings-page .learning-page-heading { margin-bottom: 24px; }
+.student-settings-page .learning-page-heading h1 { font-size: 30px; font-weight: 760; color: #03182e; margin: 0 0 8px; }
+.student-settings-page .learning-page-heading p { font-size: 15px; color: #647773; }
+.settings-tabs { display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid #dce8e3; padding-bottom: 14px; }
+.settings-tabs button { display: flex; align-items: center; gap: 9px; padding: 12px 20px; border: 0; border-radius: 12px; background: transparent; color: #657672; font: inherit; font-weight: 650; cursor: pointer; }
+.settings-tabs button[aria-pressed="true"] { background: #e6efea; color: #14544c; }
+.ai-settings { color: #03182e; }
+.ai-master-card, .agent-map-card, .diagram-settings-card { background: #fff; border: 1px solid #e6eeea; border-radius: 22px; box-shadow: 0 3px 8px #132a2004, 0 12px 28px #132a2005; }
+.ai-master-card { display: flex; align-items: center; gap: 18px; padding: 24px 28px; }
+.ai-master-card.is-enabled { background: linear-gradient(110deg, #f0f6f2, #fff 72%); border-color: #d5e6dc; }
+.settings-feature-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 17px; background: #14544c; color: #fff; flex-shrink: 0; }
+.ai-master-card h2, .settings-section-heading h2 { margin: 0; font-size: 20px; font-weight: 750; display: flex; gap: 9px; align-items: center; }
+.ai-master-card p, .settings-section-heading p { margin: 7px 0 0; font-size: 14px; line-height: 1.6; color: #657773; }
+.settings-switch-control { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; font-size: 14px; color: #526e64; }
+.settings-switch { width: 48px; height: 28px; display: inline-flex; align-items: center; border: 0; border-radius: 20px; padding: 3px; background: #b8c5c1; cursor: pointer; transition: background .16s; }
+.settings-switch > span { display: block; height: 22px; width: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px #183e4126; transition: transform .16s; }
+.settings-switch[aria-checked="true"] { background: #14544c; }
+.settings-switch[aria-checked="true"] > span { transform: translateX(20px); }
+.settings-switch:disabled { opacity: .55; cursor: wait; }
+.settings-feedback { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #667b72; min-height: 26px; margin: 9px 5px 18px; }
+.settings-feedback.is-error { color: #a04337; }
+.settings-feedback button { border: 0; background: none; color: #14544c; text-decoration: underline; cursor: pointer; }
+.settings-section-heading { display: flex; align-items: center; justify-content: space-between; padding: 25px 28px 20px; gap: 20px; }
+.settings-badge { border-radius: 20px; padding: 6px 11px; color: #567469; background: #f1f6f3; font-size: 13px; white-space: nowrap; }
+.agent-map-workspace { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(285px, 1fr); gap: 20px; padding: 0 26px 26px; }
+.agent-map { position: relative; min-height: 352px; background: radial-gradient(ellipse at center, #eaf2ed 0, #f8faf8 58%); border-radius: 16px; color: #b2cbc0; }
+.agent-map > svg { position: absolute; inset: 0; width: 100%; height: calc(100% - 18px); }
+.agent-map-hub { position: absolute; left: 50%; top: 47.5%; transform: translate(-50%, -50%); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; width: 112px; height: 112px; background: #14544c; color: #fff; border-radius: 50%; box-shadow: 0 8px 22px #14544c1c, 0 0 0 7px #f8faf8; }
+.agent-map-hub strong { font-size: 16px; }
+.agent-map-hub span { color: #c7dfd5; font-size: 11px; }
+.agent-node { position: absolute; width: 29%; min-height: 72px; display: flex; align-items: center; gap: 10px; padding: 13px 12px; border: 1px solid #e0eae4; border-radius: 14px; text-align: left; background: #fff; color: #24443b; box-shadow: 0 3px 9px #223f3407; cursor: pointer; transition: transform .18s, border-color .18s, box-shadow .18s; }
+.agent-node:nth-of-type(-n+3) { left: 3%; }
+.agent-node:nth-of-type(n+4) { right: 3%; }
+.agent-node-1, .agent-node-4 { top: 6%; }
+.agent-node-2, .agent-node-5 { top: 37%; }
+.agent-node-3, .agent-node-6 { top: 68%; }
+.agent-node-icon { display: grid; place-items: center; width: 34px; height: 36px; flex-shrink: 0; color: #4d7b78; }
+.agent-node strong { display: block; font-size: 14px; font-weight: 700; line-height: 1.5; white-space: nowrap; }
+.agent-node small { display: block; margin-top: 4px; font-size: 12px; color: #778981; white-space: nowrap; }
+.agent-node[aria-pressed="true"] { border-color: #6c9d85; background: #f0f6f1; box-shadow: 0 4px 12px #14544c10; }
+.agent-node[aria-pressed="true"] .agent-node-icon { color: #14544c; }
+.agent-node:hover { transform: translateY(-3px); box-shadow: 0 7px 15px #23443913; }
+.agent-map-caption { position: absolute; bottom: 11px; left: 0; right: 0; text-align: center; font-size: 12px; color: #769086; }
+.is-paused .agent-map-hub { background: #72847c; }
+.is-paused .agent-map { color: #c4cdc8; }
+.agent-role-detail { padding: 22px; border-radius: 16px; background: #f5f8f5; }
+.agent-role-kicker { color: #6c8476; font-size: 13px; }
+.agent-role-detail h3 { display: flex; align-items: center; gap: 9px; font-size: 19px; margin: 12px 0; }
+.agent-role-detail > p { font-size: 14px; color: #526d60; line-height: 1.8; margin: 0; }
+.agent-role-detail dl { display: grid; gap: 12px; margin: 20px 0; }
+.agent-role-detail dt { font-size: 12px; color: #839187; margin-bottom: 5px; }
+.agent-role-detail dd { margin: 0; color: #325747; font-size: 13px; line-height: 1.6; }
+.agent-role-detail a { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid #dce8e3; font-size: 14px; font-weight: 700; color: #14544c; text-decoration: none; }
+.diagram-settings-card { margin-top: 22px; }
+.diagram-preview-heading { display: flex; align-items: center; justify-content: space-between; margin: 0 28px; border-top: 1px solid #edf1ee; padding-top: 18px; color: #6a7d71; font-size: 13px; }
+.diagram-preview-heading > div { display: flex; gap: 5px; background: #f1f5f2; padding: 4px; border-radius: 10px; }
+.diagram-preview-heading button { display: flex; align-items: center; gap: 6px; border: 0; border-radius: 7px; padding: 8px 12px; color: #657c6d; background: transparent; font: inherit; cursor: pointer; }
+.diagram-preview-heading button[aria-pressed="true"] { color: #14544c; background: #fff; box-shadow: 0 2px 6px #23392e0b; }
+.settings-preview-note { padding: 0 28px 22px; margin: 0; color: #78877e; font-size: 13px; line-height: 1.7; }
+.learning-diagram { margin: 18px 0; border: 1px solid #e2ebe5; background: #fbfdfb; border-radius: 16px; padding: 22px; color: #163b30; }
+.diagram-settings-card .learning-diagram { margin: 18px 28px; }
+.learning-diagram figcaption { display: flex; align-items: center; gap: 12px; }
+.learning-diagram figcaption > strong { font-size: 16px; font-weight: 700; }
+.diagram-type { display: inline-flex; align-items: center; gap: 5px; background: #eaf2eb; border-radius: 7px; color: #4d7b68; padding: 5px 7px; font-size: 12px; flex-shrink: 0; }
+.learning-diagram .diagram-summary { margin: 12px 0 0; font-size: 14px; color: #65796c; line-height: 1.7; }
+.diagram-canvas { position: relative; width: 100%; max-width: 850px; margin: 0 auto; }
+.diagram-canvas svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: #aabfb1; }
+.diagram-canvas svg .is-active { color: #518a6c; }
+.diagram-canvas text { font-size: 10px; fill: #708576; stroke: #fbfdfb; stroke-width: 4px; paint-order: stroke; }
+.diagram-node { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 9px 8px; border: 1px solid #d8e5dc; border-radius: 12px; background: #fff; color: #496353; cursor: pointer; box-shadow: 0 3px 7px #18372506; font-family: inherit; }
+.diagram-node span { font-size: 12px; color: #94a897; }
+.diagram-node strong { font-size: 13px; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere; }
+.diagram-node[aria-pressed="true"] { background: #14544c; border-color: #14544c; color: #fff; box-shadow: 0 4px 9px #14544c1a; }
+.diagram-node[aria-pressed="true"] span { color: #aecbc0; }
+.diagram-detail { padding: 14px 18px; background: #eef5ed; border-radius: 10px; }
+.diagram-detail > strong { font-size: 14px; }
+.diagram-detail > p { font-size: 14px; line-height: 1.7; color: #5b7462; margin: 7px 0 0; }
+.diagram-relationships { margin-top: 12px; font-size: 12px; color: #79887d; }
+.diagram-relationships summary { cursor: pointer; }
+.diagram-relationships ul { padding-left: 20px; line-height: 1.9; }
+.ai-workflow-disabled { display: flex; align-items: center; gap: 9px; padding: 16px; background: #f0f5f1; border-radius: 12px; font-size: 14px; color: #66796d; }
+.ai-workflow-disabled a { color: #14544c; margin-left: auto; }
+.student-settings-page .account-page-grid[hidden] { display: none; }
+.student-settings-page .account-page-grid { grid-template-columns: minmax(310px, .9fr) minmax(0, 1.3fr); gap: 24px; }
+.student-settings-page .account-card { border: 1px solid #e6eeea; border-radius: 22px; padding: 28px; box-shadow: 0 6px 20px #12352806; background: #fff; }
+.app-shell.learning-shell .student-settings-page .account-card { border-color: #e6eeea; box-shadow: var(--student-card-shadow); }
+.app-shell.learning-shell .student-settings-page :is(.ai-master-card h2, .settings-section-heading h2, .agent-role-detail h3) { font-size: 20px; font-weight: 700; }
+.student-settings-page .account-card h2 { font-size: 20px; font-weight: 700; }
+.student-settings-page .account-card dd, .student-settings-page .account-card dt { font-size: 14px; line-height: 1.8; }
+.student-settings-page .account-card dt { color: #75887d; }
+.student-settings-page .account-card dd { color: #284b3b; }
+.student-settings-page .account-card dl > div { padding: 17px 0; border-color: #edf1ee; }
+.student-settings-page .account-course-scope span { background: #f1f6f1; padding: 4px 9px; border-radius: 7px; font-size: 13px; }
+.student-settings-page .account-password-form label { font-size: 14px; gap: 9px; }
+.student-settings-page .account-password-form input { min-height: 48px; background: #fbfdfb; border: 1px solid #dce7df; border-radius: 10px; }
+.student-settings-page .account-password-form { gap: 20px; align-content: start; }
+.student-settings-page .account-password-form .first-release-primary-action { background: #14544c; color: #fff; border: 0; border-radius: 10px; padding: 12px 23px; justify-self: start; font-size: 14px; }
+.ai-settings button:focus-visible, .settings-tabs button:focus-visible, .diagram-node:focus-visible { outline: 3px solid #83baa2; outline-offset: 3px; }
+.ai-settings :is(.agent-node small, .agent-map-caption, .agent-role-detail dt, .settings-preview-note, .diagram-relationships) { color: #607568; }
+.ai-workflow-unavailable { color: #607568; font-size: 14px; line-height: 1.7; }
+@media (prefers-reduced-motion: reduce) { .agent-node, .settings-switch, .settings-switch > span { transition: none; } .agent-node:hover { transform: none; } }

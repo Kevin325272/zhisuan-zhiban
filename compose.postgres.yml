@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17.9-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: xuetu_dev
+      POSTGRES_USER: xuetu_dev
+      POSTGRES_PASSWORD: xuetu_local_only
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    ports:
+      - "127.0.0.1:55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U xuetu_dev -d xuetu_dev"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - xuetu_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  xuetu_postgres_data:

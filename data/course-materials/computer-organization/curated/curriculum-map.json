@@ -1,0 +1,929 @@
+{
+  "schema_version": "1.0",
+  "course_id": "course_408_co",
+  "course_slug": "computer-organization",
+  "title": "课程知识地图",
+  "curation_method": "source_constrained_course_design",
+  "chapters": [
+    {
+      "chapter_id": "co_ch01",
+      "source_chapter": "1 计算机系统概论",
+      "title": "计算机系统概论",
+      "ordinal": 1,
+      "modules": [
+        {
+          "module_id": "co_m01_01",
+          "title": "计算机系统与机器层次",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c01_01",
+              "title": "硬件、软件与计算机系统",
+              "learning_objective": "区分硬件与软件，并说明二者为何必须共同构成完整的计算机系统。",
+              "prerequisite_concept_ids": [],
+              "key_terms": ["硬件", "软件", "计算机系统"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "不要把计算机系统只理解为看得见的主机和外设，软件同样是系统的一部分。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0012", "print_page": 3}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c01_02",
+              "title": "程序翻译与机器层次",
+              "learning_objective": "说明源程序如何转为机器可识别的目标程序，并辨认高级语言、机器语言与机器层次的关系。",
+              "prerequisite_concept_ids": ["co_c01_01"],
+              "key_terms": ["源程序", "目标程序", "机器语言", "翻译程序"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "高级语言程序不能由硬件直接执行，理解时要把翻译过程与最终执行过程分开。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0013", "print_page": 4}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c01_03",
+              "title": "体系结构与计算机组成",
+              "learning_objective": "区分计算机体系结构与计算机组成，理解相同体系结构可以采用不同的硬件实现方式。",
+              "prerequisite_concept_ids": ["co_c01_01"],
+              "key_terms": ["体系结构", "计算机组成", "实现方式"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "指令功能相同不代表内部实现相同；性能、成本和可靠性会影响组成方案。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0017", "print_page": 8}],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "co_m01_02",
+          "title": "基本结构与指令运行",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c01_04",
+              "title": "冯·诺依曼计算机的基本部件",
+              "learning_objective": "辨认运算器、存储器、控制器、输入设备和输出设备的基本职责及其协作关系。",
+              "prerequisite_concept_ids": ["co_c01_01"],
+              "key_terms": ["运算器", "存储器", "控制器", "输入输出设备"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "五大部件不是孤立清单，理解重点是程序和数据如何在部件之间流动。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0018", "print_page": 9}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c01_05",
+              "title": "取指、分析与执行",
+              "learning_objective": "按取指、分析、执行三个阶段描述一条指令的运行，并说明 PC、IR 与 CU 的作用。",
+              "prerequisite_concept_ids": ["co_c01_04"],
+              "key_terms": ["取指", "分析", "执行", "PC", "IR", "CU"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "PC 保存的是待执行指令的地址，IR 保存的是当前指令，二者不能混为一谈。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0026", "print_page": 16}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch02",
+      "source_chapter": "2 计算机的发展及应用",
+      "title": "计算机的发展及应用",
+      "ordinal": 2,
+      "modules": [
+        {
+          "module_id": "co_m02_01",
+          "title": "硬件演进与并行发展",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c02_01",
+              "title": "计算机硬件的代际演进",
+              "learning_objective": "从器件与系统能力变化的角度理解计算机的代际演进，而不是只记年代名称。",
+              "prerequisite_concept_ids": ["co_c01_04"],
+              "key_terms": ["电子管", "晶体管", "集成电路", "计算机发展"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "代际划分用于理解器件变化带来的系统影响，不宜只背诵年份。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0031", "print_page": 20}],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c02_02",
+              "title": "线程级与进程级并行",
+              "learning_objective": "辨认线程级、进程级并行及相关处理器形态，理解并行性是提升处理能力的一条路线。",
+              "prerequisite_concept_ids": ["co_c02_01"],
+              "key_terms": ["线程级并行", "进程级并行", "多处理器", "多线程处理器"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "并行能力不等于单个任务必然按比例加速，还取决于任务能否被有效并行化。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0041", "print_page": 25}],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m02_02",
+          "title": "程序设计语言的演进",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c02_03",
+              "title": "程序设计范式与语言发展",
+              "learning_objective": "从面向科学计算、结构化程序设计到面向对象的发展线索，理解软件表达能力的变化。",
+              "prerequisite_concept_ids": ["co_c01_02"],
+              "key_terms": ["FORTRAN", "结构化程序设计", "面向对象", "程序设计语言"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "语言演进不是简单替代关系，不同语言与范式服务于不同的问题和环境。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0043", "print_page": 26}],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch03",
+      "source_chapter": "3 系统总线",
+      "title": "系统总线",
+      "ordinal": 3,
+      "modules": [
+        {
+          "module_id": "co_m03_01",
+          "title": "总线基础",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c03_01",
+              "title": "总线连接与共享传输",
+              "learning_objective": "比较分散连接与总线连接，说明公共传输线路在计算机部件互连中的作用。",
+              "prerequisite_concept_ids": ["co_c01_04"],
+              "key_terms": ["总线", "分散连接", "总线连接", "公共传输线"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "线路共享降低了连接复杂度，但也带来了占用权和通信时序问题。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0067", "print_page": 41}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c03_02",
+              "title": "数据、地址与控制总线",
+              "learning_objective": "区分数据总线、地址总线和控制总线传递的信息，并理解各类信号的方向与用途。",
+              "prerequisite_concept_ids": ["co_c03_01"],
+              "key_terms": ["数据总线", "地址总线", "控制总线"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "控制总线由多条不同方向的控制线组成，不能把它整体简单理解为单向线路。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0070", "print_page": 44}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m03_02",
+          "title": "总线控制与通信",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c03_03",
+              "title": "总线判优与通信控制",
+              "learning_objective": "说明多个部件共享总线时为何需要判优和通信控制，并辨认二者解决的问题。",
+              "prerequisite_concept_ids": ["co_c03_02"],
+              "key_terms": ["总线判优", "仲裁", "通信控制", "总线控制器"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "判优决定谁使用总线，通信控制决定如何可靠传送，两者不是同一个步骤。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0086", "print_page": 57}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c03_04",
+              "title": "同步与异步总线通信",
+              "learning_objective": "理解同步通信依赖统一时钟安排传输，并能据此与异步通信的联络方式作区分。",
+              "prerequisite_concept_ids": ["co_c03_02"],
+              "key_terms": ["同步通信", "异步通信", "总线传输周期", "时钟"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "同步通信的共同节拍便于控制，但设备速度差异会影响统一时序的适用性。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0089", "print_page": 60}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch04",
+      "source_chapter": "4 存储器",
+      "title": "存储器",
+      "ordinal": 4,
+      "modules": [
+        {
+          "module_id": "co_m04_01",
+          "title": "存储系统基础",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c04_01",
+              "title": "存储体系的层次结构",
+              "learning_objective": "说明存储系统为何需要分层，并从速度、容量与成本之间的矛盾理解层次结构。",
+              "prerequisite_concept_ids": ["co_c01_04"],
+              "key_terms": ["存储器", "层次结构", "速度", "容量"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "不存在同时在速度、容量和成本上都占优的单一存储器，需要用层次组合折中。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0097", "print_page": 68}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c04_02",
+              "title": "存储容量与存取性能",
+              "learning_objective": "使用存储单元数和存储字长理解容量，并区分存取时间与存取周期等性能指标。",
+              "prerequisite_concept_ids": ["co_c04_01"],
+              "key_terms": ["存储容量", "存储字长", "存取时间", "存取周期"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "存取时间和存取周期含义不同，计算容量时也要先确认按字还是按字节寻址。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0104", "print_page": 74}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c04_03",
+              "title": "存储芯片的位扩展与字扩展",
+              "learning_objective": "区分增加存储字长的位扩展和增加存储单元数量的字扩展，理解芯片组合的目标。",
+              "prerequisite_concept_ids": ["co_c04_02"],
+              "key_terms": ["位扩展", "字扩展", "存储芯片", "存储字长"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "位扩展改变每个存储字的位数，字扩展改变可寻址字数，计算时不要互换。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0122", "print_page": 91}],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "co_m04_02",
+          "title": "Cache 组织",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c04_04",
+              "title": "Cache 与程序局部性",
+              "learning_objective": "用程序局部性解释 Cache 为何能缓解 CPU 与主存速度差距，并理解块式调入的基本思路。",
+              "prerequisite_concept_ids": ["co_c04_01"],
+              "key_terms": ["Cache", "主存", "程序局部性", "字块"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "Cache 有效依赖近期访问具有局部性，而不是因为它能容纳全部主存内容。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0145", "print_page": 110}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c04_05",
+              "title": "Cache 地址映射方式",
+              "learning_objective": "区分直接映射、全相联映射和组相联映射，并理解它们在固定性与灵活性之间的差异。",
+              "prerequisite_concept_ids": ["co_c04_04"],
+              "key_terms": ["直接映射", "全相联映射", "组相联映射", "地址映射"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "三种映射方式决定主存块可放入 Cache 的位置范围，不等同于替换算法。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0153", "print_page": 117}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch05",
+      "source_chapter": "5 输入输出系统",
+      "title": "输入输出系统",
+      "ordinal": 5,
+      "modules": [
+        {
+          "module_id": "co_m05_01",
+          "title": "I/O 系统与接口",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c05_01",
+              "title": "I/O 系统与主机交换方式",
+              "learning_objective": "说明输入输出系统在计算机中的作用，并辨认程序查询、中断和 DMA 三类交换控制方式。",
+              "prerequisite_concept_ids": ["co_c01_04"],
+              "key_terms": ["输入输出系统", "程序查询", "中断", "DMA"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "三种方式主要差异在于数据交换由谁控制、CPU 参与到什么程度。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0201", "print_page": 155}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c05_02",
+              "title": "I/O 编址与联络方式",
+              "learning_objective": "理解 I/O 设备编址、串并行传送与设备联络是主机连接外设时需要分别解决的问题。",
+              "prerequisite_concept_ids": ["co_c05_01", "co_c03_02"],
+              "key_terms": ["I/O 编址", "统一编址", "独立编址", "串行传送", "并行传送"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "设备地址、数据传送宽度和联络时序属于不同维度，不要混成一种接口分类。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0206", "print_page": 159}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m05_02",
+          "title": "主机与 I/O 控制",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c05_03",
+              "title": "程序查询方式的执行特征",
+              "learning_objective": "沿查询流程说明 CPU 如何等待设备就绪，并判断该方式对现行程序执行的影响。",
+              "prerequisite_concept_ids": ["co_c05_01"],
+              "key_terms": ["程序查询", "设备就绪", "CPU 等待"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "程序查询并非设备主动通知 CPU，CPU 需要反复读取设备状态。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0210", "print_page": 162}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c05_04",
+              "title": "中断向量与中断接口",
+              "learning_objective": "理解中断向量如何帮助定位服务程序入口，并辨认程序中断接口中的基本信息通路。",
+              "prerequisite_concept_ids": ["co_c05_03"],
+              "key_terms": ["中断向量", "入口地址", "中断接口", "中断响应"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "中断向量用于寻找服务程序入口，不等同于服务程序本身。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0251", "print_page": 196}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c05_05",
+              "title": "DMA 与周期窃取",
+              "learning_objective": "说明 DMA 如何在较少 CPU 干预下与主存传送数据，并理解周期窃取解决总线争用的方式。",
+              "prerequisite_concept_ids": ["co_c05_01", "co_c03_03", "co_c04_01"],
+              "key_terms": ["DMA", "周期窃取", "总线占用", "主存"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "DMA 减少的是 CPU 对逐字传送的干预，并不意味着 DMA 与 CPU 不会争用主存。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0256", "print_page": 201}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch06",
+      "source_chapter": "6 计算机的运算方法",
+      "title": "计算机的运算方法",
+      "ordinal": 6,
+      "modules": [
+        {
+          "module_id": "co_m06_01",
+          "title": "机器数与数据表示",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c06_01",
+              "title": "机器数与编码表示",
+              "learning_objective": "理解计算机内部以二进制编码表示信息，并区分无符号数、有符号数、定点数和浮点数。",
+              "prerequisite_concept_ids": ["co_c01_01"],
+              "key_terms": ["机器数", "无符号数", "有符号数", "定点数", "浮点数"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "数值本身与机器中的编码形式不是同一概念，后续运算规则依赖具体表示。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0275", "print_page": 219}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c06_02",
+              "title": "浮点数的阶码与尾数",
+              "learning_objective": "用阶码和尾数描述浮点数表示，理解小数点位置由阶码控制而非固定在某一位。",
+              "prerequisite_concept_ids": ["co_c06_01"],
+              "key_terms": ["浮点数", "阶码", "尾数", "基数"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "浮点表示中的小数点并非真的在存储单元中移动，而是由阶码表达数值尺度。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0285", "print_page": 229}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m06_02",
+          "title": "定点算术",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c06_03",
+              "title": "补码加减与溢出判断",
+              "learning_objective": "理解减法可转化为补码加法，并在固定位宽下关注运算结果是否发生溢出。",
+              "prerequisite_concept_ids": ["co_c06_01"],
+              "key_terms": ["补码", "加法", "减法", "溢出"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "运算器产生了位模式不代表数值结果一定有效，还要结合符号与位宽判断溢出。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0294", "print_page": 237}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c06_04",
+              "title": "机器乘法的移位与累加",
+              "learning_objective": "从笔算乘法过渡到机器实现，理解部分积、移位和累加如何组成乘法过程。",
+              "prerequisite_concept_ids": ["co_c06_03"],
+              "key_terms": ["乘法", "部分积", "移位", "累加"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "机器乘法的关键是把逐位处理映射为寄存器移位和加法操作。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0300", "print_page": 243}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c06_05",
+              "title": "机器除法的逐位求商",
+              "learning_objective": "理解机器除法如何通过余数处理、移位和逐位求商完成，并辨认原码除法的基本过程。",
+              "prerequisite_concept_ids": ["co_c06_03"],
+              "key_terms": ["除法", "余数", "逐位求商", "原码除法"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "机器通常把新商位写入固定位置并配合移位，不会直接写入不同寄存器位置。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0317", "print_page": 259}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "co_m06_03",
+          "title": "浮点运算与运算部件",
+          "ordinal": 3,
+          "concepts": [
+            {
+              "concept_id": "co_c06_06",
+              "title": "浮点加减中的对阶",
+              "learning_objective": "说明浮点加减为何要先对阶，并理解小阶向大阶看齐时尾数移位可能带来的精度损失。",
+              "prerequisite_concept_ids": ["co_c06_02", "co_c06_03"],
+              "key_terms": ["对阶", "阶差", "尾数右移", "精度"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "对阶不是移动最终结果的小数点，而是调整操作数表示以便尾数相加。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0328", "print_page": 270}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c06_07",
+              "title": "ALU 的算术与逻辑功能",
+              "learning_objective": "说明 ALU 如何在控制信号作用下完成不同的算术或逻辑操作，并理解其在运算器中的位置。",
+              "prerequisite_concept_ids": ["co_c06_03"],
+              "key_terms": ["ALU", "算术运算", "逻辑运算", "控制信号"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "ALU 的具体操作由控制信号选择，它不是只会进行加法的单一电路。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0339", "print_page": 281}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch07",
+      "source_chapter": "7 指令系统",
+      "title": "指令系统",
+      "ordinal": 7,
+      "modules": [
+        {
+          "module_id": "co_m07_01",
+          "title": "指令格式与指令流",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c07_01",
+              "title": "机器指令与指令格式",
+              "learning_objective": "理解机器指令如何表达操作及操作数信息，并辨认操作码与地址码等基本字段。",
+              "prerequisite_concept_ids": ["co_c01_05"],
+              "key_terms": ["机器指令", "指令格式", "操作码", "地址码"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "指令格式既要表达操作，也要给出寻找操作数所需的信息。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0360", "print_page": 300}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c07_02",
+              "title": "顺序寻址与跳跃寻址",
+              "learning_objective": "区分由 PC 自动形成下一地址的顺序寻址与由转移指令改变执行位置的跳跃寻址。",
+              "prerequisite_concept_ids": ["co_c07_01"],
+              "key_terms": ["指令寻址", "顺序寻址", "跳跃寻址", "PC"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "跳跃寻址讨论的是下一条指令地址，不是操作数有效地址。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0371", "print_page": 310}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m07_02",
+          "title": "操作数寻址与指令设计",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c07_03",
+              "title": "立即与直接寻址",
+              "learning_objective": "区分立即数直接位于指令中的立即寻址与形式地址就是有效地址的直接寻址。",
+              "prerequisite_concept_ids": ["co_c07_01"],
+              "key_terms": ["立即寻址", "直接寻址", "形式地址", "有效地址"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "立即寻址的字段存放操作数本身，直接寻址的字段存放操作数地址。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0372", "print_page": 311}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c07_04",
+              "title": "CISC 与 RISC 的设计取舍",
+              "learning_objective": "从复杂控制器、常用指令比例和实现难度理解 CISC 与 RISC 的不同设计取向。",
+              "prerequisite_concept_ids": ["co_c07_01"],
+              "key_terms": ["CISC", "RISC", "复杂指令", "精简指令"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "RISC 不是简单删除功能，而是用较简单常用指令及其组合完成计算。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0390", "print_page": 327}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch08",
+      "source_chapter": "8 CPU的结构和功能",
+      "title": "CPU 的结构和功能",
+      "ordinal": 8,
+      "modules": [
+        {
+          "module_id": "co_m08_01",
+          "title": "CPU 结构与指令执行",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c08_01",
+              "title": "CPU 的功能与内部组织",
+              "learning_objective": "归纳 CPU 的指令控制、操作控制、时间控制、数据加工与中断处理功能，并联系所需部件。",
+              "prerequisite_concept_ids": ["co_c01_05", "co_c06_07"],
+              "key_terms": ["CPU", "指令控制", "操作控制", "时间控制", "数据加工"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "CPU 功能与内部寄存器、ALU、控制单元的组织相互对应，不能只背功能名称。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0405", "print_page": 338}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c08_02",
+              "title": "指令周期与间址周期",
+              "learning_objective": "辨认取指、间址、执行与中断等周期，并说明间接寻址为何需要额外取得有效地址。",
+              "prerequisite_concept_ids": ["co_c07_03", "co_c01_05"],
+              "key_terms": ["指令周期", "取指周期", "间址周期", "执行周期"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "间址周期取得的是有效地址，不是所有指令都会经历这一周期。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0410", "print_page": 343}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m08_02",
+          "title": "流水线与中断",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c08_03",
+              "title": "指令流水的重叠执行",
+              "learning_objective": "比较串行执行与取指、执行阶段重叠，理解流水技术提高部件利用率的基本动机。",
+              "prerequisite_concept_ids": ["co_c08_02"],
+              "key_terms": ["指令流水", "串行执行", "重叠执行", "指令预取"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "流水线主要提高吞吐率，单条指令从进入到完成的时间不一定缩短。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0414", "print_page": 346}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c08_04",
+              "title": "流水线相关与冲突",
+              "learning_objective": "区分结构相关、数据相关和控制相关，说明指令重叠执行为何会产生资源、数据与转移冲突。",
+              "prerequisite_concept_ids": ["co_c08_03"],
+              "key_terms": ["结构相关", "数据相关", "控制相关", "流水线冲突"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "流水段能并行工作不代表任意相邻指令都能无条件重叠执行。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0418", "print_page": 348}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c08_05",
+              "title": "中断的作用与来源",
+              "learning_objective": "说明中断在异常处理、实时控制和提高系统效率中的作用，并辨认引起中断的基本因素。",
+              "prerequisite_concept_ids": ["co_c05_04", "co_c08_02"],
+              "key_terms": ["中断", "中断源", "异常处理", "实时控制"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "中断不只服务于 I/O，它也用于异常、实时控制和系统任务切换等情形。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0430", "print_page": 359}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch09",
+      "source_chapter": "9 控制单元的功能",
+      "title": "控制单元的功能",
+      "ordinal": 9,
+      "modules": [
+        {
+          "module_id": "co_m09_01",
+          "title": "控制信号与控制单元",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c09_01",
+              "title": "微操作与控制信号序列",
+              "learning_objective": "理解控制单元通过按序发出微操作命令控制部件，并联系指令周期、机器周期和节拍。",
+              "prerequisite_concept_ids": ["co_c08_02"],
+              "key_terms": ["微操作", "控制信号", "指令周期", "机器周期", "节拍"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "一条机器指令通常需要一串按时间组织的微操作，不是单个控制信号即可完成。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0445", "print_page": 375}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c09_02",
+              "title": "控制单元的输入与输出",
+              "learning_objective": "辨认时钟、指令操作码、标志和系统总线信号等输入，并区分 CPU 内部与总线控制输出。",
+              "prerequisite_concept_ids": ["co_c09_01"],
+              "key_terms": ["控制单元", "时钟", "操作码", "控制信号"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "控制单元既接收决定时序与操作的信息，也向 CPU 内部和系统总线发出不同控制信号。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0449", "print_page": 379}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "co_m09_02",
+          "title": "时序系统与控制方式",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c09_03",
+              "title": "节拍、机器周期与控制方式",
+              "learning_objective": "说明时钟周期、节拍和机器周期的层级关系，并理解同步、异步与联合控制的基本取舍。",
+              "prerequisite_concept_ids": ["co_c09_01"],
+              "key_terms": ["时钟周期", "节拍", "机器周期", "同步控制", "异步控制"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "主频、节拍和机器周期不是同一个量；控制方式还取决于不同微操作所需时间。"
+              },
+              "sources": [
+                {"chunk_id": "co_chunk_k0456", "print_page": 386},
+                {"chunk_id": "co_chunk_k0458", "print_page": 387}
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "co_ch10",
+      "source_chapter": "10 控制单元的设计",
+      "title": "控制单元的设计",
+      "ordinal": 10,
+      "modules": [
+        {
+          "module_id": "co_m10_01",
+          "title": "组合逻辑控制",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "co_c10_01",
+              "title": "组合逻辑控制单元",
+              "learning_objective": "理解组合逻辑控制如何依据操作码、时序和状态形成控制信号，并认识其设计思路。",
+              "prerequisite_concept_ids": ["co_c09_02"],
+              "key_terms": ["组合逻辑控制", "操作码译码", "时序信号", "控制信号"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "硬连线控制不是只对操作码译码，还要结合时序与状态条件形成最终控制信号。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0467", "print_page": 395}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            }
+          ]
+        },
+        {
+          "module_id": "co_m10_02",
+          "title": "微程序控制",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "co_c10_02",
+              "title": "微程序控制器的基本思想",
+              "learning_objective": "说明微程序控制把控制信号编码为微指令的思路，并理解其可修改、便于调试的特点。",
+              "prerequisite_concept_ids": ["co_c09_02"],
+              "key_terms": ["微程序", "微指令", "控制存储器", "存储逻辑"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "微程序是控制机器指令执行的内部控制序列，不等同于用户编写的机器语言程序。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0476", "print_page": 404}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "co_c10_03",
+              "title": "微指令的操作与顺序字段",
+              "learning_objective": "辨认微指令中的操作控制字段和顺序控制字段，理解一个发出信号、一个组织执行次序。",
+              "prerequisite_concept_ids": ["co_c10_02"],
+              "key_terms": ["微指令", "操作控制字段", "顺序控制字段", "下地址"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "操作控制字段决定本步做什么，顺序控制字段决定后续走向，两者职责不同。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0477", "print_page": 405}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "co_c10_04",
+              "title": "微指令的编码方式",
+              "learning_objective": "理解微指令编码是在控制字段中组织控制信号，并比较编码密度与译码复杂度的关注点。",
+              "prerequisite_concept_ids": ["co_c10_03"],
+              "key_terms": ["微指令编码", "控制字段", "控制信号", "译码"],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "编码方式讨论的是控制字段如何产生微操作命令，不是机器指令操作码的编码。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0479", "print_page": 407}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "co_c10_05",
+              "title": "下一微地址的形成",
+              "learning_objective": "说明机器指令操作码、顺序增量等方式如何参与形成下一条微指令地址。",
+              "prerequisite_concept_ids": ["co_c10_03"],
+              "key_terms": ["微地址", "操作码", "增量计数", "微程序入口"],
+              "learning_note": {
+                "kind": "misconception",
+                "text": "微地址用于访问控制存储器中的微指令，不是主存中的机器指令地址。"
+              },
+              "sources": [{"chunk_id": "co_chunk_k0481", "print_page": 409}],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "dataset_id": "computer-postgraduate-retest-lines-2024-2026",
+  "source_workbook_name": "院校复试信息.xlsx",
+  "source_copy": "raw/院校复试信息.xlsx",
+  "source_workbook_bytes": 366430,
+  "source_workbook_sha256": "365f5d9bf5fc1059bc635b1847af4afbe92248e777fdb4f782810cdcd141eaf8",
+  "normalized_file": "processed/retest-lines.normalized.json",
+  "source_provider": "mixed_public_sources",
+  "primary_source_provider": "www.ludengkaoyan.com",
+  "license_status": "unverified",
+  "public_distribution_authorization": "not_verified",
+  "usage_scope": "local_demo_only",
+  "training_allowed": false,
+  "verified_at": "2026-08-10",
+  "verified_counts": {
+    "records": 3374,
+    "years": 3,
+    "schools": 446,
+    "school_training_units": 971,
+    "program_codes": 65,
+    "source_urls": 1878,
+    "exact_duplicate_rows": 0,
+    "invalid_source_urls": 0
+  },
+  "coverage": {
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "records_by_year": {
+      "2024": 688,
+      "2025": 1001,
+      "2026": 1685
+    },
+    "records_by_exam_category": {
+      "其他待核": 1,
+      "三科制": 6,
+      "统考408": 2058,
+      "院系汇总": 3,
+      "院校自命题": 1306
+    },
+    "records_by_source_type": {
+      "第三方公开信息": 3320,
+      "院校/科研机构官网": 54
+    }
+  },
+  "data_boundary": {
+    "retest_cutoff_information": true,
+    "admission_list": false,
+    "final_admission_result": false,
+    "retest_admission_ratio": false,
+    "admission_probability_prediction_allowed": false,
+    "official_announcement_verification_required": true
+  }
+}

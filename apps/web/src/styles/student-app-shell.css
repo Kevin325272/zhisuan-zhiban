@@ -1,0 +1,215 @@
+/* App shell overrides are intentionally isolated from domain pages and API behavior. */
+html:has([data-visual-system="ochre-serif"]),
+body:has([data-visual-system="ochre-serif"]) {
+  min-width: 1120px;
+  color: var(--xuetu-ink);
+  background: var(--xuetu-canvas);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] {
+  color: var(--xuetu-ink);
+  background: var(--xuetu-canvas);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] .topbar {
+  background: color-mix(in srgb, var(--xuetu-surface) 96%, transparent);
+  border-bottom-color: var(--xuetu-line-strong);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 80%);
+  backdrop-filter: none;
+}
+
+[data-visual-system="ochre-serif"] .brand {
+  color: var(--xuetu-ink);
+  border-right-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .brand-mark {
+  color: var(--xuetu-highlight);
+  background: var(--xuetu-action);
+  border-radius: 6px;
+}
+
+[data-visual-system="ochre-serif"] .brand-copy strong,
+[data-visual-system="ochre-serif"] .profile-summary-copy strong {
+  color: var(--xuetu-ink);
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 600;
+}
+
+[data-visual-system="ochre-serif"] .brand-copy small,
+[data-visual-system="ochre-serif"] .profile-summary-copy small,
+[data-visual-system="ochre-serif"] .topbar-workspace-context span,
+[data-visual-system="ochre-serif"] .nav-section-label {
+  color: var(--xuetu-muted);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] .topbar-workspace-context strong {
+  color: var(--xuetu-ink);
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 600;
+}
+
+[data-visual-system="ochre-serif"] .topbar-icon,
+[data-visual-system="ochre-serif"] .profile-summary {
+  color: var(--xuetu-ink);
+  background: transparent;
+  border-color: transparent;
+}
+
+[data-visual-system="ochre-serif"] .topbar-icon:hover,
+[data-visual-system="ochre-serif"] .profile-summary:hover {
+  background: var(--xuetu-surface-muted);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .notification-dot {
+  background: var(--xuetu-ochre);
+  border-color: var(--xuetu-surface);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  box-shadow: var(--xuetu-shadow-raised);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover > header,
+[data-visual-system="ochre-serif"] .notification-popover li a:hover {
+  background: var(--xuetu-surface-muted);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover > header,
+[data-visual-system="ochre-serif"] .notification-popover li + li {
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover > header strong,
+[data-visual-system="ochre-serif"] .notification-popover li a strong {
+  color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover > header small,
+[data-visual-system="ochre-serif"] .notification-popover li a small {
+  color: var(--xuetu-muted);
+}
+
+[data-visual-system="ochre-serif"] .notification-popover li a > span:first-child {
+  color: var(--xuetu-info);
+  background: var(--xuetu-highlight);
+}
+
+[data-visual-system="ochre-serif"] .shell-body {
+  background: var(--xuetu-canvas);
+}
+
+[data-visual-system="ochre-serif"] .sidebar {
+  background: var(--xuetu-surface-muted);
+  border-right-color: var(--xuetu-line-strong);
+}
+
+[data-visual-system="ochre-serif"] .nav-link {
+  color: var(--xuetu-muted);
+  border-color: transparent;
+}
+
+[data-visual-system="ochre-serif"] .nav-link:hover {
+  color: var(--xuetu-ink);
+  background: rgb(255 255 255 / 58%);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .nav-link.active {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-ink);
+  border-color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"] .nav-link.active::after {
+  background: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .sidebar-collapse-button {
+  color: var(--xuetu-muted);
+  border-color: transparent;
+}
+
+[data-visual-system="ochre-serif"] .sidebar-collapse-button:hover {
+  color: var(--xuetu-ink);
+  background: rgb(255 255 255 / 58%);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .sidebar-foot {
+  border-top-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .sidebar-foot-status {
+  color: var(--xuetu-highlight);
+  background: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"] .sidebar-foot-copy strong {
+  color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"] .sidebar-foot-copy small {
+  color: var(--xuetu-muted);
+}
+
+[data-visual-system="ochre-serif"] .page-content {
+  background: var(--xuetu-canvas);
+}
+
+[data-visual-system="ochre-serif"] :is(button, a, input, select, textarea):focus-visible {
+  outline: none;
+  box-shadow: var(--xuetu-focus-ring);
+}
+
+[data-visual-system="ochre-serif"] .skip-link {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+}
+
+@media (max-width: 1280px) {
+  [data-visual-system="ochre-serif"] .topbar {
+    gap: 12px;
+  }
+
+  [data-visual-system="ochre-serif"] .page-content {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  html:has([data-visual-system="ochre-serif"]),
+  body:has([data-visual-system="ochre-serif"]) {
+    min-width: 0;
+  }
+
+  [data-visual-system="ochre-serif"] .topbar {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  [data-visual-system="ochre-serif"] .brand {
+    min-width: 0;
+    padding-inline: 0;
+    border-right: 0;
+  }
+
+  [data-visual-system="ochre-serif"] .topbar-workspace-context {
+    display: none;
+  }
+
+  [data-visual-system="ochre-serif"] .topbar-actions {
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,32 @@
+node_modules/
+dist/
+coverage/
+.vite/
+.env
+.env.*
+!.env.example
+!deploy/.env.production.example
+playwright-report/
+test-results/
+e2e/artifacts/
+*.log
+.playwright-cli/
+.runtime/
+.superpowers/
+/tmp/
+output/
+outputs/photo-question-tutor/
+apps/api/outputs/external-questions/
+apps/api/data/runtime-state.json*
+data/runtime-state.json*
+
+# Local knowledge-base corpora; keep only manifests and small samples in source control.
+data/**/raw/*
+data/**/processed/*
+
+# Local reproduction credentials
+.env.reproduction
+.repro-accounts.json
+model-check.json
+
+local-demo-review.json

@@ -1,0 +1,2700 @@
+{
+  "schema_version": "1.0",
+  "course_id": "course_408_cn",
+  "course_slug": "computer-networks",
+  "title": "课程知识地图",
+  "curation_method": "source_constrained_course_design",
+  "source_dataset_id": "408-three-course-source-v1",
+  "source_archive_sha256": "dbfa820489270c78f6e561c198cf3b75aaf7d03142fdf445caa00a0de82afb24",
+  "chapters": [
+    {
+      "chapter_id": "cn_ch01",
+      "source_chapter": "第1章",
+      "title": "概述",
+      "ordinal": 1,
+      "modules": [
+        {
+          "module_id": "cn_m01_01",
+          "title": "互联网组成与交换",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c01_01",
+              "title": "网络、互连网与互联网",
+              "learning_objective": "区分网络、互连网和互联网，并能识别主机、链路与路由器在互连结构中的角色。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "网络",
+                "互连网",
+                "路由器"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "先判断讨论对象是单个网络，还是由路由器连接起来的多个网络。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "网络由节点和链路组成；路由器把多个网络互连，使分属不同网络的主机能够交换信息。"
+                ],
+                "case_prompt": "在校园网接入互联网的结构中，标出主机、链路、局域网和出口路由器。",
+                "practice_tags": [
+                  "计算机网络",
+                  "网络",
+                  "互连网",
+                  "路由器"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0004",
+                  "print_page": 4
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_1_1",
+                  "figure_label": "图1.1",
+                  "caption": "简单的网络(a)和由网络构成的互连网(b)",
+                  "source_chunk_id": "cn_k0004",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c01_02",
+              "title": "互联网边缘与核心",
+              "learning_objective": "理解端系统位于互联网边缘、路由器构成核心转发能力，并说明二者承担的不同任务。",
+              "prerequisite_concept_ids": [
+                "cn_c01_01"
+              ],
+              "key_terms": [
+                "端系统",
+                "网络边缘",
+                "网络核心"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "端系统运行应用，核心路由器负责连通与转发，不要把两者职责混为一谈。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "互联网边缘包含进行通信的主机和应用进程，核心部分通过路由器与链路为这些端系统提供连通性。"
+                ],
+                "case_prompt": "跟踪一次手机访问校内服务器的过程，分别列出边缘设备与核心转发设备。",
+                "practice_tags": [
+                  "计算机网络",
+                  "端系统",
+                  "网络边缘",
+                  "网络核心"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0010",
+                  "print_page": 10
+                },
+                {
+                  "chunk_id": "cn_k0012",
+                  "print_page": 12
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "cn_c01_03",
+              "title": "分组交换与存储转发",
+              "learning_objective": "说明报文如何被划分为分组，并理解路由器逐跳存储转发带来的资源共享与时延。",
+              "prerequisite_concept_ids": [
+                "cn_c01_02"
+              ],
+              "key_terms": [
+                "分组交换",
+                "存储转发",
+                "首部"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "分组交换不为一次通信长期独占链路，但每一跳都可能产生排队和转发时延。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "发送端把较长报文划分为带首部的分组，路由器依据首部逐跳转发，从而按需共享链路带宽。"
+                ],
+                "case_prompt": "把一个长报文拆成三个分组，描述它们经过两台路由器时可能出现的到达顺序。",
+                "practice_tags": [
+                  "计算机网络",
+                  "分组交换",
+                  "存储转发",
+                  "首部"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0014",
+                  "print_page": 14
+                },
+                {
+                  "chunk_id": "cn_k0015",
+                  "print_page": 15
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_1_9",
+                  "figure_label": "图1.9",
+                  "caption": "以分组为基本单位在网络中传送",
+                  "source_chunk_id": "cn_k0014",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m01_02",
+          "title": "性能度量与体系结构",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c01_04",
+              "title": "速率、带宽与吞吐量",
+              "learning_objective": "区分链路额定速率、带宽和实际吞吐量，并能据此判断网络瓶颈。",
+              "prerequisite_concept_ids": [
+                "cn_c01_03"
+              ],
+              "key_terms": [
+                "速率",
+                "带宽",
+                "吞吐量"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "额定速率是上限条件，实际吞吐量还受协议开销、拥塞和端系统处理能力影响。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "速率描述单位时间传送的比特数；带宽约束可达到的数据率，而吞吐量反映实际通过网络的数据量。"
+                ],
+                "case_prompt": "解释为什么标称 1 Gbit/s 的链路在一次文件传输中可能只得到 300 Mbit/s。",
+                "practice_tags": [
+                  "计算机网络",
+                  "速率",
+                  "带宽",
+                  "吞吐量"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0021",
+                  "print_page": 21
+                },
+                {
+                  "chunk_id": "cn_k0022",
+                  "print_page": 22
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "cn_c01_05",
+              "title": "时延、时延带宽积与利用率",
+              "learning_objective": "分解发送、传播、处理和排队时延，并理解利用率过高时排队时延会迅速增加。",
+              "prerequisite_concept_ids": [
+                "cn_c01_04"
+              ],
+              "key_terms": [
+                "发送时延",
+                "传播时延",
+                "利用率"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "发送时延取决于分组长度和链路速率，传播时延取决于距离和传播速度。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "端到端时延由多种时延叠加；当链路接近饱和时，分组等待服务的时间会成为主要部分。"
+                ],
+                "case_prompt": "比较一条高速长距离链路与低速短距离链路，分别判断哪类时延更突出。",
+                "practice_tags": [
+                  "计算机网络",
+                  "发送时延",
+                  "传播时延",
+                  "利用率"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0023",
+                  "print_page": 23
+                },
+                {
+                  "chunk_id": "cn_k0024",
+                  "print_page": 24
+                },
+                {
+                  "chunk_id": "cn_k0026",
+                  "print_page": 26
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            },
+            {
+              "concept_id": "cn_c01_06",
+              "title": "分层、协议与服务",
+              "learning_objective": "理解网络分层的动机，区分协议与服务，并能沿五层体系说明数据封装和解封装。",
+              "prerequisite_concept_ids": [
+                "cn_c01_03"
+              ],
+              "key_terms": [
+                "协议",
+                "服务",
+                "封装",
+                "五层体系结构"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "同层实体遵守协议，相邻层通过服务接口协作；这两种关系方向不同。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "分层把复杂通信任务拆成边界清楚的职责，每一层使用下层服务并向上层提供服务。",
+                  "发送端逐层加入控制信息形成封装，接收端按相反顺序解析，协议约定同层实体如何解释这些信息。"
+                ],
+                "case_prompt": "从浏览器请求出发，按应用层到物理层写出每层增加或处理的信息。",
+                "practice_tags": [
+                  "计算机网络",
+                  "协议",
+                  "服务",
+                  "封装"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0029",
+                  "print_page": 29
+                },
+                {
+                  "chunk_id": "cn_k0031",
+                  "print_page": 31
+                },
+                {
+                  "chunk_id": "cn_k0034",
+                  "print_page": 34
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_1_16",
+                  "figure_label": "图1.16",
+                  "caption": "计算机网络体系结构",
+                  "source_chunk_id": "cn_k0031",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch02",
+      "source_chapter": "第2章",
+      "title": "物理层",
+      "ordinal": 2,
+      "modules": [
+        {
+          "module_id": "cn_m02_01",
+          "title": "比特传输基础",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c02_01",
+              "title": "物理层任务与接口特性",
+              "learning_objective": "说明物理层如何屏蔽传输媒体差异，并识别机械、电气、功能和过程特性。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "物理层",
+                "接口特性",
+                "比特流"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "传输媒体位于物理层下面；物理层规定的是怎样使用接口传输比特。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "物理层面向连续比特流，约定设备与传输媒体接口的机械、电气、功能和过程特性。"
+                ],
+                "case_prompt": "比较网卡接口标准与光纤本身，判断哪部分属于物理层规程、哪部分属于传输媒体。",
+                "practice_tags": [
+                  "计算机网络",
+                  "物理层",
+                  "接口特性",
+                  "比特流"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0042",
+                  "print_page": 42
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "cn_c02_02",
+              "title": "数据通信系统与信号表示",
+              "learning_objective": "识别源系统、传输系统和目的系统，并区分数据、信号、码元与通信方式。",
+              "prerequisite_concept_ids": [
+                "cn_c02_01"
+              ],
+              "key_terms": [
+                "信号",
+                "码元",
+                "基带信号"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "一个码元可承载多个比特，码元速率不能直接等同于比特率。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "数据通信系统把源产生的数据转换为适合信道传输的信号，接收端再恢复为目的系统可处理的数据。"
+                ],
+                "case_prompt": "画出键盘输入经调制解调设备和信道到达远端主机的基本通信模型。",
+                "practice_tags": [
+                  "计算机网络",
+                  "信号",
+                  "码元",
+                  "基带信号"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0043",
+                  "print_page": 43
+                },
+                {
+                  "chunk_id": "cn_k0045",
+                  "print_page": 45
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_2_1",
+                  "figure_label": "图2.1",
+                  "caption": "数据通信系统的模型",
+                  "source_chunk_id": "cn_k0043",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c02_03",
+              "title": "信道极限与编码调制",
+              "learning_objective": "理解码元速率、信噪比与信道带宽对极限数据率的约束，并区分编码和调制。",
+              "prerequisite_concept_ids": [
+                "cn_c02_02"
+              ],
+              "key_terms": [
+                "信噪比",
+                "香农公式",
+                "编码",
+                "调制"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "提高发送速率不能突破带宽和信噪比共同决定的信道能力上限。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "实际信道会产生失真和噪声；编码改变数字信号的表示，调制则把信息映射到载波特征上。"
+                ],
+                "case_prompt": "在带宽不变时比较提高信噪比和增加调制状态数对可用数据率的影响。",
+                "practice_tags": [
+                  "计算机网络",
+                  "信噪比",
+                  "香农公式",
+                  "编码"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0046",
+                  "print_page": 46
+                },
+                {
+                  "chunk_id": "cn_k0047",
+                  "print_page": 47
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m02_02",
+          "title": "媒体、复用与接入",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c02_04",
+              "title": "导引与非导引传输媒体",
+              "learning_objective": "比较双绞线、同轴电缆、光纤和无线传输的传播方式与适用场景。",
+              "prerequisite_concept_ids": [
+                "cn_c02_03"
+              ],
+              "key_terms": [
+                "双绞线",
+                "光纤",
+                "无线传输"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "媒体选择要同时考虑带宽、距离、抗干扰能力和部署条件，不能只比较理论速率。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "导引型媒体约束电磁波沿实体介质传播，非导引型媒体则利用自由空间完成无线传输。"
+                ],
+                "case_prompt": "为机房内短距离接入、园区主干和移动终端分别选择媒体并说明理由。",
+                "practice_tags": [
+                  "计算机网络",
+                  "双绞线",
+                  "光纤",
+                  "无线传输"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0048",
+                  "print_page": 48
+                },
+                {
+                  "chunk_id": "cn_k0051",
+                  "print_page": 51
+                },
+                {
+                  "chunk_id": "cn_k0052",
+                  "print_page": 52
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_2_10",
+                  "figure_label": "图2.10",
+                  "caption": "多模光纤(a)和单模光纤(b)的比较",
+                  "source_chunk_id": "cn_k0051",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c02_05",
+              "title": "信道复用与宽带接入",
+              "learning_objective": "区分频分、时分、波分和码分复用，并说明 ADSL、HFC 与 FTTx 的接入思路。",
+              "prerequisite_concept_ids": [
+                "cn_c02_04"
+              ],
+              "key_terms": [
+                "频分复用",
+                "时分复用",
+                "波分复用",
+                "FTTx"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "复用解决多路信号共享同一媒体的问题，接入技术解决用户如何到达 ISP。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "复用技术按频率、时间、波长或码型划分共享资源；宽带接入则组合用户线路和网络设备完成最后一段连接。"
+                ],
+                "case_prompt": "判断一条共享链路更适合频分还是时分复用，并说明空闲用户会怎样影响资源利用。",
+                "practice_tags": [
+                  "计算机网络",
+                  "频分复用",
+                  "时分复用",
+                  "波分复用"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0056",
+                  "print_page": 56
+                },
+                {
+                  "chunk_id": "cn_k0060",
+                  "print_page": 60
+                },
+                {
+                  "chunk_id": "cn_k0063",
+                  "print_page": 63
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_2_15",
+                  "figure_label": "图2.15",
+                  "caption": "复用的示意图",
+                  "source_chunk_id": "cn_k0056",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch03",
+      "source_chapter": "第3章",
+      "title": "数据链路层",
+      "ordinal": 3,
+      "modules": [
+        {
+          "module_id": "cn_m03_01",
+          "title": "成帧与点对点链路",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c03_01",
+              "title": "封装成帧、透明传输与差错检测",
+              "learning_objective": "说明数据链路层的三个基本问题，并能判断定界、转义和检错机制分别解决什么问题。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "封装成帧",
+                "透明传输",
+                "差错检测"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "透明传输保证任意比特模式都能作为数据，差错检测只发现错误而不等同于可靠交付。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "链路层把网络层数据封装成帧，通过定界识别帧边界、通过填充保持透明传输，并用检错码发现传输错误。"
+                ],
+                "case_prompt": "给定数据中出现与帧定界符相同的字节，说明发送端和接收端应如何处理。",
+                "practice_tags": [
+                  "计算机网络",
+                  "封装成帧",
+                  "透明传输",
+                  "差错检测"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0073",
+                  "print_page": 73
+                },
+                {
+                  "chunk_id": "cn_k0076",
+                  "print_page": 76
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_3_3",
+                  "figure_label": "图3.3",
+                  "caption": "使用点对点信道的数据链路层",
+                  "source_chunk_id": "cn_k0073",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c03_02",
+              "title": "PPP 帧与链路状态",
+              "learning_objective": "识别 PPP 帧的主要字段，并说明链路建立、鉴别、网络层配置和释放的基本阶段。",
+              "prerequisite_concept_ids": [
+                "cn_c03_01"
+              ],
+              "key_terms": [
+                "PPP",
+                "帧格式",
+                "链路控制协议"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "PPP 提供点对点链路封装和协商，但不负责端到端可靠传输。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "PPP 用统一帧格式承载网络层数据，并通过链路控制与网络控制过程建立和配置点对点通信。"
+                ],
+                "case_prompt": "沿用户主机接入 ISP 的过程，标出 PPP 链路从不可用到传送 IP 数据报的阶段。",
+                "practice_tags": [
+                  "计算机网络",
+                  "PPP",
+                  "帧格式",
+                  "链路控制协议"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0078",
+                  "print_page": 78
+                },
+                {
+                  "chunk_id": "cn_k0081",
+                  "print_page": 81
+                },
+                {
+                  "chunk_id": "cn_k0082",
+                  "print_page": 82
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m03_02",
+          "title": "以太网与交换",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c03_03",
+              "title": "局域网、适配器与 MAC 地址",
+              "learning_objective": "理解适配器承担的链路层功能，并区分 MAC 地址与上层逻辑地址。",
+              "prerequisite_concept_ids": [
+                "cn_c03_01"
+              ],
+              "key_terms": [
+                "局域网",
+                "适配器",
+                "MAC地址"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "MAC 地址标识链路上的接口，不直接说明该接口所在的网络前缀。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "局域网中的主机通过适配器收发以太网帧，MAC 地址用于同一链路范围内的帧交付。"
+                ],
+                "case_prompt": "说明一块网卡更换到另一子网后，MAC 地址和 IP 地址分别可能发生什么变化。",
+                "practice_tags": [
+                  "计算机网络",
+                  "局域网",
+                  "适配器",
+                  "MAC地址"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0084",
+                  "print_page": 84
+                },
+                {
+                  "chunk_id": "cn_k0087",
+                  "print_page": 87
+                },
+                {
+                  "chunk_id": "cn_k0095",
+                  "print_page": 95
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_3_15",
+                  "figure_label": "图3.15",
+                  "caption": "计算机通过适配器和局域网进行通信",
+                  "source_chunk_id": "cn_k0087",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c03_04",
+              "title": "CSMA/CD 与争用期",
+              "learning_objective": "解释载波监听、碰撞检测和退避过程，并能用传播时延理解最短帧长约束。",
+              "prerequisite_concept_ids": [
+                "cn_c03_03"
+              ],
+              "key_terms": [
+                "CSMA/CD",
+                "碰撞检测",
+                "争用期"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "监听到空闲不代表不会碰撞，远端信号仍可能尚未传播到本地。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "共享以太网在发送前监听信道，发送中检测碰撞；发生碰撞后停止发送并按退避规则重新竞争。"
+                ],
+                "case_prompt": "两站相距较远且几乎同时发送时，沿时间轴说明为什么双方都可能先监听到空闲。",
+                "practice_tags": [
+                  "计算机网络",
+                  "CSMA/CD",
+                  "碰撞检测",
+                  "争用期"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0087",
+                  "print_page": 87
+                },
+                {
+                  "chunk_id": "cn_k0089",
+                  "print_page": 89
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_3_17",
+                  "figure_label": "图3.17",
+                  "caption": "传播时延对载波监听的影响",
+                  "source_chunk_id": "cn_k0089",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c03_05",
+              "title": "以太网交换机与自学习",
+              "learning_objective": "说明交换机如何学习源 MAC 地址并依据转发表过滤、转发或泛洪帧。",
+              "prerequisite_concept_ids": [
+                "cn_c03_03"
+              ],
+              "key_terms": [
+                "以太网交换机",
+                "自学习",
+                "泛洪"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "交换机从帧的源地址学习端口，不是从目的地址学习。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "交换机记录源 MAC 地址到入端口的映射；目的地址未知时泛洪，已知时只向对应端口转发。"
+                ],
+                "case_prompt": "给定三台主机和一张空转发表，逐帧写出交换机学习与转发结果。",
+                "practice_tags": [
+                  "计算机网络",
+                  "以太网交换机",
+                  "自学习",
+                  "泛洪"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0101",
+                  "print_page": 101
+                },
+                {
+                  "chunk_id": "cn_k0103",
+                  "print_page": 103
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            },
+            {
+              "concept_id": "cn_c03_06",
+              "title": "VLAN 与高速以太网",
+              "learning_objective": "理解 VLAN 如何在逻辑上划分广播域，并说明高速以太网继承帧格式带来的兼容性。",
+              "prerequisite_concept_ids": [
+                "cn_c03_05"
+              ],
+              "key_terms": [
+                "VLAN",
+                "广播域",
+                "802.1Q"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "VLAN 是链路层的逻辑划分，不能把它等同于物理上重新布线。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "VLAN 通过交换机配置和标签把同一物理网络划分为多个逻辑广播域，高速以太网继续使用相容的 MAC 帧结构。"
+                ],
+                "case_prompt": "把同一楼层的教学终端和办公终端划入不同 VLAN，并说明跨 VLAN 通信还需要什么。",
+                "practice_tags": [
+                  "计算机网络",
+                  "VLAN",
+                  "广播域",
+                  "802.1Q"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0104",
+                  "print_page": 104
+                },
+                {
+                  "chunk_id": "cn_k0105",
+                  "print_page": 105
+                },
+                {
+                  "chunk_id": "cn_k0106",
+                  "print_page": 106
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch04",
+      "source_chapter": "第4章",
+      "title": "网络层",
+      "ordinal": 4,
+      "modules": [
+        {
+          "module_id": "cn_m04_01",
+          "title": "IP 编址与转发",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c04_01",
+              "title": "数据报服务与网络层两个层面",
+              "learning_objective": "理解互联网采用无连接数据报服务的端到端原则，并区分数据层面与控制层面。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "数据报",
+                "数据层面",
+                "控制层面"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "转发表用于逐分组转发，路由选择过程负责形成和更新转发表。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "网络层以尽最大努力的数据报方式转发分组；数据层面处理局部转发，控制层面决定全网路由。"
+                ],
+                "case_prompt": "把路由器收到一个分组后的查表动作与路由协议更新表项的动作分别归类。",
+                "practice_tags": [
+                  "计算机网络",
+                  "数据报",
+                  "数据层面",
+                  "控制层面"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0115",
+                  "print_page": 115
+                },
+                {
+                  "chunk_id": "cn_k0117",
+                  "print_page": 117
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1
+            },
+            {
+              "concept_id": "cn_c04_02",
+              "title": "虚拟互连网络、IP 地址与 CIDR",
+              "learning_objective": "理解 IP 将异构网络抽象为统一互连网，并能依据网络前缀解释 CIDR 地址块。",
+              "prerequisite_concept_ids": [
+                "cn_c04_01"
+              ],
+              "key_terms": [
+                "IP地址",
+                "网络前缀",
+                "CIDR"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "CIDR 前缀长度决定地址块范围，不能再按固定 A、B、C 类边界判断网络。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "IP 协议在异构链路之上提供统一编址与分组格式；CIDR 用可变长度网络前缀聚合连续地址。"
+                ],
+                "case_prompt": "给定 128.14.35.7/20，写出网络前缀并判断地址块的范围。",
+                "practice_tags": [
+                  "计算机网络",
+                  "IP地址",
+                  "网络前缀",
+                  "CIDR"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0119",
+                  "print_page": 119
+                },
+                {
+                  "chunk_id": "cn_k0122",
+                  "print_page": 122
+                },
+                {
+                  "chunk_id": "cn_k0126",
+                  "print_page": 126
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_4_4",
+                  "figure_label": "图4.4",
+                  "caption": "网际协议IP及其配套协议",
+                  "source_chunk_id": "cn_k0119",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c04_03",
+              "title": "IP 地址、MAC 地址与 ARP",
+              "learning_objective": "区分跨网络定位使用的 IP 地址和本链路交付使用的 MAC 地址，并说明 ARP 的解析作用。",
+              "prerequisite_concept_ids": [
+                "cn_c04_02"
+              ],
+              "key_terms": [
+                "IP地址",
+                "MAC地址",
+                "ARP"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "路由转发过程中 IP 目的地址通常保持不变，而每跳链路帧的 MAC 地址会重新封装。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "IP 地址标识网络层接口的位置，MAC 地址服务于具体链路；ARP 在本链路上把已知 IP 地址解析为 MAC 地址。"
+                ],
+                "case_prompt": "跟踪主机跨路由器发送分组时，每一跳的源/目的 IP 和源/目的 MAC 如何变化。",
+                "practice_tags": [
+                  "计算机网络",
+                  "IP地址",
+                  "MAC地址",
+                  "ARP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0130",
+                  "print_page": 130
+                },
+                {
+                  "chunk_id": "cn_k0133",
+                  "print_page": 133
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            },
+            {
+              "concept_id": "cn_c04_04",
+              "title": "IP 数据报与最长前缀匹配",
+              "learning_objective": "识别 IPv4 数据报关键首部字段，并能按最长前缀匹配选择下一跳。",
+              "prerequisite_concept_ids": [
+                "cn_c04_02"
+              ],
+              "key_terms": [
+                "IP数据报",
+                "转发表",
+                "最长前缀匹配"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "匹配多个路由表项时，应选择网络前缀最长而不是数值最大或最早出现的表项。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "路由器读取 IP 首部的目的地址，在转发表中寻找覆盖该地址且前缀最长的表项，再从指定接口转发。"
+                ],
+                "case_prompt": "给定三条重叠前缀和一个目的地址，逐位比较并写出最终转发接口。",
+                "practice_tags": [
+                  "计算机网络",
+                  "IP数据报",
+                  "转发表",
+                  "最长前缀匹配"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0136",
+                  "print_page": 136
+                },
+                {
+                  "chunk_id": "cn_k0140",
+                  "print_page": 140
+                },
+                {
+                  "chunk_id": "cn_k0142",
+                  "print_page": 142
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m04_02",
+          "title": "控制、演进与边界机制",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c04_05",
+              "title": "ICMP 与 IPv6",
+              "learning_objective": "理解 ICMP 的差错报告和探测作用，并比较 IPv6 与 IPv4 在地址和首部组织上的主要变化。",
+              "prerequisite_concept_ids": [
+                "cn_c04_04"
+              ],
+              "key_terms": [
+                "ICMP",
+                "PING",
+                "IPv6"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "ICMP 报文用于报告或探测网络状态，不能把它理解为保证 IP 可靠交付。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "ICMP 随 IP 工作以报告差错或响应查询；IPv6 扩展地址空间并重新组织基础首部与扩展首部。"
+                ],
+                "case_prompt": "区分一次 PING 探测、路由器丢弃超时报文和运输层重传各自属于哪一层机制。",
+                "practice_tags": [
+                  "计算机网络",
+                  "ICMP",
+                  "PING",
+                  "IPv6"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0146",
+                  "print_page": 146
+                },
+                {
+                  "chunk_id": "cn_k0148",
+                  "print_page": 148
+                },
+                {
+                  "chunk_id": "cn_k0149",
+                  "print_page": 149
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            },
+            {
+              "concept_id": "cn_c04_06",
+              "title": "RIP、OSPF 与 BGP 路由选择",
+              "learning_objective": "区分距离向量、链路状态和路径向量思路，并说明内部与外部网关协议的适用边界。",
+              "prerequisite_concept_ids": [
+                "cn_c04_01"
+              ],
+              "key_terms": [
+                "RIP",
+                "OSPF",
+                "BGP",
+                "自治系统"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "RIP、OSPF 和 BGP 的信息范围与目标不同，不能只按最短路径算法名称比较。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "RIP 交换距离信息，OSPF 在自治系统内传播链路状态，BGP 在自治系统之间按路径和策略选择可达路由。"
+                ],
+                "case_prompt": "判断校园网内部路由与不同运营商自治系统之间的路由分别应由哪类协议负责。",
+                "practice_tags": [
+                  "计算机网络",
+                  "RIP",
+                  "OSPF",
+                  "BGP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0157",
+                  "print_page": 157
+                },
+                {
+                  "chunk_id": "cn_k0159",
+                  "print_page": 159
+                },
+                {
+                  "chunk_id": "cn_k0164",
+                  "print_page": 164
+                },
+                {
+                  "chunk_id": "cn_k0168",
+                  "print_page": 168
+                },
+                {
+                  "chunk_id": "cn_k0175",
+                  "print_page": 175
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_4_54",
+                  "figure_label": "图4.54",
+                  "caption": "典型的路由器的结构",
+                  "source_chunk_id": "cn_k0175",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c04_07",
+              "title": "VPN、NAT 与 SDN",
+              "learning_objective": "理解 VPN 隧道、NAT 地址转换和 SDN 控制分离分别解决的网络边界问题。",
+              "prerequisite_concept_ids": [
+                "cn_c04_04"
+              ],
+              "key_terms": [
+                "VPN",
+                "NAT",
+                "SDN"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "NAT 改写地址映射并不等同于加密；VPN 的安全目标与 SDN 的控制架构也不同。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "VPN 在公共网络上建立逻辑专用通道，NAT 在私网与公网之间转换地址，SDN 将控制逻辑从转发设备中抽离。"
+                ],
+                "case_prompt": "为私网主机访问互联网、异地校区安全互联和集中下发转发策略分别选择机制。",
+                "practice_tags": [
+                  "计算机网络",
+                  "VPN",
+                  "NAT",
+                  "SDN"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0185",
+                  "print_page": 185
+                },
+                {
+                  "chunk_id": "cn_k0188",
+                  "print_page": 188
+                },
+                {
+                  "chunk_id": "cn_k0194",
+                  "print_page": 194
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 7,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_4_65",
+                  "figure_label": "图4.65",
+                  "caption": "NAT路由器的工作原理",
+                  "source_chunk_id": "cn_k0188",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch05",
+      "source_chapter": "第5章",
+      "title": "运输层",
+      "ordinal": 5,
+      "modules": [
+        {
+          "module_id": "cn_m05_01",
+          "title": "进程通信与可靠传输",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c05_01",
+              "title": "进程通信、端口与复用分用",
+              "learning_objective": "理解运输层提供进程到进程的逻辑通信，并能用端口解释复用和分用。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "端口",
+                "复用",
+                "分用",
+                "套接字"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "IP 地址定位主机接口，端口号进一步定位主机中的应用进程。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "运输层在主机端系统中工作，把多个应用进程的数据复用到网络，并按端口把到达的数据分交给对应进程。"
+                ],
+                "case_prompt": "解释一台主机同时浏览网页和收取邮件时，运输层怎样把返回数据交给正确应用。",
+                "practice_tags": [
+                  "计算机网络",
+                  "端口",
+                  "复用",
+                  "分用"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0211",
+                  "print_page": 211
+                },
+                {
+                  "chunk_id": "cn_k0213",
+                  "print_page": 213
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_5_2",
+                  "figure_label": "图5.2",
+                  "caption": "TCP/IP体系中的运输层协议",
+                  "source_chunk_id": "cn_k0213",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c05_02",
+              "title": "UDP 与 TCP 的服务差异",
+              "learning_objective": "比较 UDP 与 TCP 在连接、可靠性、报文边界和开销上的差异，并据应用需求选择协议。",
+              "prerequisite_concept_ids": [
+                "cn_c05_01"
+              ],
+              "key_terms": [
+                "UDP",
+                "TCP",
+                "无连接",
+                "面向连接"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "UDP 不保证可靠交付不代表应用一定不可靠，应用可以按自身需求增加机制。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "UDP 提供轻量的无连接数据报服务；TCP 建立连接并提供可靠、有序的字节流服务。"
+                ],
+                "case_prompt": "为实时语音、文件下载和一次短查询分别选择 UDP 或 TCP，并说明取舍。",
+                "practice_tags": [
+                  "计算机网络",
+                  "UDP",
+                  "TCP",
+                  "无连接"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0215",
+                  "print_page": 215
+                },
+                {
+                  "chunk_id": "cn_k0219",
+                  "print_page": 219
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "cn_c05_03",
+              "title": "停止等待、ARQ 与流水线",
+              "learning_objective": "理解确认、超时重传和序号如何实现可靠传输，并说明流水线相对停止等待的效率优势。",
+              "prerequisite_concept_ids": [
+                "cn_c05_02"
+              ],
+              "key_terms": [
+                "停止等待",
+                "ARQ",
+                "确认",
+                "超时重传"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "收到重复分组时仍需确认，发送方才能结束不确定状态。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "可靠传输利用序号识别重复、确认告知接收结果、定时器触发重传；流水线允许多个未确认分组同时在途。"
+                ],
+                "case_prompt": "画出确认报文丢失时停止等待协议的时间线，并标出接收方如何处理重复分组。",
+                "practice_tags": [
+                  "计算机网络",
+                  "停止等待",
+                  "ARQ",
+                  "确认"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0221",
+                  "print_page": 221
+                },
+                {
+                  "chunk_id": "cn_k0224",
+                  "print_page": 224
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m05_02",
+          "title": "TCP 窗口、控制与连接",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c05_04",
+              "title": "TCP 首部、滑动窗口与重传",
+              "learning_objective": "识别序号、确认号、窗口等 TCP 首部字段，并理解窗口推进与超时重传的关系。",
+              "prerequisite_concept_ids": [
+                "cn_c05_03"
+              ],
+              "key_terms": [
+                "TCP首部",
+                "滑动窗口",
+                "重传超时"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "TCP 序号按字节编号，确认号表示期望收到的下一个字节序号。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "TCP 用首部控制字段和字节序号维护发送、已确认与可接收范围，并根据往返时间估计重传超时。"
+                ],
+                "case_prompt": "给定发送窗口、已确认字节和一个丢失报文段，写出窗口变化与可能的重传条件。",
+                "practice_tags": [
+                  "计算机网络",
+                  "TCP首部",
+                  "滑动窗口",
+                  "重传超时"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0225",
+                  "print_page": 225
+                },
+                {
+                  "chunk_id": "cn_k0229",
+                  "print_page": 229
+                },
+                {
+                  "chunk_id": "cn_k0233",
+                  "print_page": 233
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4
+            },
+            {
+              "concept_id": "cn_c05_05",
+              "title": "流量控制与拥塞控制",
+              "learning_objective": "区分接收方流量控制和网络拥塞控制，并理解慢开始、拥塞避免、快重传与快恢复。",
+              "prerequisite_concept_ids": [
+                "cn_c05_04"
+              ],
+              "key_terms": [
+                "流量控制",
+                "拥塞控制",
+                "拥塞窗口"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "接收窗口反映接收端能力，拥塞窗口反映网络承载判断；实际发送受两者共同限制。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "流量控制防止发送方压垮接收缓存，拥塞控制则根据网络反馈调整在途数据量以避免持续拥塞。"
+                ],
+                "case_prompt": "当接收窗口很大但网络连续丢包时，判断发送上限由哪一个窗口主导。",
+                "practice_tags": [
+                  "计算机网络",
+                  "流量控制",
+                  "拥塞控制",
+                  "拥塞窗口"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0236",
+                  "print_page": 236
+                },
+                {
+                  "chunk_id": "cn_k0238",
+                  "print_page": 238
+                },
+                {
+                  "chunk_id": "cn_k0241",
+                  "print_page": 241
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_5_21",
+                  "figure_label": "图5.21",
+                  "caption": "利用可变窗口进行流量控制举例",
+                  "source_chunk_id": "cn_k0236",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c05_06",
+              "title": "TCP 连接建立、释放与状态",
+              "learning_objective": "按报文与状态变化解释 TCP 三报文握手、四报文释放和 TIME-WAIT 的作用。",
+              "prerequisite_concept_ids": [
+                "cn_c05_04"
+              ],
+              "key_terms": [
+                "三报文握手",
+                "连接释放",
+                "TIME-WAIT"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "握手的目标不仅是确认双方在线，还要同步连接参数与初始序号。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "TCP 通过握手确认双向通信能力并同步状态，释放时两个方向分别关闭；有限状态机记录连接生命周期。"
+                ],
+                "case_prompt": "按客户和服务器两条时间线写出连接建立与主动关闭时的报文和状态。",
+                "practice_tags": [
+                  "计算机网络",
+                  "三报文握手",
+                  "连接释放",
+                  "TIME-WAIT"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0246",
+                  "print_page": 246
+                },
+                {
+                  "chunk_id": "cn_k0247",
+                  "print_page": 247
+                },
+                {
+                  "chunk_id": "cn_k0248",
+                  "print_page": 248
+                },
+                {
+                  "chunk_id": "cn_k0250",
+                  "print_page": 250
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_5_28",
+                  "figure_label": "图5.28",
+                  "caption": "用三报文握手建立TCP连接",
+                  "source_chunk_id": "cn_k0247",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch06",
+      "source_chapter": "第6章",
+      "title": "应用层",
+      "ordinal": 6,
+      "modules": [
+        {
+          "module_id": "cn_m06_01",
+          "title": "命名、Web 与邮件",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c06_01",
+              "title": "DNS 层次命名与解析",
+              "learning_objective": "理解域名层次、域名服务器分工与递归/迭代查询，并能沿查询链定位解析结果。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "DNS",
+                "域名空间",
+                "域名服务器"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "DNS 是分布式命名系统，不是一台集中保存全部域名记录的服务器。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "DNS 把便于人使用的域名映射为 IP 地址，并用层次名字空间与分布式服务器组织查询和缓存。"
+                ],
+                "case_prompt": "从本地域名服务器开始，追踪一次未命中缓存的域名解析可能经过哪些服务器。",
+                "practice_tags": [
+                  "计算机网络",
+                  "DNS",
+                  "域名空间",
+                  "域名服务器"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0261",
+                  "print_page": 261
+                },
+                {
+                  "chunk_id": "cn_k0264",
+                  "print_page": 264
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_6_1",
+                  "figure_label": "图6.1",
+                  "caption": "互联网的域名空间",
+                  "source_chunk_id": "cn_k0264",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c06_02",
+              "title": "URL、HTTP 与万维网交互",
+              "learning_objective": "理解 URL 如何定位资源，并能按请求、响应、连接与缓存解释 HTTP 交互。",
+              "prerequisite_concept_ids": [
+                "cn_c06_01"
+              ],
+              "key_terms": [
+                "URL",
+                "HTTP",
+                "浏览器",
+                "缓存"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "HTTP 负责传送资源表示，HTML 负责文档结构，URL 负责标识资源位置和访问方式。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "浏览器依据 URL 建立到服务器的应用层交互，通过 HTTP 请求资源并根据响应状态与内容进行处理。"
+                ],
+                "case_prompt": "把输入网址到首个 HTML 文档到达浏览器的步骤按 DNS、运输层和 HTTP 列出。",
+                "practice_tags": [
+                  "计算机网络",
+                  "URL",
+                  "HTTP",
+                  "浏览器"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0272",
+                  "print_page": 272
+                },
+                {
+                  "chunk_id": "cn_k0274",
+                  "print_page": 274
+                },
+                {
+                  "chunk_id": "cn_k0276",
+                  "print_page": 276
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "cn_c06_03",
+              "title": "电子邮件传送与读取",
+              "learning_objective": "区分 SMTP 发送链路与 POP3/IMAP 读取方式，并说明邮件用户代理与服务器的角色。",
+              "prerequisite_concept_ids": [
+                "cn_c06_02"
+              ],
+              "key_terms": [
+                "SMTP",
+                "POP3",
+                "IMAP",
+                "MIME"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "SMTP 主要负责推送邮件，用户读取邮件通常使用 POP3、IMAP 或基于 Web 的接口。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "电子邮件通过用户代理提交给邮件服务器，再由 SMTP 在服务器之间传送；接收者使用读取协议访问邮箱。"
+                ],
+                "case_prompt": "跟踪一封带附件邮件从发送者用户代理到接收者手机的协议链路。",
+                "practice_tags": [
+                  "计算机网络",
+                  "SMTP",
+                  "POP3",
+                  "IMAP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0293",
+                  "print_page": 293
+                },
+                {
+                  "chunk_id": "cn_k0296",
+                  "print_page": 296
+                },
+                {
+                  "chunk_id": "cn_k0298",
+                  "print_page": 298
+                },
+                {
+                  "chunk_id": "cn_k0300",
+                  "print_page": 300
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m06_02",
+          "title": "配置、管理与应用接口",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c06_04",
+              "title": "DHCP 动态配置与租用期",
+              "learning_objective": "说明 DHCP 如何分配 IP、掩码、默认路由与 DNS 参数，并理解租用、更新和中继。",
+              "prerequisite_concept_ids": [
+                "cn_c04_02"
+              ],
+              "key_terms": [
+                "DHCP",
+                "租用期",
+                "中继代理"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "DHCP 分配的是有期限的配置，客户需要按计时器更新，跨网段时还需中继代理。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "DHCP 通过发现、提供、请求和确认等报文自动完成主机协议配置，并用租用期管理地址复用。"
+                ],
+                "case_prompt": "写出一台新接入校园网的主机从无地址到获得可用配置的报文顺序。",
+                "practice_tags": [
+                  "计算机网络",
+                  "DHCP",
+                  "租用期",
+                  "中继代理"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0304",
+                  "print_page": 304
+                },
+                {
+                  "chunk_id": "cn_k0305",
+                  "print_page": 305
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_6_18",
+                  "figure_label": "图6.18",
+                  "caption": "DHCP中继代理以单播方式转发发现报文",
+                  "source_chunk_id": "cn_k0305",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c06_05",
+              "title": "SNMP、SMI 与 MIB",
+              "learning_objective": "区分网络管理进程、代理、SMI、MIB 和 SNMP 报文，并说明轮询与陷阱的用途。",
+              "prerequisite_concept_ids": [
+                "cn_c06_04"
+              ],
+              "key_terms": [
+                "SNMP",
+                "SMI",
+                "MIB",
+                "代理"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "MIB 描述被管对象，SMI 规定组织和编码规则，SNMP 负责交换管理操作。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "网络管理系统通过代理读取或设置被管对象，使用 MIB 组织对象并依照 SMI 表示这些管理信息。"
+                ],
+                "case_prompt": "把读取路由器接口计数器的过程拆成管理进程、SNMP 报文、代理与 MIB 对象。",
+                "practice_tags": [
+                  "计算机网络",
+                  "SNMP",
+                  "SMI",
+                  "MIB"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0306",
+                  "print_page": 306
+                },
+                {
+                  "chunk_id": "cn_k0311",
+                  "print_page": 311
+                },
+                {
+                  "chunk_id": "cn_k0313",
+                  "print_page": 313
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 5
+            },
+            {
+              "concept_id": "cn_c06_06",
+              "title": "套接字接口与 P2P 分发",
+              "learning_objective": "理解套接字作为应用与运输层的接口，并比较客户-服务器与 P2P 文件分发。",
+              "prerequisite_concept_ids": [
+                "cn_c05_01"
+              ],
+              "key_terms": [
+                "套接字",
+                "系统调用",
+                "P2P"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "P2P 中每个对等方可同时请求和提供服务，但仍要通过套接字使用运输层。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "应用进程通过套接字系统调用建立、发送和接收网络数据；P2P 让多个对等方共同承担文件分发。"
+                ],
+                "case_prompt": "比较同一文件由单服务器分发和由多个对等方协同分发时的带宽来源。",
+                "practice_tags": [
+                  "计算机网络",
+                  "套接字",
+                  "系统调用",
+                  "P2P"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0316",
+                  "print_page": 316
+                },
+                {
+                  "chunk_id": "cn_k0320",
+                  "print_page": 320
+                },
+                {
+                  "chunk_id": "cn_k0324",
+                  "print_page": 324
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 6,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_6_26",
+                  "figure_label": "图6.26",
+                  "caption": "多个应用进程使用系统调用的机制",
+                  "source_chunk_id": "cn_k0316",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch07",
+      "source_chapter": "第7章",
+      "title": "网络安全",
+      "ordinal": 7,
+      "modules": [
+        {
+          "module_id": "cn_m07_01",
+          "title": "威胁、密码与鉴别",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c07_01",
+              "title": "被动攻击、主动攻击与安全目标",
+              "learning_objective": "区分窃听与流量分析等被动攻击和篡改、重放、拒绝服务等主动攻击。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "被动攻击",
+                "主动攻击",
+                "机密性",
+                "完整性"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "保密只能应对部分威胁，身份、完整性、可用性和抗重放也需要独立机制。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "被动攻击观察通信而不改变信息流，主动攻击会修改、伪造、重放或阻断通信。"
+                ],
+                "case_prompt": "把窃听报文、修改报文和压垮服务器分别归类，并写出受损的安全目标。",
+                "practice_tags": [
+                  "计算机网络",
+                  "被动攻击",
+                  "主动攻击",
+                  "机密性"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0334",
+                  "print_page": 334
+                },
+                {
+                  "chunk_id": "cn_k0336",
+                  "print_page": 336
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_7_1",
+                  "figure_label": "图7.1",
+                  "caption": "对网络的被动攻击和主动攻击",
+                  "source_chunk_id": "cn_k0334",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c07_02",
+              "title": "对称密钥与公钥密码体制",
+              "learning_objective": "比较对称密码和公钥密码在密钥关系、性能与分配上的差异，并理解混合使用的动机。",
+              "prerequisite_concept_ids": [
+                "cn_c07_01"
+              ],
+              "key_terms": [
+                "对称密钥",
+                "公钥",
+                "私钥"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "公钥可以公开不代表私钥可以共享；加密和签名使用密钥的方向也不同。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "对称体制使用共享密钥完成加解密，速度较快；公钥体制使用成对密钥，便于密钥分配和签名。"
+                ],
+                "case_prompt": "设计一个先协商会话密钥、再加密大量数据的通信过程并说明两类算法分工。",
+                "practice_tags": [
+                  "计算机网络",
+                  "对称密钥",
+                  "公钥",
+                  "私钥"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0337",
+                  "print_page": 337
+                },
+                {
+                  "chunk_id": "cn_k0338",
+                  "print_page": 338
+                },
+                {
+                  "chunk_id": "cn_k0339",
+                  "print_page": 339
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2
+            },
+            {
+              "concept_id": "cn_c07_03",
+              "title": "报文鉴别、数字签名与证书链",
+              "learning_objective": "区分报文鉴别码、数字签名和数字证书，并能沿证书链解释公钥信任。",
+              "prerequisite_concept_ids": [
+                "cn_c07_02"
+              ],
+              "key_terms": [
+                "报文鉴别码",
+                "数字签名",
+                "数字证书",
+                "证书链"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "证书证明公钥与身份的绑定，数字签名证明报文来源与完整性，二者作用不同。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "鉴别码使用共享秘密验证报文，数字签名使用私钥产生可公开验证的证据，证书链把公钥绑定到可信身份。"
+                ],
+                "case_prompt": "解释浏览器验证一个网站证书时，为什么还要检查签发者和上级证书。",
+                "practice_tags": [
+                  "计算机网络",
+                  "报文鉴别码",
+                  "数字签名",
+                  "数字证书"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0341",
+                  "print_page": 341
+                },
+                {
+                  "chunk_id": "cn_k0350",
+                  "print_page": 350
+                },
+                {
+                  "chunk_id": "cn_k0352",
+                  "print_page": 352
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_7_16",
+                  "figure_label": "图7.16",
+                  "caption": "树状结构的多级认证系统(a)和证书链(b)",
+                  "source_chunk_id": "cn_k0352",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m07_02",
+          "title": "分层安全与系统防护",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c07_04",
+              "title": "IPsec 与 TLS 安全会话",
+              "learning_objective": "理解网络层 IPsec 和运输层之上的 TLS 保护边界，并说明 TLS 建立安全会话的基本过程。",
+              "prerequisite_concept_ids": [
+                "cn_c07_03"
+              ],
+              "key_terms": [
+                "IPsec",
+                "TLS",
+                "安全会话"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "安全协议所在层次决定它保护的对象和部署位置，不能把 TLS 当作 IP 层隧道。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "IPsec 可保护 IP 数据报及网络间通信，TLS 在应用与运输服务之间建立经过鉴别和加密的会话。"
+                ],
+                "case_prompt": "比较异地网络 VPN 通道与浏览器 HTTPS 会话分别更接近哪种安全协议边界。",
+                "practice_tags": [
+                  "计算机网络",
+                  "IPsec",
+                  "TLS",
+                  "安全会话"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0352",
+                  "print_page": 352
+                },
+                {
+                  "chunk_id": "cn_k0357",
+                  "print_page": 357
+                },
+                {
+                  "chunk_id": "cn_k0359",
+                  "print_page": 359
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_7_21",
+                  "figure_label": "图7.21",
+                  "caption": "TLS建立安全会话的工作原理",
+                  "source_chunk_id": "cn_k0359",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c07_05",
+              "title": "防火墙与入侵检测",
+              "learning_objective": "理解防火墙的边界访问控制和入侵检测的行为发现能力，并说明二者互补关系。",
+              "prerequisite_concept_ids": [
+                "cn_c07_01"
+              ],
+              "key_terms": [
+                "防火墙",
+                "入侵检测",
+                "访问控制"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "防火墙无法识别所有越权或内部攻击，允许通过的流量仍可能需要持续检测。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "防火墙按规则控制进出网络的通信，入侵检测系统分析事件与流量以发现绕过或发生在边界后的攻击。"
+                ],
+                "case_prompt": "为允许 Web 服务但阻断异常扫描的场景，分别写出防火墙和入侵检测应承担的任务。",
+                "practice_tags": [
+                  "计算机网络",
+                  "防火墙",
+                  "入侵检测",
+                  "访问控制"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0364",
+                  "print_page": 364
+                },
+                {
+                  "chunk_id": "cn_k0365",
+                  "print_page": 365
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch08",
+      "source_chapter": "第8章",
+      "title": "互联网上的音频/视频服务",
+      "ordinal": 8,
+      "modules": [
+        {
+          "module_id": "cn_m08_01",
+          "title": "实时媒体与传输协议",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c08_01",
+              "title": "时延、抖动与播放缓存",
+              "learning_objective": "理解多媒体业务对时延和抖动的敏感性，并说明播放缓存如何平滑非等时到达。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "时延抖动",
+                "播放缓存",
+                "实时媒体"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "更大的播放缓存可减少卡顿，但也会增加首播等待和交互时延。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "互联网分组到达并非等时，接收端利用播放缓存吸收到达间隔波动，再按稳定节奏播放媒体。"
+                ],
+                "case_prompt": "比较直播与点播对播放缓存大小的不同取舍。",
+                "practice_tags": [
+                  "计算机网络",
+                  "时延抖动",
+                  "播放缓存",
+                  "实时媒体"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0370",
+                  "print_page": 370
+                },
+                {
+                  "chunk_id": "cn_k0371",
+                  "print_page": 371
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_8_2",
+                  "figure_label": "图8.2",
+                  "caption": "缓存把非等时的分组变换为等时的",
+                  "source_chunk_id": "cn_k0371",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c08_02",
+              "title": "流式媒体与 RTSP",
+              "learning_objective": "区分下载后播放与流式播放，并理解媒体服务器和 RTSP 对播放控制的作用。",
+              "prerequisite_concept_ids": [
+                "cn_c08_01"
+              ],
+              "key_terms": [
+                "流式媒体",
+                "媒体服务器",
+                "RTSP"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "RTSP 负责播放控制，不等同于承载所有媒体数据的运输协议。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "流式服务允许客户端边接收边播放，媒体服务器处理媒体传送，RTSP 提供播放、暂停和定位等控制。"
+                ],
+                "case_prompt": "把一次视频在线播放拆成资源定位、会话控制、媒体传送和播放缓存四个环节。",
+                "practice_tags": [
+                  "计算机网络",
+                  "流式媒体",
+                  "媒体服务器",
+                  "RTSP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0374",
+                  "print_page": 374
+                },
+                {
+                  "chunk_id": "cn_k0378",
+                  "print_page": 378
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_8_8",
+                  "figure_label": "图8.8",
+                  "caption": "使用RTSP的媒体服务器的工作过程",
+                  "source_chunk_id": "cn_k0378",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c08_03",
+              "title": "RTP、RTCP 与 SIP",
+              "learning_objective": "理解 RTP/RTCP 的媒体传输与质量反馈分工，以及 SIP 建立和管理会话的作用。",
+              "prerequisite_concept_ids": [
+                "cn_c08_02"
+              ],
+              "key_terms": [
+                "RTP",
+                "RTCP",
+                "SIP"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "RTP 提供序号和时间戳等实时信息，但本身不保证按时到达或可靠重传。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "RTP 承载实时媒体并提供时间关系，RTCP 汇报传输质量，SIP 负责建立、修改和结束多媒体会话。"
+                ],
+                "case_prompt": "为一次网络通话标出会话建立、音频分组传送和质量反馈分别使用的协议角色。",
+                "practice_tags": [
+                  "计算机网络",
+                  "RTP",
+                  "RTCP",
+                  "SIP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0379",
+                  "print_page": 379
+                },
+                {
+                  "chunk_id": "cn_k0384",
+                  "print_page": 384
+                },
+                {
+                  "chunk_id": "cn_k0388",
+                  "print_page": 388
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m08_02",
+          "title": "服务质量与资源控制",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c08_04",
+              "title": "QoS、调度与区分服务",
+              "learning_objective": "理解 QoS 指标、队列调度和流量管制，并比较综合服务与区分服务的粒度。",
+              "prerequisite_concept_ids": [
+                "cn_c08_01"
+              ],
+              "key_terms": [
+                "QoS",
+                "队列调度",
+                "流量管制",
+                "DiffServ"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "服务质量机制是在资源有限时区分处理，并不能消除物理链路容量约束。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "路由器可用优先级或公平排队调度分组，并用管制约束流量；IntServ 关注流级预留，DiffServ 按类别处理。"
+                ],
+                "case_prompt": "为实时会议和后台备份设计两个服务类别，并说明边界路由器如何标记和管制。",
+                "practice_tags": [
+                  "计算机网络",
+                  "QoS",
+                  "队列调度",
+                  "流量管制"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0390",
+                  "print_page": 390
+                },
+                {
+                  "chunk_id": "cn_k0392",
+                  "print_page": 392
+                },
+                {
+                  "chunk_id": "cn_k0395",
+                  "print_page": 395
+                },
+                {
+                  "chunk_id": "cn_k0398",
+                  "print_page": 398
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_8_26",
+                  "figure_label": "图8.26",
+                  "caption": "区分服务码点DSCP占DS字段的前6位",
+                  "source_chunk_id": "cn_k0398",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "cn_ch09",
+      "source_chapter": "第9章",
+      "title": "无线网络和移动网络",
+      "ordinal": 9,
+      "modules": [
+        {
+          "module_id": "cn_m09_01",
+          "title": "无线局域网",
+          "ordinal": 1,
+          "concepts": [
+            {
+              "concept_id": "cn_c09_01",
+              "title": "BSS、ESS 与无线接入",
+              "learning_objective": "识别基本服务集、接入点、分配系统和扩展服务集，并说明基础设施模式的通信路径。",
+              "prerequisite_concept_ids": [],
+              "key_terms": [
+                "BSS",
+                "ESS",
+                "接入点"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "无线站之间的逻辑通信通常要经过接入点，不能只根据物理距离判断帧路径。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "一个 BSS 由一组无线站和接入点构成，多个 BSS 可通过分配系统连接为 ESS 并接入其他网络。"
+                ],
+                "case_prompt": "画出两个教室接入点组成同一 ESS 时，终端跨接入点通信的路径。",
+                "practice_tags": [
+                  "计算机网络",
+                  "BSS",
+                  "ESS",
+                  "接入点"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0405",
+                  "print_page": 405
+                },
+                {
+                  "chunk_id": "cn_k0406",
+                  "print_page": 406
+                },
+                {
+                  "chunk_id": "cn_k0407",
+                  "print_page": 407
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 1,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_9_1",
+                  "figure_label": "图9.1",
+                  "caption": "IEEE802.11的基本服务集BSS和扩展服务集ESS",
+                  "source_chunk_id": "cn_k0407",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c09_02",
+              "title": "CSMA/CA、确认与退避",
+              "learning_objective": "解释无线链路为何使用碰撞避免而非碰撞检测，并理解确认、预约和随机退避。",
+              "prerequisite_concept_ids": [
+                "cn_c09_01"
+              ],
+              "key_terms": [
+                "CSMA/CA",
+                "确认",
+                "退避"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "无线站难以边发送边可靠检测碰撞，监听到空闲也可能受隐藏站影响。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "802.11 在发送前监听信道并等待规定间隔，通过确认判断成功，竞争失败或信道忙时按退避计数重新尝试。"
+                ],
+                "case_prompt": "给定两个隐藏站同时向接入点发送，说明碰撞避免、确认和退避如何共同工作。",
+                "practice_tags": [
+                  "计算机网络",
+                  "CSMA/CA",
+                  "确认",
+                  "退避"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0412",
+                  "print_page": 412
+                },
+                {
+                  "chunk_id": "cn_k0413",
+                  "print_page": 413
+                },
+                {
+                  "chunk_id": "cn_k0416",
+                  "print_page": 416
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 2,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_9_8",
+                  "figure_label": "图9.8",
+                  "caption": "在争用期根据退避算法公平竞争",
+                  "source_chunk_id": "cn_k0416",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c09_03",
+              "title": "802.11 MAC 帧与地址字段",
+              "learning_objective": "理解 802.11 帧中多个地址字段如何适配无线站、接入点与分配系统之间的转发。",
+              "prerequisite_concept_ids": [
+                "cn_c09_01"
+              ],
+              "key_terms": [
+                "802.11帧",
+                "地址字段",
+                "分配系统"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "无线帧的地址字段不能机械套用以太网的源地址和目的地址两个字段。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "802.11 MAC 帧根据是否经过分配系统解释多个地址字段，以同时表达发送站、接收站、源和最终目的。"
+                ],
+                "case_prompt": "跟踪无线终端经接入点向有线服务器发送一帧时，各地址字段代表的节点。",
+                "practice_tags": [
+                  "计算机网络",
+                  "802.11帧",
+                  "地址字段",
+                  "分配系统"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0418",
+                  "print_page": 418
+                },
+                {
+                  "chunk_id": "cn_k0419",
+                  "print_page": 419
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 3
+            }
+          ]
+        },
+        {
+          "module_id": "cn_m09_02",
+          "title": "个人区域、蜂窝与移动性",
+          "ordinal": 2,
+          "concepts": [
+            {
+              "concept_id": "cn_c09_04",
+              "title": "WPAN、蓝牙与 ZigBee",
+              "learning_objective": "比较无线个人区域网中的蓝牙与 ZigBee 在覆盖、速率、功耗和组网目标上的差异。",
+              "prerequisite_concept_ids": [
+                "cn_c09_01"
+              ],
+              "key_terms": [
+                "WPAN",
+                "蓝牙",
+                "ZigBee"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "低功耗协议并不追求最高吞吐量，应用约束决定覆盖、速率和能耗的取舍。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "WPAN 服务于个人或近距离设备互连；蓝牙侧重通用短距连接，ZigBee 面向低速、低功耗和多节点组网。"
+                ],
+                "case_prompt": "为无线耳机和电池供电的楼宇传感器分别选择技术并说明取舍。",
+                "practice_tags": [
+                  "计算机网络",
+                  "WPAN",
+                  "蓝牙",
+                  "ZigBee"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0422",
+                  "print_page": 422
+                },
+                {
+                  "chunk_id": "cn_k0424",
+                  "print_page": 424
+                }
+              ],
+              "importance": "core",
+              "review_status": "verified",
+              "ordinal": 4,
+              "figure_guidance": {
+                "primary": {
+                  "asset_id": "cn_v8_fig_9_15",
+                  "figure_label": "图9.15",
+                  "caption": "ZigBee的协议栈",
+                  "source_chunk_id": "cn_k0424",
+                  "confidence": "high"
+                },
+                "related": []
+              }
+            },
+            {
+              "concept_id": "cn_c09_05",
+              "title": "蜂窝网络、LTE 与移动 IP",
+              "learning_objective": "理解蜂窝网络接入互联网的基本结构，并说明移动节点更换接入点时保持可达性的核心问题。",
+              "prerequisite_concept_ids": [
+                "cn_c09_01"
+              ],
+              "key_terms": [
+                "蜂窝网络",
+                "LTE",
+                "移动IP",
+                "切换"
+              ],
+              "learning_note": {
+                "kind": "reminder",
+                "text": "无线接入描述怎样连入网络，移动性管理还要处理位置变化、路由和持续会话。"
+              },
+              "learning_content": {
+                "explanation": [
+                  "蜂窝系统通过无线接入网和核心网连接互联网；移动 IP 等机制在节点位置变化时维持标识与可达路径。"
+                ],
+                "case_prompt": "描述手机从一个基站移动到另一个基站时，链路接入、地址可达和运输连接分别面临什么变化。",
+                "practice_tags": [
+                  "计算机网络",
+                  "蜂窝网络",
+                  "LTE",
+                  "移动IP"
+                ]
+              },
+              "sources": [
+                {
+                  "chunk_id": "cn_k0425",
+                  "print_page": 425
+                },
+                {
+                  "chunk_id": "cn_k0432",
+                  "print_page": 432
+                },
+                {
+                  "chunk_id": "cn_k0436",
+                  "print_page": 436
+                },
+                {
+                  "chunk_id": "cn_k0440",
+                  "print_page": 440
+                }
+              ],
+              "importance": "extended",
+              "review_status": "verified",
+              "ordinal": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

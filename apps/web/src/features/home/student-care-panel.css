@@ -1,0 +1,522 @@
+.student-care-panel {
+  position: fixed;
+  top: calc(var(--topbar-height, 68px) + 18px);
+  right: 24px;
+  z-index: 45;
+  display: grid;
+  box-sizing: border-box;
+  width: min(380px, calc(100vw - 48px));
+  max-height: min(360px, calc(100vh - var(--topbar-height, 68px) - 36px));
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  gap: 12px;
+  color: var(--home-ink, #202322);
+  border: 1px solid var(--home-line-strong, #aaa8a3);
+  border-top: 3px solid var(--home-amber, #ad741f);
+  border-radius: 8px;
+  background: var(--home-paper, #fffdfa);
+  box-shadow: 0 18px 44px rgb(32 35 34 / 18%), 0 3px 10px rgb(32 35 34 / 9%);
+  animation: student-care-enter 180ms ease-out;
+}
+
+.student-care-launcher {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 12px 9px 14px;
+  color: var(--home-ink, #202322);
+  border: 1px solid var(--home-line-strong, #aaa8a3);
+  border-left: 3px solid var(--home-teal, #2b776b);
+  border-radius: 7px;
+  background: var(--home-paper, #fffdfa);
+  box-shadow: 0 5px 16px rgb(32 35 34 / 7%);
+  animation: student-care-enter 180ms ease-out;
+}
+
+.student-care-launcher-copy {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.student-care-launcher-copy > svg {
+  flex: 0 0 auto;
+  color: var(--home-teal, #2b776b);
+}
+
+.student-care-launcher-copy > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.student-care-launcher-copy strong {
+  color: var(--home-ink, #202322);
+  font-size: 12px;
+}
+
+.student-care-launcher-copy small {
+  color: var(--home-muted, #68716d);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.student-care-launcher-link {
+  display: inline-flex;
+  min-height: 34px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  color: var(--home-blue, #315bd6);
+  border: 1px solid rgb(49 91 214 / 35%);
+  border-radius: 4px;
+  background: #f7f9ff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.student-care-launcher-link:hover {
+  color: #fff;
+  background: var(--home-blue, #315bd6);
+}
+
+.student-care-heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px 8px 14px;
+  border-bottom: 1px solid var(--home-line, #d4d1cd);
+  background: var(--home-paper, #fffdfa);
+}
+
+.student-care-heading-label {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  color: var(--home-amber, #8d621f);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.student-care-close {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  padding: 0;
+  color: var(--home-muted, #68716d);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.student-care-close:hover {
+  color: var(--home-ink, #202322);
+  border-color: var(--home-line, #d4d1cd);
+  background: var(--home-surface-soft, #f4f1e9);
+}
+
+.student-care-invitation,
+.student-care-light-step,
+.student-care-talk {
+  min-width: 0;
+  padding: 2px 16px 16px;
+}
+
+.student-care-invitation {
+  display: grid;
+  gap: 14px;
+}
+
+.student-care-invitation h2,
+.student-care-light-step h2 {
+  margin: 0;
+  color: var(--home-ink, #202322);
+  font-family: var(--xuetu-font-editorial);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.student-care-actions {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.student-care-quiet-actions {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.student-care-actions button,
+.student-care-talk form button,
+.student-care-quiet-actions button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 8px;
+  color: var(--home-ink-soft, #4c5350);
+  border: 1px solid var(--home-line-strong, #aaa8a3);
+  border-radius: 5px;
+  background: var(--home-paper, #fffdfa);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.student-care-actions button:hover,
+.student-care-talk form button:hover {
+  color: var(--home-blue, #315bd6);
+  border-color: var(--home-blue, #315bd6);
+}
+
+.student-care-panel button:disabled {
+  cursor: wait;
+  opacity: .58;
+}
+
+.student-care-reason {
+  min-width: 0;
+}
+
+.student-care-reason > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--home-muted, #68716d);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.student-care-reason > summary::-webkit-details-marker {
+  display: none;
+}
+
+.student-care-reason > summary svg {
+  transition: transform 150ms ease;
+}
+
+.student-care-reason[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.student-care-reason > div {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--home-line, #d4d1cd);
+}
+
+.student-care-reason:not([open]) > div {
+  display: none;
+}
+
+.student-care-reason p,
+.student-care-light-step p,
+.student-care-light-step small,
+.student-care-talk p {
+  margin: 0;
+  color: var(--home-ink-soft, #4c5350);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.student-care-quiet-actions button {
+  min-height: 30px;
+  padding: 4px 7px;
+  color: var(--home-muted, #68716d);
+  border-color: transparent;
+  background: transparent;
+  font-size: 12px;
+}
+
+.student-care-quiet-actions button:last-child {
+  color: var(--home-error, #a4433d);
+}
+
+.student-care-light-step {
+  display: grid;
+  gap: 14px;
+}
+
+.student-care-light-step > div:first-child {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.student-care-light-step > div:first-child > span {
+  color: var(--home-muted, #68716d);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.student-care-light-step small {
+  display: block;
+}
+
+.student-care-light-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--home-line, #d4d1cd);
+}
+
+.student-care-light-action > span {
+  color: var(--home-muted, #68716d);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.student-care-light-action > a,
+.student-care-original-task {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--home-blue, #315bd6);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.student-care-talk {
+  display: grid;
+  gap: 12px;
+}
+
+.student-care-talk form {
+  display: grid;
+  gap: 7px;
+}
+
+.student-care-talk form > label {
+  color: var(--home-muted, #68716d);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.student-care-talk form > div {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.student-care-talk textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 82px;
+  max-height: 150px;
+  resize: vertical;
+  padding: 10px 12px;
+  color: var(--home-ink, #202322);
+  border: 1px solid var(--home-line-strong, #aaa8a3);
+  border-radius: 5px;
+  background: var(--home-paper, #fffdfa);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.student-care-talk form button {
+  width: 100%;
+}
+
+.student-care-reply {
+  display: grid;
+  gap: 9px;
+  padding-left: 12px;
+  border-left: 2px solid var(--home-teal, #2b776b);
+}
+
+.student-care-thread,
+.student-care-exchange {
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+}
+
+.student-care-thread {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.student-care-exchange + .student-care-exchange {
+  padding-top: 10px;
+  border-top: 1px solid var(--home-line, #d4d1cd);
+}
+
+.student-care-user-turn {
+  display: grid;
+  gap: 3px;
+  padding-left: 12px;
+  border-left: 2px solid var(--home-blue, #315bd6);
+}
+
+.student-care-user-turn strong {
+  color: var(--home-ink, #202322);
+  font-size: 12px;
+}
+
+.student-care-reply section {
+  display: grid;
+  gap: 3px;
+}
+
+.student-care-reply strong {
+  color: var(--home-ink, #202322);
+  font-size: 13px;
+}
+
+.student-care-fallback,
+.student-care-notice,
+.student-care-error {
+  margin: 0;
+  padding-left: 12px;
+  color: var(--home-ink-soft, #4c5350);
+  border-left: 2px solid var(--home-amber, #ad741f);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.student-care-panel > .student-care-notice,
+.student-care-panel > .student-care-error {
+  margin: 0 16px 16px;
+}
+
+.student-care-error {
+  color: var(--home-error, #a4433d);
+  border-left-color: var(--home-error, #a4433d);
+}
+
+.student-care-original-task {
+  width: fit-content;
+}
+
+.student-care-talk-fallback-step {
+  display: flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  color: var(--home-blue, #315bd6);
+  border-top: 1px solid var(--home-line, #d4d1cd);
+  border-bottom: 1px solid var(--home-line, #d4d1cd);
+  text-decoration: none;
+}
+
+.student-care-talk-fallback-step > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.student-care-talk-fallback-step small {
+  color: var(--home-muted, #68716d);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.student-care-talk-fallback-step strong {
+  overflow-wrap: anywhere;
+  color: var(--home-ink, #202322);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.student-care-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.student-care-spinner {
+  animation: student-care-spin 900ms linear infinite;
+}
+
+.student-care-panel :is(button, a, summary, textarea):focus-visible {
+  outline: 3px solid rgb(49 91 214 / 25%);
+  outline-offset: 2px;
+}
+
+.student-care-launcher :is(a, button):focus-visible {
+  outline: 3px solid rgb(49 91 214 / 25%);
+  outline-offset: 2px;
+}
+
+@keyframes student-care-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes student-care-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-care-panel,
+  .student-care-launcher,
+  .student-care-spinner {
+    animation: none;
+  }
+
+  .student-care-reason > summary svg {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-care-launcher {
+    max-width: none;
+  }
+
+  .student-care-launcher-link {
+    padding-inline: 8px;
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "dataset_id": "408-three-course-source-v1",
+  "archive_file": "raw/output.zip",
+  "archive_sha256": "DBFA820489270C78F6E561C198CF3B75AAF7D03142FDF445CAA00A0DE82AFB24",
+  "package_schema": "output-json-and-figure-manifests-v2.1",
+  "source_origin": "user_supplied_local_archive",
+  "license_status": "unverified",
+  "usage_scope": "local_demo_only",
+  "provenance_status": "source_metadata_present_authorization_unverified",
+  "student_content_status": "source_layer_only_curriculum_pending",
+  "expected": {
+    "courses": 3,
+    "chunks": 1287,
+    "figure_assets": 601,
+    "figure_relations": 601,
+    "image_pairs_available": 555,
+    "figures_needing_human_review": 46
+  },
+  "courses": [
+    {
+      "course_id": "course_408_ds",
+      "course_slug": "data-structures",
+      "title": "数据结构（C语言版·第2版）",
+      "version": "第2版",
+      "isbn": "978-7-302-45989-7",
+      "chunks": 406,
+      "chapters": 8,
+      "figure_assets": 234
+    },
+    {
+      "course_id": "course_408_os",
+      "course_slug": "operating-systems",
+      "title": "计算机操作系统（第4版）",
+      "version": "第4版",
+      "isbn": "978-7-5606-3350-3",
+      "chunks": 407,
+      "chapters": 12,
+      "figure_assets": 138
+    },
+    {
+      "course_id": "course_408_cn",
+      "course_slug": "computer-networks",
+      "title": "计算机网络（第8版）",
+      "version": "第8版",
+      "isbn": "978-7-121-41174-8",
+      "chunks": 474,
+      "chapters": 9,
+      "figure_assets": 229
+    }
+  ]
+}

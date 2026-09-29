@@ -1,0 +1,280 @@
+.account-auth-form {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+}
+
+.account-auth-form > label,
+.registration-fields > label,
+.account-password-form > label {
+  display: grid;
+  gap: 7px;
+  color: var(--ink-strong, #1c2730);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.account-auth-form input,
+.account-password-form input,
+.account-create-fields input,
+.account-create-fields select {
+  min-height: 44px;
+  border: 1px solid rgba(31, 54, 67, .2);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink-strong, #1c2730);
+  padding: 0 12px;
+  font: inherit;
+}
+
+.account-auth-form input:focus-visible,
+.account-password-form input:focus-visible,
+.account-create-fields input:focus-visible,
+.account-create-fields select:focus-visible,
+.account-governance-actions button:focus-visible,
+.account-create-fields button:focus-visible {
+  outline: 3px solid rgba(68, 130, 151, .28);
+  outline-offset: 2px;
+}
+
+.account-auth-form button:disabled { cursor: wait; opacity: .68; }
+.account-auth-error { color: #a13d36; font-size: 14px; margin: 0; }
+.account-auth-success { color: #2f6d54; font-size: 14px; margin: 0; }
+.account-auth-switch { color: #53636b; font-size: 14px; margin: 0; }
+.account-auth-switch a { color: #1b6074; font-weight: 700; }
+
+.registration-fields,
+.registration-controlled-message,
+.registration-result {
+  display: grid;
+  gap: 14px;
+}
+
+.registration-controlled-message > strong { color: #1c2730; font-size: 17px; }
+.registration-controlled-message > p,
+.registration-review-note,
+.registration-password-note {
+  margin: 0;
+  color: #65747b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.registration-result > svg { color: #3f755c; }
+
+.registration-entry-links {
+  display: grid;
+  gap: 10px;
+}
+
+.registration-entry-links .account-auth-switch { text-align: center; }
+
+.registration-secondary-action {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(31, 54, 67, .17);
+  border-radius: 7px;
+  background: #f7f8f6;
+  color: #36556d;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.registration-secondary-action:hover:not(:disabled) {
+  border-color: rgba(31, 54, 67, .3);
+  background: #eef3f2;
+}
+
+.registration-secondary-action:focus-visible {
+  outline: 3px solid rgba(68, 130, 151, .28);
+  outline-offset: 2px;
+}
+
+.registration-secondary-action:disabled {
+  cursor: wait;
+  opacity: .62;
+}
+
+.account-page { max-width: 1120px; margin: 0 auto; padding: 42px 32px 72px; }
+.account-page-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 20px; }
+.account-card { border: 1px solid rgba(31, 54, 67, .13); border-radius: 12px; background: rgba(255,255,255,.82); padding: 22px; box-shadow: 0 10px 28px rgba(21, 43, 52, .06); }
+.account-card header { display: flex; align-items: center; gap: 9px; margin-bottom: 18px; }
+.account-card h2 { font-size: 19px; margin: 0; }
+.account-card dl { display: grid; gap: 12px; margin: 0; }
+.account-card dl > div { display: flex; justify-content: space-between; gap: 18px; border-bottom: 1px solid rgba(31,54,67,.08); padding-bottom: 9px; }
+.account-card dt { color: #69777d; font-size: 13px; }
+.account-card dd { color: #1c2730; font-size: 14px; font-weight: 650; margin: 0; text-align: right; }
+.account-course-scope { display: grid; gap: 4px; max-width: 360px; }
+.account-course-scope > span { display: block; }
+.account-course-scope .account-scope-note { color: #69777d; font-size: 12px; font-weight: 450; line-height: 1.5; }
+.account-password-form { display: grid; gap: 14px; }
+.account-password-form .first-release-primary-action { justify-self: start; }
+
+.account-governance-panel { display: grid; gap: 14px; margin-top: 18px; }
+.account-create-form { border-top: 1px solid rgba(31,54,67,.1); padding-top: 16px; }
+.account-create-form h3 { font-size: 15px; margin: 0 0 10px; }
+.account-create-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.account-create-fields button,
+.account-governance-actions button { min-height: 44px; border: 1px solid rgba(27,96,116,.25); border-radius: 7px; background: #edf6f7; color: #1b6074; cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; padding: 0 11px; }
+.account-create-fields button:hover:not(:disabled),
+.account-governance-actions button:hover:not(:disabled) { filter: brightness(.96); }
+.account-create-fields button:disabled { cursor: wait; opacity: .62; }
+.account-governance-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.account-governance-actions button:last-child { background: #fff8ea; border-color: rgba(170, 117, 42, .25); color: #815d23; }
+.account-governance-panel table small { display: block; color: #75838a; font-size: 12px; margin-top: 3px; }
+
+.governance-section-unavailable {
+  display: grid;
+  gap: 4px;
+  border: 1px dashed rgba(31, 54, 67, .2);
+  border-radius: 7px;
+  background: #f7f8f6;
+  padding: 16px;
+  color: #52646c;
+}
+.governance-section-unavailable strong { color: #293d47; font-size: 14px; }
+.governance-section-unavailable span { font-size: 13px; }
+
+.account-password-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(18, 25, 28, .48);
+}
+.account-password-dialog {
+  width: min(440px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(31, 54, 67, .18);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(18, 25, 28, .22);
+  padding: 20px;
+}
+.account-password-dialog > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.account-password-dialog h3 { margin: 0; font-size: 18px; }
+.account-password-dialog header p { margin: 6px 0 0; color: #64747b; font-size: 13px; line-height: 1.55; }
+.account-password-dialog header > button,
+.account-password-input button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border: 1px solid rgba(31, 54, 67, .16);
+  border-radius: 7px;
+  background: #fff;
+  color: #42545c;
+  cursor: pointer;
+}
+.account-password-dialog form { display: grid; gap: 14px; margin-top: 20px; }
+.account-password-dialog label { display: grid; gap: 7px; color: #2f4149; font-size: 13px; font-weight: 700; }
+.account-password-dialog input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(31, 54, 67, .2);
+  border-radius: 7px;
+  background: #fff;
+  color: #21343c;
+  font: inherit;
+  padding: 0 12px;
+}
+.account-password-input { display: flex; align-items: center; gap: 8px; }
+.account-password-input input { min-width: 0; }
+.account-password-dialog form > small { color: #66767d; font-size: 12px; line-height: 1.5; }
+.account-password-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.account-password-dialog-actions button {
+  min-height: 38px;
+  border: 1px solid rgba(31, 54, 67, .18);
+  border-radius: 7px;
+  background: #fff;
+  color: #344851;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  padding: 0 15px;
+}
+.account-password-dialog-actions button[type="submit"] { border-color: #285f68; background: #285f68; color: #fff; }
+.account-password-dialog button:hover:not(:disabled) { filter: brightness(.96); }
+.account-password-dialog button:focus-visible,
+.account-password-dialog input:focus-visible { outline: 3px solid rgba(68, 130, 151, .28); outline-offset: 2px; }
+.account-password-dialog button:disabled { cursor: wait; opacity: .65; }
+
+.teacher-approval-form {
+  display: grid;
+  gap: 14px;
+  border: 1px solid rgba(31, 54, 67, .15);
+  border-radius: 8px;
+  background: #f8faf9;
+  padding: 18px;
+}
+
+.teacher-approval-form > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.teacher-approval-form h3 { margin: 0; font-size: 16px; }
+.teacher-approval-form header p { margin: 5px 0 0; color: #66767d; font-size: 13px; }
+.teacher-approval-form header button { border: 0; background: transparent; color: #52646c; cursor: pointer; }
+
+.teacher-approval-fields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.teacher-approval-fields label { display: grid; gap: 6px; color: #334852; font-size: 13px; font-weight: 650; }
+.teacher-approval-fields input,
+.teacher-approval-fields select {
+  min-height: 44px;
+  min-width: 0;
+  border: 1px solid rgba(31, 54, 67, .2);
+  border-radius: 7px;
+  background: #fff;
+  padding: 0 10px;
+  font: inherit;
+}
+.teacher-approval-fields input:focus-visible,
+.teacher-approval-fields select:focus-visible,
+.teacher-approval-form header button:focus-visible,
+.teacher-approval-submit:focus-visible {
+  outline: 3px solid rgba(68, 130, 151, .28);
+  outline-offset: 2px;
+}
+
+.teacher-class-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 8px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.teacher-class-options legend { margin-bottom: 8px; color: #334852; font-size: 13px; font-weight: 700; }
+.teacher-class-options label { display: flex; min-height: 44px; align-items: center; gap: 8px; border: 1px solid rgba(31, 54, 67, .12); border-radius: 6px; background: #fff; padding: 0 10px; font-size: 13px; }
+.teacher-class-empty { grid-column: 1 / -1; margin: 0; border: 1px dashed rgba(31, 54, 67, .2); border-radius: 6px; background: #fff; color: #5d6c73; padding: 12px; font-size: 13px; line-height: 1.5; }
+.teacher-approval-submit { justify-self: start; min-height: 44px; border: 0; border-radius: 7px; background: #36556d; color: #fff; cursor: pointer; padding: 0 16px; font-weight: 700; }
+.teacher-approval-submit:disabled { cursor: not-allowed; opacity: .58; }
+
+@media (max-width: 800px) {
+  .account-page { padding-inline: 18px; }
+  .account-page-grid { grid-template-columns: 1fr; }
+  .account-create-fields { grid-template-columns: 1fr 1fr; }
+  .teacher-approval-fields { grid-template-columns: 1fr 1fr; }
+  .account-create-fields button { min-height: 44px; }
+}

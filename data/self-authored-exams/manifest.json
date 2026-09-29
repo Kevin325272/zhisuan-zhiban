@@ -1,0 +1,20 @@
+{
+  "dataset_id": "self-authored-computer-exams-2017-2026",
+  "archive_file": "raw/自命题试卷.zip",
+  "archive_bytes": 93432262,
+  "archive_sha256": "58bf66791d0587bc16917574c850429bf15722fd2a036ffe6779f8649939d984",
+  "verified_counts": {
+    "papers": 67,
+    "pages": 353,
+    "schools": 14,
+    "years": 10,
+    "scans": 35,
+    "text_layer": 32
+  },
+  "source_provider": "official_university_websites",
+  "license_status": "unverified",
+  "usage_scope": "local_demo_only",
+  "training_allowed": false,
+  "answers_available": false,
+  "verified_at": "2026-07-31"
+}

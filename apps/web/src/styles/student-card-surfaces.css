@@ -1,0 +1,368 @@
+/* Desktop card treatment from the supplied 408OS references.
+   Opt in to a stretched link only when a card has one navigation action.
+   Panels containing forms, charts or several actions stay stationary. */
+@media (min-width: 1100px) {
+  .student-onboarding-page .onboarding-workspace {
+    overflow: hidden;
+    border-radius: 22px;
+    border-color: rgb(3 24 46 / 5%);
+    box-shadow: 0 2px 5px rgb(3 24 46 / 3%), 0 5px 18px rgb(3 24 46 / 3%);
+  }
+  .student-onboarding-page .onboarding-inline-loading.is-unavailable {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    min-height: 280px;
+  }
+  .student-onboarding-page .onboarding-inline-loading.is-unavailable h1,
+  .student-onboarding-page .onboarding-inline-loading.is-unavailable p { margin: 0; }
+  .student-onboarding-page .onboarding-inline-loading.is-unavailable h1 {
+    color: var(--xuetu-ink, #03182e);
+    font-size: 23px;
+    font-weight: 600;
+  }
+  .student-onboarding-page .onboarding-inline-loading .onboarding-question-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .student-onboarding-page .onboarding-inline-loading .onboarding-question-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .student-onboarding-page .onboarding-inline-loading .onboarding-subtle-action {
+    border-color: var(--onboarding-line);
+    color: #14544c;
+    background: #fff;
+  }
+  .student-onboarding-page .onboarding-inline-loading .onboarding-subtle-action:hover {
+    background: #f1f5f2;
+  }
+  .student-onboarding-page .onboarding-steps {
+    width: min(1100px, 100%);
+    column-gap: 14px;
+  }
+  .student-onboarding-page .onboarding-steps > div:not(:last-child)::after {
+    position: static;
+    flex: 1 1 12px;
+  }
+  .student-onboarding-page .onboarding-steps > div > strong {
+    overflow: visible;
+    white-space: normal;
+  }
+  .student-onboarding-page .onboarding-steps > div.is-deferred > span {
+    color: var(--onboarding-muted);
+    background: var(--onboarding-soft);
+    border-style: dashed;
+  }
+  .app-shell.learning-shell {
+    --student-card-radius: 22px;
+    --student-card-line: rgb(3 24 46 / 5%);
+    --student-card-shadow: 0 2px 5px rgb(3 24 46 / 3%), 0 5px 18px rgb(3 24 46 / 3%);
+    --student-card-hover-shadow: 0 12px 28px rgb(3 24 46 / 10%), 0 3px 8px rgb(3 24 46 / 4%);
+    --student-card-ease: cubic-bezier(.22, .68, .25, 1);
+  }
+
+  .app-shell.learning-shell .page-content :is(
+    .home-action-workspace, .home-course-rail, .dashboard-updates,
+    .dashboard-activity, .dashboard-goal-column, .dashboard-tools,
+    .question-filter-bar, .question-sheet, .attempt-context-rail,
+    .personal-care-preference, .personal-starting-direction,
+    .personal-profile-summary, .personal-stat-strip, .personal-profile-workspace,
+    .personal-priority-concept, .personal-recent-mistakes,
+    .notebook-overview, .notebook-library, .notebook-welcome,
+    .notebook-editor:not(.is-inline),
+    .current-plan-overview, .current-plan-next, .current-plan-day, .current-plan-empty,
+    .mistake-item, .courses-overview-domain,
+    .course-video-series-ledger, .course-video-library-controls,
+    .exam-paper-ledger, .community-post-card, .community-detail-post, .vl-recent
+  ) {
+    background: var(--xuetu-surface);
+    border: 1px solid var(--student-card-line);
+    border-radius: var(--student-card-radius);
+    box-shadow: var(--student-card-shadow);
+  }
+
+  .app-shell.learning-shell .page-content :is(
+    .personal-profile-summary, .personal-stat-strip, .personal-profile-workspace,
+    .personal-starting-direction, .courses-overview-domain
+  ) { overflow: hidden; }
+
+  .app-shell.learning-shell .page-content :is(
+    .student-action-card, .dashboard-tools > div > a, .dashboard-plan-link,
+    .notebook-entry-list button
+  ) {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid var(--student-card-line);
+    border-radius: var(--student-card-radius);
+    background: var(--xuetu-surface);
+    box-shadow: var(--student-card-shadow);
+    cursor: pointer;
+    transition: transform 200ms var(--student-card-ease),
+      box-shadow 200ms var(--student-card-ease), border-color 200ms ease;
+  }
+
+  /* The native anchor supplies keyboard navigation, context menus and new tabs. */
+  .app-shell.learning-shell .page-content .student-action-card .student-card-target {
+    position: static;
+  }
+  .app-shell.learning-shell .page-content .student-card-target::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: var(--student-card-radius);
+    content: "";
+  }
+
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-grid { gap: 18px; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-item {
+    min-height: 146px;
+    padding: 22px 24px 17px;
+  }
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-item dt { gap: 10px; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-item dd { margin-block: 12px; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-foot a { border-radius: 50%; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-summary-foot a:hover {
+    background: transparent;
+  }
+  .app-shell.learning-shell .learning-dashboard .dashboard-courses > ol { gap: 14px; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-courses li.student-action-card {
+    padding: 17px 16px;
+    border: 1px solid var(--student-card-line);
+    border-radius: 16px;
+    background: var(--xuetu-surface);
+    --student-card-radius: 16px;
+  }
+  .app-shell.learning-shell .learning-dashboard .dashboard-tools > div { gap: 10px; }
+  .app-shell.learning-shell .learning-dashboard .dashboard-tools > div > a {
+    min-height: 62px;
+    padding: 11px 10px;
+    border-radius: 14px;
+    background: #f5f8f6;
+    box-shadow: 0 2px 4px rgb(3 24 46 / 3%);
+  }
+  .app-shell.learning-shell .learning-dashboard .dashboard-day-mark {
+    border-color: transparent;
+    border-radius: 7px;
+    background: #edf1ef;
+  }
+  .app-shell.learning-shell .learning-dashboard .dashboard-week [data-completed="true"] .dashboard-day-mark {
+    background: var(--dashboard-teal);
+  }
+  .app-shell.learning-shell .page-content .notebook-entry-list button { border-radius: 13px; }
+  .app-shell.learning-shell .page-content .notebook-entry-list button[aria-current] {
+    background: var(--xuetu-surface-muted);
+    border-color: var(--xuetu-line-strong);
+  }
+
+  /* A multi-action course row is a display panel; only its actual links react. */
+  .app-shell.learning-shell .page-content .courses-overview-list article:hover {
+    background: var(--xuetu-surface);
+  }
+  .app-shell.learning-shell .page-content .vl-card-footer a:hover { gap: 10px; }
+  .app-shell.learning-shell .page-content .vl-recent { padding: 22px 24px; }
+
+  /* School navigation keeps selection separate from the saved target school. */
+  .app-shell.learning-shell .community-workspace {
+    grid-template-columns: 268px minmax(0, 1fr) 244px;
+  }
+  .app-shell.learning-shell .community-circle-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 88px;
+    max-height: calc(100dvh - 108px);
+    padding: 14px 10px 10px;
+    border: 1px solid var(--student-card-line);
+    border-radius: var(--student-card-radius);
+    background: var(--xuetu-surface);
+    box-shadow: var(--student-card-shadow);
+  }
+  .app-shell.learning-shell .community-rail-heading {
+    flex-shrink: 0;
+    min-height: 32px;
+    margin: 0 8px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #edf2ef;
+  }
+  .app-shell.learning-shell .community-rail-title {
+    color: var(--xuetu-ink);
+    font-size: 15px;
+    font-weight: 650;
+  }
+  .app-shell.learning-shell .community-rail-count {
+    padding: 3px 8px;
+    color: var(--xuetu-muted);
+    border-radius: 7px;
+    background: #f1f5f2;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .app-shell.learning-shell .community-circle-list {
+    gap: 7px;
+    min-height: 0;
+    padding: 5px 4px 6px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c9d8d1 transparent;
+  }
+  .app-shell.learning-shell .community-circle-list > button {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) 16px;
+    align-items: center;
+    gap: 10px;
+    min-height: 70px;
+    padding: 12px 10px;
+    overflow: visible;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    color: var(--xuetu-ink);
+    background: var(--xuetu-surface);
+    box-shadow: none;
+    transition: transform 200ms var(--student-card-ease),
+      box-shadow 200ms var(--student-card-ease), background-color 160ms ease;
+  }
+  .app-shell.learning-shell .community-circle-list > button[data-target="true"] {
+    border-color: var(--xuetu-line);
+    background: #f6f9f7;
+    box-shadow: none;
+  }
+  .app-shell.learning-shell .community-circle-list > button::before { content: none; }
+  .app-shell.learning-shell .community-circle-list > button.is-active {
+    border-color: #bcd4c9;
+    background: #eaf3ee;
+    color: var(--xuetu-action);
+    box-shadow: 0 2px 5px rgb(20 84 76 / 4%);
+  }
+  .app-shell.learning-shell .community-circle-mark {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 34px;
+    border-radius: 9px;
+    background: #f2f6f3;
+    color: #718a80;
+  }
+  .app-shell.learning-shell .community-circle-list > button.is-active .community-circle-mark {
+    background: var(--xuetu-action);
+    color: white;
+  }
+  .app-shell.learning-shell .community-circle-copy { display: grid; gap: 7px; }
+  .app-shell.learning-shell .community-circle-name strong {
+    overflow: visible;
+    color: inherit;
+    font-family: var(--xuetu-font-interface);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .app-shell.learning-shell .community-circle-stats {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px 9px;
+    color: var(--xuetu-muted);
+    font-size: 11px;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+  }
+  .app-shell.learning-shell .community-circle-stats > span { gap: 3px; white-space: nowrap; }
+  .app-shell.learning-shell .community-circle-list > button.is-active .community-circle-stats {
+    color: #4e7361;
+  }
+  .app-shell.learning-shell .community-circle-target {
+    padding: 1px 4px;
+    border: 1px solid #c9ddd1;
+    border-radius: 4px;
+    background: #e3efe7;
+    color: var(--xuetu-action);
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .app-shell.learning-shell .community-circle-selected {
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: white;
+    background: var(--xuetu-action);
+    visibility: hidden;
+  }
+  .app-shell.learning-shell .community-circle-list > button.is-active .community-circle-selected {
+    visibility: visible;
+  }
+  .app-shell.learning-shell .community-circle-list > button:focus-visible {
+    outline: 2px solid var(--xuetu-action);
+    outline-offset: 2px;
+  }
+  @media (max-width: 1320px) {
+    .app-shell.learning-shell .community-workspace { grid-template-columns: 268px minmax(0, 1fr); }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .app-shell.learning-shell .community-circle-list > button:not(:disabled):hover {
+      transform: translateY(-3px);
+      background: #f1f7f3;
+      box-shadow: 0 6px 14px rgb(20 84 76 / 8%);
+    }
+    .app-shell.learning-shell .community-circle-list > button.is-active:not(:disabled):hover {
+      background: #e4efe8;
+    }
+    .app-shell.learning-shell .community-circle-list > button:not(:disabled):active {
+      transform: translateY(-1px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .app-shell.learning-shell .community-circle-list > button:not(:disabled):is(:hover, :active) {
+      transform: none;
+    }
+  }
+
+  .app-shell.learning-shell .page-content :is(
+    .dashboard-tools > div > a, .dashboard-plan-link, .notebook-entry-list button
+  ):focus-visible,
+  .app-shell.learning-shell .page-content .student-action-card:has(.student-card-target:focus-visible) {
+    outline: 3px solid var(--xuetu-action);
+    outline-offset: 3px;
+    border-color: var(--xuetu-line-strong);
+    box-shadow: var(--student-card-hover-shadow);
+  }
+  .app-shell.learning-shell .page-content .student-action-card .student-card-target:focus-visible {
+    /* The enclosing card already draws the visible focus ring. */
+    outline: none;
+    box-shadow: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .app-shell.learning-shell .page-content :is(
+      .student-action-card, .dashboard-tools > div > a, .dashboard-plan-link,
+      .notebook-entry-list button
+    ):not(:disabled):not([aria-disabled="true"]):hover {
+      transform: translateY(-4px);
+      border-color: rgb(20 84 76 / 18%);
+      box-shadow: var(--student-card-hover-shadow);
+    }
+    .app-shell.learning-shell .page-content :is(
+      .student-action-card, .dashboard-tools > div > a, .dashboard-plan-link,
+      .notebook-entry-list button
+    ):not(:disabled):not([aria-disabled="true"]):active {
+      transform: translateY(-1px);
+      box-shadow: var(--student-card-shadow);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .app-shell.learning-shell .page-content :is(
+      .student-action-card, .dashboard-tools > div > a, .dashboard-plan-link,
+      .notebook-entry-list button
+    ):not(:disabled):not([aria-disabled="true"]):is(:hover, :active) { transform: none; }
+  }
+}

@@ -1,0 +1,385 @@
+/* Student palette sampled from the five-slide deck; existing routes and state remain shared. */
+html:has(.learning-shell),
+body:has(.learning-shell) {
+  min-width: 0;
+  background: #f7f8f5;
+}
+
+.app-shell.learning-shell {
+  --xuetu-canvas: #f7f8f5;
+  --xuetu-surface: #ffffff;
+  --xuetu-surface-muted: #f1f5f2;
+  --xuetu-highlight: #e9efe9;
+  --xuetu-ink: #03182e;
+  --xuetu-muted: #5f6e73;
+  --xuetu-ochre: #4d7b78;
+  --xuetu-ochre-text: #14544c;
+  --xuetu-action: #14544c;
+  --xuetu-info: #56707f;
+  --xuetu-success: #2b6e5c;
+  --xuetu-warning: #946922;
+  --xuetu-danger: #ab4f49;
+  --xuetu-line: #dce8e3;
+  --xuetu-line-strong: #9fbdb4;
+  --dashboard-accent-hover: #103f3a;
+  --dashboard-teal: #4d7b78;
+  --dashboard-icon-muted: #7a9290;
+  --dashboard-info-soft: #eef3f6;
+  --dashboard-gold-soft: #eef3f6;
+  --xuetu-focus-ring: 0 0 0 3px rgb(20 84 76 / 22%);
+  min-width: 0;
+  min-height: 100vh;
+  background: var(--xuetu-canvas);
+  font-family: var(--xuetu-font-interface);
+  letter-spacing: 0;
+}
+
+.learning-shell *, .learning-shell *::before, .learning-shell *::after { box-sizing: border-box; letter-spacing: 0; }
+.app-shell.learning-shell .topbar { position: sticky; top: 0; z-index: 40; display: block; width: 100%; height: auto; min-height: 68px; padding: 0; background: var(--xuetu-surface); border: 0; border-bottom: 1px solid var(--xuetu-line); box-shadow: none; }
+.learning-shell .learning-topbar-inner { display: flex; align-items: center; gap: 24px; width: min(1400px, calc(100% - 48px)); min-height: 68px; margin: 0 auto; }
+.app-shell.learning-shell .brand { flex: 0 0 auto; width: auto; min-width: 0; height: auto; gap: 10px; padding: 0; border: 0; text-decoration: none; }
+.app-shell.learning-shell .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--xuetu-action); color: white; }
+.app-shell.learning-shell .brand-mark svg { width: 20px; height: 20px; }
+.app-shell.learning-shell .brand-copy strong { color: var(--xuetu-ink); font: 700 19px/1.3 var(--xuetu-font-interface); white-space: nowrap; }
+.learning-shell .learning-main-nav { flex: 1; min-width: 0; }
+.learning-shell .learning-main-nav ul { display: flex; justify-content: center; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.learning-shell .learning-main-nav li { min-width: 0; }
+.learning-shell .learning-main-nav a { position: relative; display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 68px; padding: 0 12px; color: var(--xuetu-muted); font-size: 13px; font-weight: 500; white-space: nowrap; text-decoration: none; }
+.learning-shell .learning-main-nav a:hover { color: var(--xuetu-action); background: var(--xuetu-surface-muted); }
+.learning-shell .learning-main-nav a.is-active { color: var(--xuetu-action); font-weight: 700; }
+.learning-shell .learning-main-nav a.is-active::after { position: absolute; right: 15px; bottom: 0; left: 15px; height: 3px; background: var(--xuetu-action); content: ""; }
+.learning-shell .learning-main-nav .nav-copy { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1px; line-height: 1.25; }
+.learning-shell .learning-main-nav .nav-copy strong { font: inherit; font-weight: inherit; }
+.learning-shell .learning-main-nav .nav-copy small { color: var(--xuetu-ochre); font-size: 10px; letter-spacing: 0.03em; opacity: 0.9; }
+.learning-shell .learning-main-nav a.is-active .nav-copy small { color: var(--xuetu-action); }
+.learning-shell .learning-menu-toggle { display: none; flex: 0 0 36px; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid var(--xuetu-line); border-radius: 6px; background: var(--xuetu-surface); color: var(--xuetu-info); }
+.app-shell.learning-shell .topbar-actions { flex: 0 0 auto; gap: 7px; margin-left: 0; padding: 0; }
+.app-shell.learning-shell .topbar-icon { display: inline-grid; place-items: center; width: 32px; height: 34px; padding: 0; border: 0; border-radius: 6px; color: var(--xuetu-muted); }
+.app-shell.learning-shell .profile-summary { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 5px; border: 0; }
+.app-shell.learning-shell .profile-avatar { display: grid; place-items: center; width: 30px; height: 30px; background: var(--xuetu-surface-muted); color: var(--dashboard-teal); font-size: 12px; border: 1px solid var(--xuetu-line); border-radius: 50%; }
+.app-shell.learning-shell .profile-summary-copy strong { max-width: 96px; overflow: hidden; color: var(--xuetu-muted); font-size: 12px; font-family: var(--xuetu-font-interface); text-overflow: ellipsis; white-space: nowrap; }
+.app-shell.learning-shell .notification-popover { right: 0; width: min(320px, calc(100vw - 32px)); border-radius: 8px; }
+.app-shell.learning-shell .shell-body { display: block; min-width: 0; margin: 0; padding: 0; }
+.app-shell.learning-shell .page-content { display: block; width: 100%; min-width: 0; min-height: calc(100vh - 68px); margin: 0; padding: 28px 24px 56px; }
+.app-shell.learning-shell[data-workspace="focused"] .page-content { padding: 18px; }
+.app-shell.learning-shell .study-agent-trigger { top: 82px; right: 18px; bottom: auto; }
+.learning-shell .learning-dashboard .dashboard-page-heading { padding-right: 68px; }
+
+.learning-shell .learning-dashboard {
+  --home-ink: var(--xuetu-ink);
+  --home-muted: var(--xuetu-muted);
+  --home-line: var(--xuetu-line);
+  --home-paper: var(--xuetu-surface);
+  --home-blue: var(--xuetu-action);
+  --home-blue-dark: var(--dashboard-accent-hover);
+  --home-blue-soft: var(--xuetu-highlight);
+  --home-canvas: var(--xuetu-canvas);
+  display: grid;
+  gap: 24px;
+  width: min(1360px, 100%);
+  min-width: 0;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  color: var(--xuetu-ink);
+  font-size: 13px;
+}
+.learning-shell .learning-dashboard :is(h1, h2, h3, strong, button) { font-family: var(--xuetu-font-interface); letter-spacing: 0; }
+.learning-shell .learning-dashboard :is(h1, h2, h3, p, dl, dd, ol, ul) { margin-top: 0; }
+.learning-shell .learning-dashboard .home-opening { display: block; min-width: 0; margin: 0; padding: 0; }
+.learning-shell .learning-dashboard .home-opening::after,
+.learning-shell .learning-dashboard .home-goal-route::before,
+.learning-shell .learning-dashboard .home-goal-route::after { content: none; }
+.learning-dashboard .dashboard-page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.learning-dashboard .dashboard-page-heading > div { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; }
+.learning-shell .learning-dashboard .dashboard-page-heading h2 { margin: 0; font-size: 23px; line-height: 1.4; font-weight: 700; }
+.learning-dashboard .dashboard-page-heading span { color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-date { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.learning-dashboard .dashboard-summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; }
+.learning-dashboard .dashboard-summary-item { min-width: 0; padding: 20px 22px 15px; background: var(--xuetu-surface); border: 1px solid var(--xuetu-line); border-radius: 8px; }
+.learning-dashboard .dashboard-summary-item dt { display: flex; align-items: center; gap: 8px; color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-summary-item dt svg { color: var(--dashboard-teal); }
+.learning-dashboard .dashboard-summary-item dd { display: flex; align-items: baseline; gap: 7px; margin: 9px 0 10px; font-size: 33px; line-height: 1.15; font-weight: 700; font-variant-numeric: tabular-nums; }
+.learning-dashboard .dashboard-summary-item dd span { color: var(--xuetu-muted); font-size: 12px; font-weight: 400; }
+.learning-dashboard .dashboard-summary-item .dashboard-goal-value { font-size: 23px; line-height: 38px; }
+.learning-dashboard .is-review dd { color: var(--xuetu-warning); }
+.learning-dashboard .is-coverage dd { color: var(--xuetu-action); }
+.learning-dashboard .dashboard-summary-foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 24px; color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-summary-foot > span { min-width: 0; line-height: 1.5; }
+.learning-dashboard .dashboard-summary-foot a { display: grid; flex: 0 0 26px; place-items: center; width: 26px; height: 26px; border-radius: 5px; color: var(--dashboard-teal); }
+.learning-dashboard .dashboard-summary-foot a:hover { background: var(--xuetu-highlight); color: var(--xuetu-action); }
+
+.learning-shell .learning-dashboard .dashboard-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr); gap: 0; align-items: stretch; margin: 0; padding: 0; background: var(--xuetu-surface); border-block: 1px solid var(--xuetu-line); }
+.learning-shell .learning-dashboard .dashboard-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 25px; padding: 0; margin: 0 0 18px; border: 0; background: none; }
+.learning-shell .learning-dashboard .dashboard-section-heading h2 { margin: 0; font-size: 15px; line-height: 1.4; font-weight: 700; color: var(--xuetu-ink); }
+.learning-dashboard .dashboard-section-heading > span { color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-section-heading a { display: inline-flex; align-items: center; gap: 4px; color: var(--xuetu-muted); font-size: 12px; text-decoration: none; }
+.learning-dashboard .dashboard-activity { min-width: 0; padding: 23px; border-right: 1px solid var(--xuetu-line); }
+.learning-dashboard .dashboard-activity-total { display: flex; align-items: baseline; gap: 8px; margin: 8px 0 20px; color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-activity-total strong { color: var(--xuetu-ink); font-size: 29px; line-height: 1.2; }
+.learning-dashboard .dashboard-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; padding: 0; margin: 0; list-style: none; }
+.learning-dashboard .dashboard-week li { display: grid; justify-items: center; gap: 9px; min-width: 0; color: var(--xuetu-muted); font-size: 11px; }
+.learning-dashboard .dashboard-day-mark { display: grid; place-items: center; width: 100%; max-width: 35px; aspect-ratio: 1; background: var(--xuetu-surface-muted); border: 1px solid var(--xuetu-line); border-radius: 5px; }
+.learning-dashboard .dashboard-day-mark > span { width: 4px; height: 4px; background: var(--xuetu-line-strong); border-radius: 1px; }
+.learning-dashboard .dashboard-week [data-completed="true"] .dashboard-day-mark { color: var(--xuetu-surface); background: var(--dashboard-teal); border-color: var(--dashboard-teal); }
+.learning-dashboard .dashboard-week small { font-size: 11px; font-variant-numeric: tabular-nums; }
+.learning-dashboard .dashboard-last-activity { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-top: 22px; padding-top: 15px; border-top: 1px solid var(--xuetu-line); }
+.learning-dashboard .dashboard-last-activity > span { grid-column: 1 / -1; color: var(--xuetu-muted); font-size: 12px; }
+.learning-dashboard .dashboard-last-activity p { min-width: 0; margin: 0; color: var(--xuetu-muted); font-size: 12px; line-height: 1.6; }
+.learning-dashboard .dashboard-last-activity a { display: inline-flex; align-items: center; align-self: start; color: var(--dashboard-teal); font-size: 12px; white-space: nowrap; }
+.learning-shell .learning-dashboard .home-action-workspace { display: flex; flex-direction: column; min-width: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.learning-shell .learning-dashboard .dashboard-current-task { display: flex; flex: 1; flex-direction: column; gap: 0; width: 100%; min-height: 290px; height: auto; padding: 23px 26px; border: 0; border-radius: 0; background: var(--xuetu-surface); box-shadow: none; }
+.learning-shell .learning-dashboard .dashboard-task-status { padding: 3px 7px; color: var(--xuetu-action); background: var(--xuetu-highlight); border-radius: 3px; font-size: 11px; }
+.learning-shell .learning-dashboard .orchestrator-task-main { display: block; padding: 0; min-width: 0; }
+.learning-shell .learning-dashboard .orchestrator-task-breadcrumb { margin: 0 0 9px; color: var(--dashboard-teal); font-size: 12px; line-height: 1.6; font-weight: 500; }
+.learning-shell .learning-dashboard .orchestrator-task-main h1 { margin: 0 0 15px; max-width: none; color: var(--xuetu-ink); font-size: 21px; line-height: 1.5; font-weight: 700; overflow-wrap: anywhere; }
+.learning-shell .learning-dashboard .orchestrator-task-reason { display: block; margin: 0 0 10px; padding: 0; border: 0; background: none; }
+.learning-shell .learning-dashboard .orchestrator-task-reason > span { display: block; margin-bottom: 3px; color: var(--xuetu-muted); font-size: 11px; }
+.learning-shell .learning-dashboard .orchestrator-task-reason p { margin: 0; color: var(--xuetu-muted); font-size: 12px; line-height: 1.8; }
+.learning-dashboard .dashboard-task-details { margin-top: 10px; }
+.learning-dashboard .dashboard-task-details summary { display: inline-flex; align-items: center; gap: 5px; color: var(--xuetu-muted); font-size: 12px; cursor: pointer; list-style: none; }
+.learning-dashboard .dashboard-task-details summary::-webkit-details-marker { display: none; }
+.learning-dashboard .dashboard-task-details[open] summary svg { transform: rotate(90deg); }
+.learning-shell .learning-dashboard .orchestrator-task-completion { display: flex; gap: 8px; margin: 12px 0; padding: 10px; border: 0; border-radius: 4px; background: var(--xuetu-surface-muted); }
+.learning-shell .learning-dashboard .orchestrator-task-completion p { margin: 4px 0 0; font-size: 12px; line-height: 1.7; }
+.learning-shell .learning-dashboard .orchestrator-task-completion span { font-size: 12px; }
+.learning-shell .learning-dashboard .orchestrator-task-flow { margin: 10px 0; padding: 0; border: 0; }
+.learning-shell .learning-dashboard .orchestrator-task-flow-label { font-size: 12px; }
+.learning-shell .learning-dashboard .orchestrator-task-flow ol { display: grid; gap: 10px; grid-template-columns: 1fr; padding: 0; margin: 10px 0; }
+.learning-shell .learning-dashboard .orchestrator-task-flow li::after { display: none; }
+.learning-shell .learning-dashboard .orchestrator-task-flow li b { width: 22px; height: 22px; font-size: 11px; }
+.learning-shell .learning-dashboard .orchestrator-task-flow li strong { font-size: 12px; }
+.learning-shell .learning-dashboard .orchestrator-task-flow li small { font-size: 12px; }
+.learning-shell .learning-dashboard .orchestrator-task-action { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; padding: 18px 0 0; margin: auto 0 0; border: 0; background: none; }
+.learning-shell .learning-dashboard .orchestrator-task-time { display: flex; align-items: center; gap: 6px; color: var(--xuetu-muted); }
+.learning-shell .learning-dashboard .orchestrator-task-time strong { font-size: 12px; font-weight: 400; color: var(--xuetu-muted); }
+.learning-shell .learning-dashboard .orchestrator-task-action > a { display: inline-flex; align-items: center; justify-content: center; gap: 17px; min-width: 120px; min-height: 38px; padding: 9px 16px; border: 0; border-radius: 5px; background: var(--xuetu-action); color: var(--xuetu-surface); font-size: 12px; font-weight: 600; }
+.learning-shell .learning-dashboard .orchestrator-task-action > a:hover { background: var(--dashboard-accent-hover); }
+.learning-shell .learning-dashboard .student-care-launcher { gap: 8px; min-height: 40px; margin: 0; padding: 8px 23px; border: 0; border-top: 1px solid var(--xuetu-line); border-radius: 0; box-shadow: none; background: var(--xuetu-surface-muted); }
+.learning-shell .learning-dashboard .student-care-launcher-link { min-height: 28px; padding: 3px 6px; border-color: var(--xuetu-line); background: var(--xuetu-surface-muted); color: var(--xuetu-action); font-size: 12px; }
+.learning-shell .learning-dashboard .student-care-launcher-copy strong { color: var(--dashboard-teal); font-size: 12px; font-weight: 500; }
+
+.learning-dashboard .dashboard-goal-column { min-width: 0; padding: 23px; border-left: 1px solid var(--xuetu-line); }
+.learning-shell .learning-dashboard .orchestrator-admissions { display: block; grid-template-columns: none; min-height: 0; height: auto; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
+.learning-shell .learning-dashboard .orchestrator-admissions > header { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0 0 16px; padding: 0; border: 0; }
+.learning-shell .learning-dashboard .orchestrator-admissions > header > div:first-child { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; }
+.learning-shell .learning-dashboard .orchestrator-admissions .orchestrator-eyebrow { color: var(--xuetu-ink); font-size: 15px; font-weight: 700; }
+.learning-shell .learning-dashboard .orchestrator-admissions > header h2 { margin: 0; color: var(--xuetu-muted); font-size: 12px; line-height: 1.6; font-weight: 400; }
+.learning-shell .learning-dashboard .admissions-header-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.learning-shell .learning-dashboard .admissions-header-actions button { display: inline-flex; align-items: center; gap: 5px; min-height: 28px; padding: 4px 7px; border: 1px solid var(--xuetu-line); border-radius: 4px; background: var(--xuetu-surface); color: var(--xuetu-muted); font-size: 12px; }
+.learning-shell .learning-dashboard .admissions-header-actions button svg { width: 14px; height: 14px; }
+.learning-shell .learning-dashboard .admissions-header-actions .admissions-primary-trigger { color: var(--xuetu-action); background: var(--xuetu-highlight); border-color: var(--xuetu-line); }
+.learning-shell .learning-dashboard .admissions-selected-target { display: block; padding: 0; margin: 0; border: 0; }
+.learning-shell .learning-dashboard .admissions-selected-target > svg { display: none; }
+.learning-shell .learning-dashboard .admissions-selected-target > div { min-width: 0; }
+.learning-shell .learning-dashboard .admissions-selected-target strong { display: block; color: var(--xuetu-ink); font-size: 17px; line-height: 1.6; font-weight: 600; }
+.learning-shell .learning-dashboard .admissions-selected-target p { color: var(--xuetu-muted); font-size: 12px; line-height: 1.7; }
+.learning-shell .learning-dashboard .admissions-selected-target dl { display: flex; flex-wrap: wrap; gap: 20px; margin: 16px 0 14px; padding-top: 13px; border-top: 1px solid var(--xuetu-line); }
+.learning-shell .learning-dashboard .admissions-selected-target dl > div { min-width: 0; padding: 0; border: 0; }
+.learning-shell .learning-dashboard .admissions-selected-target dt { color: var(--xuetu-muted); font-size: 11px; }
+.learning-shell .learning-dashboard .admissions-selected-target dd { margin: 5px 0 0; color: var(--xuetu-action); font-size: 17px; }
+.learning-shell .learning-dashboard .admissions-selected-target > a { display: inline-flex; align-items: center; gap: 5px; color: var(--dashboard-teal); font-size: 12px; }
+.learning-shell .learning-dashboard .admissions-intro { margin: 15px 0 0; color: var(--xuetu-muted); font-size: 12px; }
+.learning-shell .learning-dashboard .dashboard-workspace:has(.orchestrator-admissions[data-expanded="true"]) .home-action-workspace { grid-column: 2 / -1; }
+.learning-shell .learning-dashboard .dashboard-workspace:has(.orchestrator-admissions[data-expanded="true"]) .dashboard-goal-column { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--xuetu-line); }
+.learning-shell .learning-dashboard .orchestrator-admissions[data-expanded="true"] .admissions-search-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: end; }
+.learning-shell .learning-dashboard .orchestrator-admissions[data-expanded="true"] .admissions-search-input-shell { min-height: 42px; background: var(--xuetu-surface); border-radius: 5px; }
+.learning-shell .learning-dashboard .admissions-suggestion-popover { z-index: 25; max-height: 430px; overflow-y: auto; }
+.learning-shell .learning-dashboard .admissions-target-preview { margin: 0; box-shadow: none; background: var(--xuetu-surface); }
+
+.learning-shell .learning-dashboard .home-course-rail { min-width: 0; margin: 0; padding: 0; }
+.learning-shell .learning-dashboard .dashboard-courses { display: block; padding: 0; margin: 0; background: transparent; border: 0; }
+.learning-shell .learning-dashboard .dashboard-courses > header { margin-bottom: 14px; }
+.learning-shell .learning-dashboard .dashboard-courses > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 0; margin: 0; border: 0; list-style: none; }
+.learning-shell .learning-dashboard .dashboard-courses li { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 10px 12px; align-items: center; min-width: 0; min-height: 152px; padding: 18px 22px; background: var(--xuetu-surface); border: 1px solid var(--xuetu-line); border-radius: 8px; box-shadow: none; }
+.learning-shell .learning-dashboard .dashboard-courses li::before { content: none; }
+.learning-shell .learning-dashboard .dashboard-courses li:hover { border-color: var(--xuetu-line-strong); background: var(--xuetu-surface); }
+.learning-dashboard .dashboard-course-icon { display: grid; place-items: center; width: 40px; height: 40px; color: var(--xuetu-action); background: var(--xuetu-highlight); border-radius: 7px; }
+.learning-dashboard [data-course="course_408_co"] .dashboard-course-icon { color: var(--xuetu-info); background: var(--dashboard-info-soft); }
+.learning-dashboard [data-course="course_408_os"] .dashboard-course-icon { color: var(--xuetu-warning); background: var(--dashboard-gold-soft); }
+.learning-dashboard [data-course="course_408_cn"] .dashboard-course-icon { color: var(--xuetu-info); background: var(--dashboard-info-soft); }
+.learning-shell .learning-dashboard .orchestrator-priority-copy a { display: flex; align-items: center; gap: 6px; color: var(--xuetu-ink); }
+.learning-shell .learning-dashboard .orchestrator-priority-copy strong { font-size: 14px; font-weight: 600; }
+.learning-shell .learning-dashboard .orchestrator-priority-copy a > svg { color: var(--dashboard-icon-muted); width: 14px; }
+.learning-shell .learning-dashboard .orchestrator-course-status { grid-column: 3; grid-row: 1; display: grid; justify-items: end; gap: 5px; }
+.learning-shell .learning-dashboard .orchestrator-course-status strong { padding: 3px 6px; background: var(--xuetu-surface-muted); color: var(--dashboard-teal); border: 0; border-radius: 3px; font-size: 11px; font-weight: 400; }
+.learning-shell .learning-dashboard [data-priority="focus"] .orchestrator-course-status strong { color: var(--xuetu-warning); background: var(--dashboard-gold-soft); }
+.learning-shell .learning-dashboard .orchestrator-course-status small { color: var(--xuetu-muted); font-size: 11px; }
+.learning-shell .learning-dashboard .orchestrator-course-progress { grid-column: 1 / -1; min-width: 0; padding: 0; }
+.learning-shell .learning-dashboard .orchestrator-course-progress-copy { display: flex; align-items: center; justify-content: space-between; margin: 1px 0 8px; color: var(--xuetu-muted); font-size: 12px; }
+.learning-shell .learning-dashboard .orchestrator-course-progress-copy strong { color: var(--dashboard-teal); font-size: 12px; font-weight: 500; }
+.learning-shell .learning-dashboard .orchestrator-course-progress-track { width: 100%; height: 5px; overflow: hidden; background: var(--xuetu-line); border-radius: 3px; }
+.learning-shell .learning-dashboard .dashboard-courses li .orchestrator-course-progress-track > i { display: block; height: 100%; background: var(--dashboard-teal); border-radius: 3px; }
+.learning-shell .learning-dashboard .dashboard-course-facts { display: flex; justify-content: space-between; gap: 10px; margin-top: 9px; color: var(--xuetu-muted); font-size: 11px; }
+
+.learning-shell .learning-dashboard .dashboard-bottom { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 28px; margin: 0; padding: 0; }
+.learning-shell .learning-dashboard .dashboard-tools { display: block; margin: 0; padding: 0; border: 0; background: transparent; }
+.learning-shell .learning-dashboard .dashboard-tools > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; border: 0; }
+.learning-shell .learning-dashboard .dashboard-tools > div > a { display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 69px; margin: 0; padding: 14px; background: var(--xuetu-surface); border: 1px solid var(--xuetu-line); border-radius: 6px; }
+.learning-shell .learning-dashboard .dashboard-tools > div > a:hover { color: var(--xuetu-action); border-color: var(--xuetu-line-strong); background: var(--xuetu-surface-muted); }
+.learning-shell .learning-dashboard .dashboard-tools > div > a > svg:first-child { flex: 0 0 auto; color: var(--dashboard-teal); }
+.learning-shell .learning-dashboard .dashboard-tools > div > a > span { flex: 1; min-width: 0; }
+.learning-shell .learning-dashboard .dashboard-tools > div > a > svg:last-child { flex: 0 0 auto; width: 13px; color: var(--dashboard-icon-muted); }
+.learning-shell .learning-dashboard .dashboard-tools a strong { font-size: 12px; line-height: 1.5; color: var(--xuetu-muted); }
+.learning-shell .learning-dashboard .dashboard-tools a small { margin-top: 5px; font-size: 11px; color: var(--xuetu-muted); }
+.learning-dashboard .dashboard-updates ul { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.learning-dashboard .dashboard-updates li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--xuetu-line); }
+.learning-dashboard .dashboard-update-marker { flex: 0 0 5px; width: 5px; height: 5px; margin-top: 6px; border-radius: 1px; background: var(--dashboard-teal); }
+.learning-dashboard .dashboard-updates li > div { display: grid; gap: 7px; min-width: 0; }
+.learning-dashboard .dashboard-updates li strong { font-size: 12px; line-height: 1.5; color: var(--xuetu-muted); font-weight: 500; }
+.learning-dashboard .dashboard-updates li span:not(.dashboard-update-marker) { color: var(--xuetu-muted); font-size: 11px; }
+.learning-dashboard .dashboard-empty { margin: 20px 0; color: var(--xuetu-muted); font-size: 12px; }
+
+/* Align existing learning pages with the deck without replacing their domain layouts. */
+.learning-shell :is(.question-practice-center, .mistakes-page, .review-page, .personal-learning-page) {
+  --release-ink-soft: var(--xuetu-muted);
+  --release-moss-soft: var(--xuetu-highlight);
+}
+.app-shell.learning-shell .courses-overview-page { --courses-accent: var(--xuetu-action); }
+.learning-shell .page-content :is(.page-heading, .personal-learning-header) h1 { color: var(--xuetu-ink); font-weight: 600; }
+.learning-shell .segmented-filter { background: var(--xuetu-highlight); }
+.learning-shell .segmented-filter button { color: var(--xuetu-muted); }
+.learning-shell .segmented-filter button.active { color: var(--xuetu-action); background: var(--xuetu-surface); }
+.learning-shell .mistakes-page .mistake-priority-callout { color: var(--xuetu-ink); background: var(--xuetu-highlight); border-color: var(--xuetu-line); border-left-color: var(--xuetu-action); }
+.learning-shell .mistakes-page .mistake-priority-callout :is(span, a) { color: var(--xuetu-action); }
+.learning-shell .mistakes-page .mistake-priority-callout h2 { color: var(--xuetu-ink); }
+.learning-shell .mistakes-page .mistake-priority-callout p { color: var(--xuetu-muted); }
+.learning-shell .mistakes-page .mistake-item { border-color: var(--xuetu-line); border-radius: 8px; }
+.learning-shell .mistakes-page .mistake-item h2 { font-size: 19px; font-weight: 600; line-height: 1.5; }
+.learning-shell .mistakes-page .mistake-columns .objective-record { background: var(--xuetu-surface); }
+.learning-shell .mistakes-page .mistake-columns .ai-attribution { background: var(--xuetu-surface-muted); }
+.learning-shell .mistakes-page .mistake-columns :is(p, small) { color: var(--xuetu-muted); }
+.learning-shell .mistakes-page .mistake-item > header a { color: var(--xuetu-action); background: var(--xuetu-highlight); }
+.learning-shell .study-agent-trigger { color: var(--xuetu-surface); background: var(--xuetu-action); border-color: var(--xuetu-action); }
+.learning-shell .study-agent-trigger:hover { background: var(--dashboard-accent-hover); }
+.learning-shell .study-agent-orbit { color: inherit; background: transparent; }
+.learning-shell .study-agent-dock { background: var(--xuetu-surface); border-color: var(--xuetu-line-strong); }
+.learning-shell .study-agent-dock > header { color: var(--xuetu-ink); background: var(--xuetu-surface-muted); border-color: var(--xuetu-line); }
+.learning-shell .study-agent-primary-action { color: var(--xuetu-surface); background: var(--xuetu-action); border-color: var(--xuetu-action); }
+
+@media (max-width: 1320px) {
+  .learning-shell .learning-topbar-inner { gap: 16px; }
+  .learning-shell .learning-main-nav a { padding-inline: 10px; }
+  .learning-shell .learning-main-nav a > svg { display: none; }
+  .app-shell.learning-shell .profile-summary-copy { display: none; }
+}
+
+@media (max-width: 1100px) {
+  .learning-shell .learning-topbar-inner { gap: 12px; }
+  .learning-shell .learning-menu-toggle { display: grid; order: 3; }
+  .app-shell.learning-shell .topbar-actions { margin-left: auto; }
+  .learning-shell .learning-main-nav { position: absolute; top: 68px; right: 16px; left: 16px; display: none; padding: 8px; background: var(--xuetu-surface); border: 1px solid var(--xuetu-line); border-radius: 8px; box-shadow: 0 14px 30px rgb(20 84 76 / 10%); }
+  .learning-shell .learning-main-nav[data-open="true"] { display: block; }
+  .learning-shell .learning-main-nav ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .learning-shell .learning-main-nav a { justify-content: flex-start; min-height: 43px; padding: 8px 10px; border-radius: 4px; }
+  .learning-shell .learning-main-nav a > svg { display: block; }
+  .learning-shell .learning-main-nav a.is-active { background: var(--xuetu-highlight); }
+  .learning-shell .learning-main-nav a.is-active::after { display: none; }
+  .learning-shell .learning-dashboard .dashboard-workspace { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
+  .learning-dashboard .dashboard-goal-column { grid-column: 1 / -1; border-top: 1px solid var(--xuetu-line); border-left: 0; }
+  .learning-shell .learning-dashboard .orchestrator-admissions:not([data-expanded="true"]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 20px; }
+  .learning-shell .learning-dashboard .admissions-selected-target dl { margin-block: 12px; }
+  .learning-shell .learning-dashboard .dashboard-bottom { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 20px; }
+  .learning-shell .learning-dashboard .dashboard-tools > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .learning-shell .learning-topbar-inner { width: calc(100% - 32px); min-height: 60px; }
+  .app-shell.learning-shell .topbar { min-height: 60px; }
+  .learning-shell .learning-main-nav { top: 60px; }
+  .learning-shell .learning-main-nav ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .app-shell.learning-shell .brand-copy strong { font-size: 17px; }
+  .app-shell.learning-shell .brand-mark { width: 29px; height: 29px; }
+  .app-shell.learning-shell .topbar-actions { gap: 2px; }
+  .app-shell.learning-shell .page-content { padding: 20px 16px 92px; }
+  .learning-shell .learning-dashboard { gap: 22px; }
+  .learning-dashboard .dashboard-date { display: none; }
+  .learning-dashboard .dashboard-page-heading > div { display: grid; gap: 6px; }
+  .app-shell.learning-shell .study-agent-trigger { top: 72px; right: 16px; }
+  .learning-shell .learning-dashboard .dashboard-page-heading { padding-right: 0; }
+  .learning-shell .learning-dashboard .dashboard-page-heading h2 { font-size: 21px; }
+  .learning-dashboard .dashboard-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .learning-dashboard .dashboard-summary-item { padding: 15px 13px 12px; }
+  .learning-dashboard .dashboard-summary-item dt { font-size: 12px; gap: 6px; }
+  .learning-dashboard .dashboard-summary-item dd { font-size: 28px; }
+  .learning-dashboard .dashboard-summary-item .dashboard-goal-value { font-size: 20px; line-height: 32px; }
+  .learning-dashboard .dashboard-summary-foot { align-items: flex-end; min-height: 30px; font-size: 11px; }
+  .learning-shell .learning-dashboard .dashboard-workspace { grid-template-columns: minmax(0, 1fr); }
+  .learning-shell .learning-dashboard .home-action-workspace { grid-row: 1; }
+  .learning-shell .learning-dashboard .dashboard-workspace:has(.orchestrator-admissions[data-expanded="true"]) .home-action-workspace { grid-column: 1; }
+  .learning-dashboard .dashboard-activity { grid-row: 2; border-top: 1px solid var(--xuetu-line); border-right: 0; padding: 22px 18px; }
+  .learning-shell .learning-dashboard .dashboard-current-task { min-height: 300px; padding: 22px 18px; }
+  .learning-dashboard .dashboard-goal-column { padding: 22px 18px; }
+  .learning-shell .learning-dashboard .orchestrator-admissions:not([data-expanded="true"]) { display: block; }
+  .learning-shell .learning-dashboard .orchestrator-admissions[data-expanded="true"] .admissions-search-form { grid-template-columns: minmax(0, 1fr); }
+  .learning-shell .learning-dashboard .admissions-search-controls { justify-content: flex-start; flex-wrap: wrap; }
+  .learning-shell .learning-dashboard .admissions-suggestions > button { grid-template-columns: minmax(0, 1fr) auto; }
+  .learning-shell .learning-dashboard .admissions-suggestion-action { grid-column: 1 / -1; }
+  .learning-shell .learning-dashboard .admissions-target-preview :is(.admissions-preview-summary, .admissions-preview-facts, .admissions-preview-lines li, footer) { grid-template-columns: minmax(0, 1fr); flex-wrap: wrap; min-width: 0; }
+  .learning-shell .learning-dashboard .dashboard-courses > ol { grid-template-columns: minmax(0, 1fr); }
+  .learning-shell .learning-dashboard .dashboard-courses li { padding: 16px; grid-template-columns: 36px minmax(0, 1fr) auto; column-gap: 10px; }
+  .learning-dashboard .dashboard-course-icon { width: 34px; height: 34px; }
+  .learning-shell .learning-dashboard .orchestrator-priority-copy strong { font-size: 13px; }
+  .learning-shell .learning-dashboard .dashboard-bottom { grid-template-columns: minmax(0, 1fr); }
+  .learning-shell .learning-dashboard .dashboard-tools > div > a { padding: 12px; gap: 8px; }
+}
+
+@media (max-width: 380px) {
+  .app-shell.learning-shell .profile-summary { display: none; }
+}
+
+/* Agent 研学工作台（iCAN 重构）：Tutor-Agent 任务徽标与四科专家 Agent 矩阵 */
+.learning-dashboard .agent-task-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--xuetu-highlight);
+  color: var(--xuetu-action);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.learning-dashboard .dashboard-course-agent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  color: var(--xuetu-muted);
+  font-size: 12px;
+}
+
+.agent-drive-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border: 1px solid rgb(77 123 120 / 0.4);
+  border-radius: 999px;
+  background: rgb(77 123 120 / 0.08);
+  color: var(--xuetu-ochre);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.learning-dashboard .agent-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+  margin-top: 8px;
+  color: var(--xuetu-action);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.learning-dashboard .agent-secondary-action:hover {
+  color: var(--xuetu-ochre);
+  text-decoration: underline;
+}
+
+.learning-dashboard .agent-matrix-card {
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+}

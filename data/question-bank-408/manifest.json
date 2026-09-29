@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "dataset_id": "408_json_data",
+  "source_archive_name": "408_json_data(1).zip",
+  "archive_sha256": "0cb18fe825a5a02f214b11c06dddd7da1342a645eb5f444976c5962782b0ba6a",
+  "source_provider": "csgraduates.com",
+  "source_url": "https://www.csgraduates.com/study_methods/408quiz/",
+  "license_status": "unverified",
+  "public_distribution_authorization": "not_verified",
+  "usage_scope": "local_demo_only",
+  "runtime_storage": "postgresql",
+  "json_usage": "import_only",
+  "verified_at": "2026-07-27",
+  "verified_counts": {
+    "years": 18,
+    "questions": 846,
+    "choice": 720,
+    "subjective": 126,
+    "subjects": 4,
+    "embedded_asset_references": 2236,
+    "relative_file_references": 2
+  },
+  "subjects": [
+    "数据结构",
+    "组成原理",
+    "操作系统",
+    "计算机网络"
+  ],
+  "import_policy": {
+    "raw_directory_tracked": false,
+    "html_fields_imported": false,
+    "plain_text_sanitized": true,
+    "embedded_asset_payload_exposed_by_api": false,
+    "choice_grading": "deterministic_exact_option_set",
+    "subjective_grading": "ai_or_teacher_review_required"
+  }
+}

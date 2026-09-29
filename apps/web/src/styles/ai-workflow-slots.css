@@ -1,0 +1,148 @@
+.ai-workflow-slot {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+  padding: 11px 13px;
+  color: #30413a;
+  background: #f4f7f3;
+  border-top: 1px solid #cad4ce;
+  border-bottom: 1px solid #cad4ce;
+  font-family: var(--xuetu-font-interface);
+}
+
+.ai-workflow-slot > svg {
+  margin-top: 2px;
+  color: #416958;
+}
+
+.ai-workflow-slot-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ai-workflow-slot-heading strong {
+  color: #21342c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ai-workflow-slot-heading span {
+  flex: 0 0 auto;
+  padding: 2px 7px;
+  color: #6d5a2c;
+  background: #fff4d8;
+  border: 1px solid #e2ca8d;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ai-workflow-slot p {
+  margin: 4px 0 2px;
+  color: #3f4d47;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ai-workflow-slot small {
+  display: block;
+  color: #6a756f;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.ai-workflow-manual-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ai-workflow-manual-action button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 10px;
+  color: #ffffff;
+  background: #315c4b;
+  border: 1px solid #315c4b;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-workflow-manual-action button:hover {
+  background: #24483a;
+  border-color: #24483a;
+}
+
+.ai-workflow-manual-action button:focus-visible {
+  outline: 2px solid #a87320;
+  outline-offset: 2px;
+}
+
+.ai-workflow-content {
+  display: grid;
+  gap: 9px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #d4ddd8;
+}
+
+.ai-workflow-content > section > strong,
+.ai-workflow-references > strong,
+.ai-workflow-actions > strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #253a31;
+  font-size: 13px;
+}
+
+.ai-workflow-content > section > p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ai-workflow-references ul,
+.ai-workflow-actions ul {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding-left: 18px;
+  color: #53625b;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.ai-workflow-slot.is-compact {
+  padding: 10px 11px;
+  border: 1px solid #cad4ce;
+  border-radius: 3px;
+}
+
+.ai-workflow-slot.is-compact .ai-workflow-slot-heading {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@media (max-width: 680px) {
+  .ai-workflow-slot-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ai-workflow-manual-action {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "curation_method": "metadata_title_review",
+  "review_scope": "只核对课程概念标题、视频系列与分集标题；未宣称已观看视频内容。",
+  "usage_scope": "local_demo_only",
+  "license_status": "unverified",
+  "links": [
+    {
+      "course_slug": "data-structures",
+      "concept_id": "ds_c01_01",
+      "bv_id": "BV1zUzfBwEy3",
+      "episode_number": 4,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.94,
+      "review_status": "approved",
+      "review_note": "第一章分集与数据、数据元素基础概念相邻；仅作外部拓展入口。"
+    },
+    {
+      "course_slug": "data-structures",
+      "concept_id": "ds_c03_01",
+      "bv_id": "BV1pU4y157uN",
+      "episode_number": 1,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确为栈的定义，对应栈的抽象与存储知识点；仅作外部拓展入口。"
+    },
+    {
+      "course_slug": "data-structures",
+      "concept_id": "ds_c05_04",
+      "bv_id": "BV1b7411N798",
+      "episode_number": 49,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确包含线索二叉树概念。"
+    },
+    {
+      "course_slug": "operating-systems",
+      "concept_id": "os_c01_01",
+      "bv_id": "BV1zaySBSExR",
+      "episode_number": 1,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确为操作系统概念，和首章知识点一致。"
+    },
+    {
+      "course_slug": "operating-systems",
+      "concept_id": "os_c05_03",
+      "bv_id": "BV1zaySBSExR",
+      "episode_number": 66,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确为先进先出页面置换算法。"
+    },
+    {
+      "course_slug": "computer-networks",
+      "concept_id": "cn_c01_01",
+      "bv_id": "BV1KQULBCEc9",
+      "episode_number": 1,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.98,
+      "review_status": "approved",
+      "review_note": "分集标题明确为第一章互联网概述。"
+    },
+    {
+      "course_slug": "computer-networks",
+      "concept_id": "cn_c01_01",
+      "bv_id": "BV1KQULBCEc9",
+      "episode_number": 2,
+      "display_role": "related",
+      "ordinal": 2,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确为互联网的组成。"
+    },
+    {
+      "course_slug": "computer-networks",
+      "concept_id": "cn_c04_03",
+      "bv_id": "BV1c4411d7jb",
+      "episode_number": 33,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确包含 MAC 地址、IP 地址与 ARP。"
+    },
+    {
+      "course_slug": "computer-organization",
+      "concept_id": "co_c01_01",
+      "bv_id": "BV1PbokYVE2i",
+      "episode_number": 7,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.98,
+      "review_status": "approved",
+      "review_note": "分集标题明确包含软件、硬件与层次结构，对应硬件、软件与计算机系统知识点；仅作外部拓展入口。"
+    },
+    {
+      "course_slug": "computer-organization",
+      "concept_id": "co_c01_04",
+      "bv_id": "BV1CPXpBYEtz",
+      "episode_number": 2,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.98,
+      "review_status": "approved",
+      "review_note": "分集标题明确为计算机的基本组成。"
+    },
+    {
+      "course_slug": "computer-organization",
+      "concept_id": "co_c06_03",
+      "bv_id": "BV1qG41197E4",
+      "episode_number": 25,
+      "display_role": "primary",
+      "ordinal": 1,
+      "match_method": "metadata_title_review",
+      "match_confidence": 0.99,
+      "review_status": "approved",
+      "review_note": "分集标题明确为补码加减法运算公式。"
+    }
+  ]
+}

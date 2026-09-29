@@ -1,0 +1,41 @@
+{
+  "dataset_id": "data-structures-csdn-test-v1",
+  "purpose": "integration_test_only",
+  "imported_at": "2026-07-24",
+  "files": [
+    {
+      "path": "raw/articles.jsonl",
+      "stage": "raw",
+      "records": 165,
+      "bytes": 2677135,
+      "sha256": "31F35B896B1BADD08EDEC8636D1358E9C9DAC1B23B679E09195CA748E915DB6D"
+    },
+    {
+      "path": "processed/chunks.jsonl",
+      "stage": "chunked",
+      "records": 1449,
+      "bytes": 3573332,
+      "sha256": "A599AB5355052121565F4D2813DE626D7FE80E5241D183894762DA9630345653"
+    },
+    {
+      "path": "processed/by-topic.json",
+      "stage": "topic_index",
+      "records": 1448,
+      "topic_groups": 12,
+      "bytes": 2833313,
+      "sha256": "3AEA00518DDD34E17FE172B1FFFF21AF855013FB7F62EF79C5381021312B9D68"
+    }
+  ],
+  "quality_checks": {
+    "json_parse_errors": 0,
+    "duplicate_raw_ids": 0,
+    "duplicate_chunk_ids": 0,
+    "empty_text_records": 0,
+    "orphan_chunks": 0
+  },
+  "known_issues": [
+    "The topic index contains one fewer item than the chunk file.",
+    "Topic-index items do not retain stable ids or source metadata.",
+    "Source authority, copyright permission, factual accuracy, and semantic deduplication are not yet verified."
+  ]
+}

@@ -1,0 +1,571 @@
+/*
+ * Student page visual layer.
+ *
+ * This file deliberately owns presentation only. Domain styles remain in their
+ * existing files; these selectors translate their semantic variables onto the
+ * approved ochre-paper system without changing data, routes or interactions.
+ */
+
+/* Shared page reading defaults */
+[data-visual-system="ochre-serif"] :is(.page-inner, .learning-orchestrator-page),
+[data-visual-system="ochre-serif"].student-onboarding-page,
+[data-visual-system="ochre-serif"].login-entry-page {
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] :is(h1, h2, h3),
+[data-visual-system="ochre-serif"].student-onboarding-page :is(h1, h2, h3),
+[data-visual-system="ochre-serif"].login-entry-page h1 {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+[data-visual-system="ochre-serif"] :is(p, dd, dt, li, label, button, input, select, textarea, small),
+[data-visual-system="ochre-serif"].student-onboarding-page :is(p, dd, dt, li, label, button, input, select, textarea, small),
+[data-visual-system="ochre-serif"].login-entry-page :is(p, dd, dt, li, label, button, input, select, textarea, small) {
+  font-family: var(--xuetu-font-interface);
+}
+
+/* Authentication and first learning setup */
+[data-visual-system="ochre-serif"].login-entry-page {
+  min-width: 0;
+  padding: clamp(28px, 5vw, 72px);
+  color: var(--xuetu-ink);
+  background: var(--xuetu-canvas);
+  border-top: 4px solid var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-sheet {
+  min-height: 600px;
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  border-radius: 10px;
+  box-shadow: var(--xuetu-shadow-raised);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis .first-release-kicker {
+  color: var(--xuetu-highlight);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis h1 {
+  font-size: 52px;
+  line-height: 1.16;
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis > p {
+  color: #e2e2d9;
+  line-height: 1.8;
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-proof-list {
+  border-color: rgb(255 255 255 / 18%);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-proof-list li {
+  color: #e2e2d9;
+  border-color: rgb(255 255 255 / 14%);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-proof-list li span {
+  color: var(--xuetu-highlight);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .login-entry-control {
+  background: var(--xuetu-surface);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-boundary-note {
+  color: var(--xuetu-muted);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-boundary-note svg {
+  color: var(--xuetu-info);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .entry-boundary-note strong {
+  color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .account-auth-form > label {
+  color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .account-auth-form input {
+  color: var(--xuetu-ink);
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  border-radius: 6px;
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .first-release-primary-action {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .first-release-primary-action:hover:not(:disabled) {
+  color: var(--xuetu-surface);
+  background: #293c4d;
+  border-color: #293c4d;
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .account-auth-switch,
+[data-visual-system="ochre-serif"].login-entry-page .account-auth-switch a {
+  color: var(--xuetu-muted);
+}
+
+[data-visual-system="ochre-serif"].login-entry-page .account-auth-switch a {
+  color: var(--xuetu-info);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page {
+  min-width: 0;
+  color: var(--xuetu-ink);
+  background: var(--xuetu-canvas);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-header {
+  border-color: var(--xuetu-line-strong);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-brand-mark {
+  color: var(--xuetu-highlight);
+  background: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-brand strong,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage-heading h1,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-profile-heading h1,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-plan-heading h1 {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  box-shadow: var(--xuetu-shadow-soft);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage-heading > span,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage-options input:checked + span {
+  color: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-primary-action,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage-actions button[type="submit"] {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-primary-action:hover:not(:disabled),
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-stage-actions button[type="submit"]:hover:not(:disabled) {
+  background: #293c4d;
+  border-color: #293c4d;
+}
+
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-boundary-note,
+[data-visual-system="ochre-serif"].student-onboarding-page .onboarding-today-task {
+  background: var(--xuetu-highlight);
+  border-color: var(--xuetu-ochre);
+}
+
+/* Home and admissions */
+[data-visual-system="ochre-serif"] .learning-orchestrator-page {
+  --home-ink: var(--xuetu-ink);
+  --home-ink-soft: #4f5049;
+  --home-muted: var(--xuetu-muted);
+  --home-line: var(--xuetu-line);
+  --home-line-strong: var(--xuetu-line-strong);
+  --home-canvas: var(--xuetu-canvas);
+  --home-paper: var(--xuetu-surface);
+  --home-paper-cool: var(--xuetu-surface-muted);
+  --home-blue: var(--xuetu-action);
+  --home-blue-dark: #293c4d;
+  --home-blue-soft: var(--xuetu-highlight);
+  --home-teal: var(--xuetu-success);
+  --home-teal-soft: #e5efeb;
+  --home-amber: var(--xuetu-warning);
+  --home-error: var(--xuetu-danger);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page :is(h1, h2, h3) {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-heading h1 {
+  font-size: 32px;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-current-task {
+  border-color: var(--xuetu-line-strong);
+  border-radius: 8px;
+  background: var(--xuetu-surface);
+  box-shadow: 8px 8px 0 var(--xuetu-highlight), var(--xuetu-shadow-soft);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-task-index {
+  background: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-task-action,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-evidence {
+  background: var(--xuetu-highlight);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-task-action > a,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-state button {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-task-action > a:hover,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-state button:hover {
+  background: #293c4d;
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-evidence {
+  border-left: 3px solid var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-priorities li:hover,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-plan li {
+  background: var(--xuetu-surface);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-priorities li[data-priority="focus"]::before,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-priorities li[data-priority="strengthen"]::before {
+  background: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .admissions-search-input-shell,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .admissions-suggestion-popover,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .admissions-target-preview,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .orchestrator-admissions {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+}
+
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .admissions-search-submit,
+[data-visual-system="ochre-serif"] .learning-orchestrator-page .admissions-preview-confirm {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+}
+
+/* Course catalogue and reading */
+[data-visual-system="ochre-serif"] .courses-overview-page,
+[data-visual-system="ochre-serif"] .course-study-page,
+[data-visual-system="ochre-serif"] .course-domain-page,
+[data-visual-system="ochre-serif"] .course-domain-state {
+  --courses-ink: var(--xuetu-ink);
+  --courses-muted: var(--xuetu-muted);
+  --courses-line: var(--xuetu-line);
+  --courses-surface: var(--xuetu-surface);
+  --courses-soft: var(--xuetu-highlight);
+  --courses-accent: var(--xuetu-info);
+  --courses-accent-strong: var(--xuetu-action);
+  --course-ink: var(--xuetu-ink);
+  --course-ink-soft: #4f5049;
+  --course-muted: var(--xuetu-muted);
+  --course-paper: var(--xuetu-surface);
+  --course-canvas: var(--xuetu-canvas);
+  --course-rule: var(--xuetu-line);
+  --course-rule-strong: var(--xuetu-line-strong);
+  --course-moss: var(--xuetu-success);
+  --course-moss-soft: #e5efeb;
+  --course-blue: var(--xuetu-info);
+  --course-blue-soft: #edf0ef;
+  --course-amber: var(--xuetu-warning);
+  --course-amber-soft: var(--xuetu-highlight);
+  --course-signal: var(--xuetu-highlight);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] .courses-overview-page :is(h1, h2, h3),
+[data-visual-system="ochre-serif"] .course-study-page :is(h1, h2, h3) {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+}
+
+[data-visual-system="ochre-serif"] .courses-overview-page .courses-overview-heading h1,
+[data-visual-system="ochre-serif"] .course-study-page .course-study-heading h1 {
+  font-size: 30px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+[data-visual-system="ochre-serif"] .courses-overview-page .courses-overview-domain,
+[data-visual-system="ochre-serif"] .course-study-page :is(.course-study-heading, .course-study-grid, .course-training-strip, .course-example-section) {
+  border-color: var(--xuetu-line-strong);
+  background: var(--xuetu-surface);
+  box-shadow: none;
+}
+
+[data-visual-system="ochre-serif"] .courses-overview-page .courses-overview-index {
+  color: var(--xuetu-action);
+  background: var(--xuetu-highlight);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .courses-overview-page .courses-overview-entry > a,
+[data-visual-system="ochre-serif"] .course-study-page .course-training-strip > a,
+[data-visual-system="ochre-serif"] .course-study-page .course-resume-strip > a {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .course-resume-strip {
+  background: var(--xuetu-ink);
+  border-color: var(--xuetu-ink);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .course-resume-index {
+  color: var(--xuetu-ink);
+  background: var(--xuetu-highlight);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .chapter-map-panel {
+  background: var(--xuetu-surface-muted);
+  border-color: var(--xuetu-line-strong);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .curriculum-tree-chapter > header {
+  font-family: var(--xuetu-font-editorial);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .curriculum-tree-concepts [aria-current="true"],
+[data-visual-system="ochre-serif"] .course-study-page .curriculum-tree-concepts .is-current {
+  background: var(--xuetu-highlight);
+  border-color: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .course-lesson-panel {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .lesson-reading-body,
+[data-visual-system="ochre-serif"] .course-study-page .lesson-source-excerpt {
+  font-family: var(--xuetu-font-editorial);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+[data-visual-system="ochre-serif"] .course-study-page .lesson-reading-body mark {
+  color: var(--xuetu-ink);
+  background: var(--xuetu-highlight);
+}
+
+/* Question practice, mistakes and review */
+[data-visual-system="ochre-serif"] .question-practice-center,
+[data-visual-system="ochre-serif"] .mistakes-page,
+[data-visual-system="ochre-serif"] .review-page,
+[data-visual-system="ochre-serif"] .personal-learning-page {
+  --release-ink: var(--xuetu-ink);
+  --release-ink-soft: #4f5049;
+  --release-muted: var(--xuetu-muted);
+  --release-paper: var(--xuetu-surface);
+  --release-canvas: var(--xuetu-canvas);
+  --release-rule: var(--xuetu-line);
+  --release-rule-strong: var(--xuetu-line-strong);
+  --release-moss: var(--xuetu-success);
+  --release-moss-soft: #e5efeb;
+  --release-signal: var(--xuetu-highlight);
+  --personal-ink: var(--xuetu-ink);
+  --personal-green: var(--xuetu-success);
+  --personal-accent: var(--xuetu-ochre);
+  --personal-paper: var(--xuetu-surface);
+  --personal-line: var(--xuetu-line);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center :is(h1, h2, h3),
+[data-visual-system="ochre-serif"] .mistakes-page :is(h1, h2, h3),
+[data-visual-system="ochre-serif"] .review-page :is(h1, h2, h3),
+[data-visual-system="ochre-serif"] .personal-learning-page :is(h1, h2, h3) {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .first-release-primary-action,
+[data-visual-system="ochre-serif"] .question-practice-center .question-filter-bar > button,
+[data-visual-system="ochre-serif"] .mistakes-page .primary-button,
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-action-band a.primary {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-action);
+  border-color: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-session-workspace,
+[data-visual-system="ochre-serif"] .question-practice-center .question-sheet,
+[data-visual-system="ochre-serif"] .mistakes-page .mistake-item,
+[data-visual-system="ochre-serif"] .personal-learning-page :is(.personal-stat-strip, .personal-profile-workspace, .personal-priority-concept, .personal-recent-mistakes) {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  box-shadow: none;
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-filter-bar,
+[data-visual-system="ochre-serif"] .question-practice-center .attempt-context-rail,
+[data-visual-system="ochre-serif"] .mistakes-page .mistake-toolbar {
+  background: var(--xuetu-surface-muted);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-stem,
+[data-visual-system="ochre-serif"] .question-practice-center .evaluation-explanation p {
+  font-family: var(--xuetu-font-editorial);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > label.selected-option,
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > .question-option-row.selected-option {
+  background: var(--xuetu-highlight);
+  border-color: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > label.correct-option,
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > .question-option-row.correct-option {
+  color: #2e574d;
+  background: #e5efeb;
+  border-color: #9bb9ad;
+}
+
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > label.incorrect-option,
+[data-visual-system="ochre-serif"] .question-practice-center .question-options > .question-option-row.incorrect-option {
+  color: var(--xuetu-danger);
+  background: #f8e9e5;
+  border-color: #d9aaa2;
+}
+
+[data-visual-system="ochre-serif"] .mistakes-page .mistake-item h2,
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-learning-header h1 {
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+[data-visual-system="ochre-serif"] .mistakes-page .mistake-item footer button,
+[data-visual-system="ochre-serif"] .mistakes-page .mistake-item > header a,
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-header-actions > a {
+  color: var(--xuetu-info);
+  background: var(--xuetu-surface-muted);
+  border-color: var(--xuetu-line);
+}
+
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-stat-strip .featured,
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-course-switcher button.active {
+  background: var(--xuetu-highlight);
+  border-bottom-color: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .personal-learning-page .personal-action-band {
+  color: var(--xuetu-surface);
+  background: var(--xuetu-ink);
+  border-radius: 8px;
+}
+
+[data-visual-system="ochre-serif"] .personal-learning-page .course-radar-area {
+  fill: rgb(185 151 69 / 20%);
+  stroke: var(--xuetu-action);
+}
+
+[data-visual-system="ochre-serif"] .personal-learning-page .course-radar-points circle {
+  fill: var(--xuetu-success);
+  stroke: var(--xuetu-surface);
+}
+
+/* Auxiliary student pages keep the same quiet paper surface. */
+[data-visual-system="ochre-serif"] :is(.ai-tutor-page, .materials-page, .plan-page, .account-page, .workbench-page, .exam-paper-page) {
+  color: var(--xuetu-ink);
+  font-family: var(--xuetu-font-interface);
+}
+
+[data-visual-system="ochre-serif"] :is(.ai-tutor-page, .materials-page, .plan-page, .account-page, .workbench-page, .exam-paper-page) :is(h1, h2, h3) {
+  font-family: var(--xuetu-font-editorial);
+  font-weight: 500;
+}
+
+[data-visual-system="ochre-serif"] .ai-tutor-page .ai-learning-context,
+[data-visual-system="ochre-serif"] .materials-page .material-action-panel,
+[data-visual-system="ochre-serif"] .account-page .account-card {
+  background: var(--xuetu-surface);
+  border-color: var(--xuetu-line-strong);
+  box-shadow: none;
+}
+
+[data-visual-system="ochre-serif"] .ai-tutor-page .ai-learning-context {
+  border-left-color: var(--xuetu-ochre);
+}
+
+[data-visual-system="ochre-serif"] .ai-tutor-page .ai-context-heading > span {
+  color: var(--xuetu-action);
+  background: var(--xuetu-highlight);
+}
+
+/* Keep the student shell usable at the two acceptance widths. */
+@media (max-width: 1280px) {
+  [data-visual-system="ochre-serif"] .learning-orchestrator-page,
+  [data-visual-system="ochre-serif"] .courses-overview-page,
+  [data-visual-system="ochre-serif"] .course-study-page,
+  [data-visual-system="ochre-serif"] .question-practice-center,
+  [data-visual-system="ochre-serif"] .personal-learning-page {
+    max-width: 100%;
+  }
+
+  [data-visual-system="ochre-serif"] .course-study-page .lesson-reading-body,
+  [data-visual-system="ochre-serif"] .course-study-page .lesson-source-excerpt {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  [data-visual-system="ochre-serif"].login-entry-page {
+    padding: 14px;
+  }
+
+  [data-visual-system="ochre-serif"].login-entry-page .login-entry-sheet {
+    grid-template-columns: 1fr;
+  }
+
+  [data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis {
+    padding: 34px 26px;
+  }
+
+  [data-visual-system="ochre-serif"].login-entry-page .login-entry-thesis h1 {
+    font-size: 40px;
+  }
+
+  [data-visual-system="ochre-serif"].login-entry-page .login-entry-control {
+    padding: 30px 26px;
+  }
+
+  [data-visual-system="ochre-serif"] .personal-learning-page .personal-profile-workspace,
+  [data-visual-system="ochre-serif"] .personal-learning-page .personal-review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-visual-system="ochre-serif"] :is(.courses-overview-loader, .onboarding-spin, .onboarding-gate-spinner, .load-rule::after) {
+    animation: none;
+  }
+}

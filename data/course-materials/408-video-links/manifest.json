@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "408-course-video-links-2026-08",
+  "archive_file": "408四科视频网址(1).zip",
+  "archive_sha256": "c2793cb57258058d8cd51a851fee33b64d1004486e496bd61f8506af10da6c89",
+  "source_provider": "workflow_group_link_archive",
+  "original_path": "C:\\Users\\Administrator\\Desktop\\挑战杯\\408四科视频网址(1).zip",
+  "collected_at": "2026-08-10T07:31:09.000Z",
+  "license_status": "unverified",
+  "usage_scope": "local_demo_only",
+  "review_status": "pending_review",
+  "content_mode": "external_links_only",
+  "expected": {
+    "json_files": 8,
+    "series": 149,
+    "episodes": 6438,
+    "subjects": 4,
+    "platforms": ["www.bilibili.com"]
+  },
+  "notice": "链接由工作流组提供并按采集字段归档；平台不下载或托管视频，课程展示仅限本地演示，内容与授权仍待核验。"
+}

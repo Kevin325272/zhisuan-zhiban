@@ -1,0 +1,21 @@
+name: xuetu_code05
+services:
+  postgres:
+    image: postgres:17.9-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${XUETU_REPRO_DB_NAME:?run node repro/configure.mjs first}
+      POSTGRES_USER: ${XUETU_REPRO_DB_USER:?run node repro/configure.mjs first}
+      POSTGRES_PASSWORD: ${XUETU_REPRO_DB_PASSWORD:?run node repro/configure.mjs first}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    ports:
+      - "127.0.0.1:${XUETU_REPRO_DB_PORT:-55435}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - database:/var/lib/postgresql/data
+volumes:
+  database:
