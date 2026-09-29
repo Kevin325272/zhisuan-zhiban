@@ -12,7 +12,7 @@ const databasePort = Number(process.env.REPRO_DATABASE_PORT || 55435);
 if (!Number.isInteger(databasePort) || databasePort < 1024 || databasePort > 65535) {
   throw new Error('REPRO_DATABASE_PORT 必须是 1024 到 65535 之间的端口。');
 }
-const ports = { database: databasePort, api: 53105, web: 57105 };
+const ports = { database: databasePort, api: 53105, web: 57305 };
 const generated = () => `Repro_${randomBytes(18).toString('hex')}!`;
 const databasePassword = randomBytes(24).toString('hex');
 const adminPassword = generated();

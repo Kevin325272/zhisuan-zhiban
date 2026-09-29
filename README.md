@@ -12,17 +12,17 @@
 
 ## 离线演示包启动（Windows）
 
-1. 安装 Node.js 24.x（建议 24.19 或更高版本）。安装程序自带 Corepack，不需要单独安装 pnpm。
+1. 安装 Node.js 24.x（24.14 或更高版本）。安装程序自带 Corepack，不需要单独安装 pnpm。
 2. 将单独提交的离线演示包完整解压到纯英文路径（例如 `D:\zhisuan-demo`），双击根目录的 `start.cmd`。GitHub 源码不包含此步骤需要的演示数据库和便携 PostgreSQL。
 3. 脚本会自动安装依赖、初始化本地 PostgreSQL、导入演示数据库并打开浏览器。
-4. 访问 `http://127.0.0.1:57105/login`。演示账号密码会自动写入 `.repro-accounts.json`。
+4. 访问 `http://127.0.0.1:57305/login`。演示账号密码会自动写入 `.repro-accounts.json`。
 5. 结束演示时双击 `stop.cmd`。
 
 如果双击没有反应，请在本目录打开 PowerShell，执行 `powershell -ExecutionPolicy Bypass -File .\\run-demo.ps1`，窗口中的错误信息可以直接定位缺少的环境。
 
 ## 手动启动
 
-使用 Node.js 24.16.0 或更高的 24.x 版本、pnpm 11.5.2 和 PostgreSQL 17。以下命令均在本目录执行：
+使用 Node.js 24.14.0 或更高的 24.x 版本、pnpm 11.5.2 和 PostgreSQL 17。以下命令均在本目录执行：
 
 ```powershell
 pnpm install --frozen-lockfile
@@ -43,7 +43,7 @@ pnpm repro:web
 
 Windows 原生 PostgreSQL 路径默认 `C:\Program Files\PostgreSQL\17\bin`。其他路径可设置 `POSTGRES_BIN`。没有原生 PostgreSQL 时可用 `compose.reproduction.yml`；不要同时启动两种数据库。Docker 命令见完整指南。
 
-浏览器入口：`http://127.0.0.1:57105/login`。本地随机生成的账号密码仅写入 `.repro-accounts.json`，不要上传；学生、教师和管理员用户名分别为 `user_student_001`、`user_teacher_001`、`user_admin_001`。新学生首次进入学习设置，完成目标、自评和起步筛查后进入学习面板。
+浏览器入口：`http://127.0.0.1:57305/login`。本地随机生成的账号密码仅写入 `.repro-accounts.json`，不要上传；学生、教师和管理员用户名分别为 `user_student_001`、`user_teacher_001`、`user_admin_001`。新学生首次进入学习设置，完成目标、自评和起步筛查后进入学习面板。
 
 `prepare-demo.mjs` 只为独立本机数据库中的 8 道自编筛查题和 8 道自编练习题执行有审计说明的演示审核。正式教学应由教师重新审核，不得把此步骤当作真实教师签审。也可不用该脚本，改由管理员在正常管理流程逐题审核。
 
@@ -93,6 +93,6 @@ pnpm test
 
 - **提示“不是内部或外部命令”**：请从压缩包中完整解压后双击根目录的 `start.cmd`，不要直接在压缩包预览窗口运行；新版入口只调用英文文件名 `run-demo.ps1`，可避免中文路径编码问题。
 - **具身研学或智能出题为空白**：确认 `.runtime/repro-demo.sql` 存在，并使用根目录的 `start.cmd` 启动。该快照包含演示课程、题库、学习画像和研学数据。
-- **端口被占用**：确认 `55435`（数据库）、`53105`（API）、`57105`（网页）没有被其他程序占用。仅关闭自己先前打开的演示窗口后重试。
+- **端口被占用**：确认 `55435`（数据库）、`53105`（API）、`57305`（网页）没有被其他程序占用。仅关闭自己先前打开的演示窗口后重试。
 - **提示 `apps/api/.env.local 已存在`**：旧压缩包误包含本机配置，不能继续使用旧包。新版不会包含 `.env.local`；请解压到全新目录，不要覆盖旧目录。
 - **提示 `initdb` 或 UTF-8 路径错误**：完整路径中含中文字符，请改为纯英文路径，例如 `D:\zhisuan-demo`。

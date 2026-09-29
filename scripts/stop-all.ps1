@@ -5,7 +5,7 @@ $root = Split-Path -Parent $PSScriptRoot
 Write-Host '正在停止智算智伴服务 ...' -ForegroundColor Yellow
 
 # 关闭占用 API / 前端专用端口的进程
-foreach ($port in 53105, 57105) {
+foreach ($port in 53105, 57305) {
   $pids = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue |
     Select-Object -ExpandProperty OwningProcess -Unique
   foreach ($procId in $pids) {
