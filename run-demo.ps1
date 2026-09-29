@@ -11,6 +11,17 @@ function Test-ListeningPort([int]$port) {
   return [bool](Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1)
 }
 
+function Test-OwnDemoDatabase([string]$nodePath) {
+  $statusOutput = & $nodePath (Join-Path $PSScriptRoot 'repro\postgres.mjs') 'status' 2>$null
+  if ($LASTEXITCODE -ne 0 -or -not $statusOutput) { return $false }
+  try {
+    $status = ($statusOutput | Out-String | ConvertFrom-Json)
+    return [bool]$status.running
+  } catch {
+    return $false
+  }
+}
+
 try {
   if ($PSScriptRoot -match '[^\x00-\x7F]') {
     throw '便携 PostgreSQL 不支持含中文字符的解压路径。请完整解压到纯英文路径，例如 D:\zhisuan-demo，然后再双击 start.cmd。'
@@ -51,11 +62,15 @@ try {
   if (-not (Test-Path (Join-Path $env:POSTGRES_BIN 'pg_ctl.exe'))) {
     throw '压缩包缺少便携 PostgreSQL。请重新完整解压，不要在压缩包预览窗口运行。'
   }
-  try { Run-Step '启动演示数据库' $node @((Join-Path $PSScriptRoot 'repro\postgres.mjs'), 'start') }
-  catch {
-    $log = Join-Path $PSScriptRoot '.runtime\postgres.log'
-    if (Test-Path $log) { Get-Content -LiteralPath $log -Tail 12 | Write-Host }
-    throw '演示数据库启动失败。请检查目录是否全英文、55435 端口是否被占用，以及上方数据库日志。'
+  if (Test-OwnDemoDatabase $node) {
+    Write-Host '本演示包的数据库已在运行，跳过重复启动。' -ForegroundColor Yellow
+  } else {
+    try { Run-Step '启动演示数据库' $node @((Join-Path $PSScriptRoot 'repro\postgres.mjs'), 'start') }
+    catch {
+      $log = Join-Path $PSScriptRoot '.runtime\postgres.log'
+      if (Test-Path $log) { Get-Content -LiteralPath $log -Tail 12 | Write-Host }
+      throw '演示数据库启动失败。请检查目录是否全英文、55435 端口是否被占用，以及上方数据库日志。'
+    }
   }
   if (-not (Test-Path (Join-Path $PSScriptRoot '.runtime\.demo-restored'))) {
     Run-Step '导入演示数据' $node @((Join-Path $PSScriptRoot 'repro\restore-demo.mjs'))
