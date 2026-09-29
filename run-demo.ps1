@@ -76,7 +76,7 @@ try {
     Run-Step '导入演示数据' $node @((Join-Path $PSScriptRoot 'repro\restore-demo.mjs'))
   }
   $env:XUETU_SYNC_DEMO_CREDENTIALS = 'true'
-  try { Run-Pnpm '初始化演示账号' @('db:seed:auth') }
+  try { Run-Pnpm '初始化演示账号' @('--filter', '@xuetu/api', 'db:seed:auth') }
   finally { Remove-Item Env:XUETU_SYNC_DEMO_CREDENTIALS -ErrorAction SilentlyContinue }
 
   $psExe = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
