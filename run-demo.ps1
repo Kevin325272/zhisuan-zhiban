@@ -50,7 +50,7 @@ function Get-EnvValue([string]$path, [string]$key) {
   return $line.Matches[0].Groups[1].Value
 }
 
-function Set-DemoPorts([bool]$ownDatabaseRunning) {
+function Set-DemoPorts([bool]$ownDatabaseRunning, [string]$nodePath) {
   $sharedEnv = Join-Path $PSScriptRoot '.env.reproduction'
   $apiEnv = Join-Path $PSScriptRoot 'apps\api\.env.local'
   $databasePort = [int](Get-EnvValue $sharedEnv 'XUETU_REPRO_DB_PORT')
@@ -61,19 +61,9 @@ function Set-DemoPorts([bool]$ownDatabaseRunning) {
   }
 
   $databasePort = Select-FreePort $databasePort
-  Set-EnvValue $sharedEnv 'XUETU_REPRO_DB_PORT' ([string]$databasePort)
-
   $apiPort = Select-FreePort $apiPort @($databasePort)
-  Set-EnvValue $sharedEnv 'XUETU_REPRO_API_PORT' ([string]$apiPort)
-  Set-EnvValue $apiEnv 'PORT' ([string]$apiPort)
-
   $webPort = Select-FreePort $webPort @($databasePort, $apiPort)
-  Set-EnvValue $sharedEnv 'XUETU_REPRO_WEB_PORT' ([string]$webPort)
-
-  $databaseUrl = Get-EnvValue $apiEnv 'DATABASE_URL'
-  $updatedUrl = [regex]::Replace($databaseUrl, '(@(?:127\.0\.0\.1|localhost):)\d+', [System.Text.RegularExpressions.MatchEvaluator]{ param($match) $match.Groups[1].Value + $databasePort })
-  if ($updatedUrl -eq $databaseUrl) { throw 'DATABASE_URL 不是本机 PostgreSQL 地址，无法安全切换端口。' }
-  Set-EnvValue $apiEnv 'DATABASE_URL' $updatedUrl
+  Run-Step '更新本机端口配置' $nodePath @((Join-Path $PSScriptRoot 'repro\update-ports.mjs'), $databasePort, $apiPort, $webPort)
   return @{ Database = $databasePort; Api = $apiPort; Web = $webPort }
 }
 
@@ -125,7 +115,7 @@ try {
     throw '压缩包缺少便携 PostgreSQL。请重新完整解压，不要在压缩包预览窗口运行。'
   }
   $ownDatabaseRunning = Test-OwnDemoDatabase $node
-  $ports = Set-DemoPorts $ownDatabaseRunning
+  $ports = Set-DemoPorts $ownDatabaseRunning $node
   $webPort = [string]$ports.Web
   if ($ownDatabaseRunning) {
     Write-Host '本演示包的数据库已在运行，跳过重复启动。' -ForegroundColor Yellow
