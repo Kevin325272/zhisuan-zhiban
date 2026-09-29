@@ -4,8 +4,16 @@ $root = Split-Path -Parent $PSScriptRoot
 
 Write-Host '正在停止智算智伴服务 ...' -ForegroundColor Yellow
 
-# 关闭占用 API / 前端专用端口的进程
-foreach ($port in 53105, 57305) {
+$sharedEnv = Join-Path $root '.env.reproduction'
+$ports = @(53105, 57305)
+if (Test-Path $sharedEnv) {
+  $configured = Select-String -Path $sharedEnv -Pattern '^XUETU_REPRO_(API|WEB)_PORT=(\d+)$' -ErrorAction SilentlyContinue |
+    ForEach-Object { [int]$_.Matches[0].Groups[2].Value }
+  if ($configured.Count -eq 2) { $ports = $configured }
+}
+
+# 关闭本演示实例记录的 API / 前端端口，不触碰其他端口上的演示实例。
+foreach ($port in $ports) {
   $pids = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue |
     Select-Object -ExpandProperty OwningProcess -Unique
   foreach ($procId in $pids) {
